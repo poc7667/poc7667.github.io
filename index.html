@@ -715,68 +715,6 @@ ALTER USER postgres WITH SUPERUSER;
 
 
   
-    <article id="post-brew" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/brew/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/brew/">Homebrew</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>Search all versions for a ansible<ul>
-<li>brew search ansible</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-aws" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -856,6 +794,68 @@ ALTER USER postgres WITH SUPERUSER;
 
 
   
+    <article id="post-brew" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/brew/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/brew/">Homebrew</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Search all versions for a ansible<ul>
+<li>brew search ansible</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-js-debugger-skills" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -886,45 +886,6 @@ ALTER USER postgres WITH SUPERUSER;
 <p>JS除錯第三方的好工具，客戶端的環境千百種，靠開發窮舉測試幾乎是不可能的任務。</p>
 <p>Simply illustrate how to install it on an Angular js project.</p>
 <p>Put the snippet at the every page’s header section.<br>Make it be executed as soon as possible.</p>
-<pre><code>+        &lt;!-- ErrorException --&gt;
-+        &lt;script&gt;
-+            (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
-+            c&amp;&amp;c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
-+            c.src=&quot;//beacon.errorception.com/&quot;+s+&quot;.js&quot;;c.async=!0;b.parentNode.insertBefore(c,b)};
-+            _.addEventListener?_.addEventListener(&quot;load&quot;,b,!1):_.attachEvent(&quot;onload&quot;,b)})
-+            (window,document,&quot;script&quot;,&quot;5776cCXCCX7900024c&quot;);
-+        &lt;/script&gt;
-</code></pre><p><code>Angular integration</code>: open up an angular config file make sure your module name called <code>app</code>, and inject this snippet.</p>
-<pre><code>+app.config(function($provide) {
-*  $provide.decorator(&quot;$exceptionHandler&quot;, [&apos;$delegate&apos;, function($delegate) {
-*    return function(exception, cause) {
-*      _errs.push(exception);
-*      $delegate(exception, cause);
-*    }
-*  }])
-+});
-</code></pre><h1 id="Expand-objects-in-array"><a href="#Expand-objects-in-array" class="headerlink" title="Expand objects in array"></a>Expand objects in array</h1><p>Paste this function to the chrome dev tool console</p>
-<p>then pp(<code>The array you wanna show</code>)</p>
-<pre><code>var pp = (function(){
-    var MAX_DEPTH = 100;
-    return function(item, depth){
-        depth = depth || 0;
-        if (depth &gt; MAX_DEPTH ) {
-            console.log(item);
-            return;
-        }
-        if (_.isObject(item)) {
-            _.each(item, function(value, key) {
-            console.group(key + &apos; : &apos; +(typeof value));
-            pp(value, depth + 1);
-            console.groupEnd();
-            });
-        } else {
-            console.log(item);
-        }
-    }
-})(); 
-</code></pre>
       
     </div>
     
@@ -937,6 +898,10 @@ ALTER USER postgres WITH SUPERUSER;
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/03/js-debugger-skills/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

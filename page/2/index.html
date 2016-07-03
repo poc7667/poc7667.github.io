@@ -450,67 +450,6 @@ end
 
 
   
-    <article id="post-paperclip_with_s3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/15/paperclip_with_s3/" class="article-date">
-  	<time datetime="2016-04-16T06:09:04.000Z" itemprop="datePublished">2016-04-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/15/paperclip_with_s3/">paperclip with s3</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h1><p>aws-sdk version should &lt; 2.0</p>
-<p>Gemfile</p>
-<pre><code>gem &quot;paperclip&quot;
-gem &apos;aws-sdk&apos;, &apos;&lt; 2.0&apos;
-# http://stackoverflow.com/questions/28374401/nameerror-uninitialized-constant-paperclipstorages3aws
-</code></pre><h1 id="AWS-S3-Ruby-Cheat-sheet"><a href="#AWS-S3-Ruby-Cheat-sheet" class="headerlink" title="AWS S3 (Ruby) Cheat sheet"></a>AWS S3 (Ruby) Cheat sheet</h1>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROR/">ROR</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-rails-cheat-sheet" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -637,6 +576,67 @@ end
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rails/">rails</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-paperclip_with_s3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/paperclip_with_s3/" class="article-date">
+  	<time datetime="2016-04-16T06:09:04.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/paperclip_with_s3/">paperclip with s3</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h1><p>aws-sdk version should &lt; 2.0</p>
+<p>Gemfile</p>
+<pre><code>gem &quot;paperclip&quot;
+gem &apos;aws-sdk&apos;, &apos;&lt; 2.0&apos;
+# http://stackoverflow.com/questions/28374401/nameerror-uninitialized-constant-paperclipstorages3aws
+</code></pre><h1 id="AWS-S3-Ruby-Cheat-sheet"><a href="#AWS-S3-Ruby-Cheat-sheet" class="headerlink" title="AWS S3 (Ruby) Cheat sheet"></a>AWS S3 (Ruby) Cheat sheet</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROR/">ROR</a></li></ul>
 	</div>
 
       
@@ -845,10 +845,10 @@ $timeout(function(){
 
 
   
-    <article id="post-angular-resource-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-angular-cheatsheet" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/09/angular-resource-RESTful/" class="article-date">
+      <a href="/2016/04/09/angular-cheatsheet/" class="article-date">
   	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
 </a>
     </div>
@@ -862,7 +862,7 @@ $timeout(function(){
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/angular-resource-RESTful/">angular resource RESTful</a>
+      <a class="article-title" href="/2016/04/09/angular-cheatsheet/">angular-cheatsheet</a>
     </h1>
   
 
@@ -871,102 +871,51 @@ $timeout(function(){
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="type-1-Controller"><a href="#type-1-Controller" class="headerlink" title="type 1: Controller"></a>type 1: Controller</h1><pre><code>app.controller(&apos;ProductIndexCtrl&apos;,
-    function($scope, $resource, $q, $stateParams, productService) {
-        $q.all([
-            productService.query({
-                product_id: $stateParams.id
-            }).$promise
-</code></pre><p>Update</p>
-<pre><code>productService.update({product_id: product_id},{product: product})
-</code></pre><p>Create</p>
-<pre><code>productService.create({},{product: product})
-</code></pre><h1 id="type-1-Service"><a href="#type-1-Service" class="headerlink" title="type 1: Service"></a>type 1: Service</h1><pre><code>angular.module(&apos;productModule&apos;, [])
-    .service(&apos;productService&apos;, function($resource, $http) {
-            var product = $resource(&apos;/api/v1/products/:product_id&apos;, {
-                product_id: &apos;@product_id&apos;,
-            }, {
-                 update: { method:&apos;PUT&apos; },
-                 create: { method: &apos;POST&apos; },
-                 delete: { method: &apos;DELETE&apos;}
-            });
-            return product;
-        }
-    );
-</code></pre><h1 id="type-2-controller"><a href="#type-2-controller" class="headerlink" title="type 2: controller"></a>type 2: controller</h1><pre><code>app.controller(&apos;BanksBaseCtrl&apos;, function($scope, $resource, $q, bankService, $auth, $http) {
-    $scope.BankService = new bankService();
+        <h1 id="Show-un-safe-string-as-HTML"><a href="#Show-un-safe-string-as-HTML" class="headerlink" title="Show un-safe string as HTML"></a>Show un-safe string as HTML</h1><p>Add a filter</p>
+<pre><code>angular
+    .module(&apos;altairApp&apos;).filter(&apos;unsafe&apos;, function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
 });
+</code></pre><p>In the view</p>
+<pre><code>&lt;p ng-bind-html=&quot;product.description | unsafe&quot;&gt;&lt;/p&gt;
+</code></pre><h1 id="Dropdown-selection-single-and-multiple-choice"><a href="#Dropdown-selection-single-and-multiple-choice" class="headerlink" title="Dropdown selection: single and multiple choice"></a>Dropdown selection: single and multiple choice</h1><h2 id="single-choice"><a href="#single-choice" class="headerlink" title="single choice"></a>single choice</h2><p>pitfalls</p>
+<blockquote>
+ 
+</blockquote>
+<pre><code>&lt;ui-select ng-model=&quot;user_profile.career&quot; theme=&quot;bootstrap&quot; required=&quot;true&quot;&gt;
+&lt;ui-select-match &gt; {{$select.selected.name}} &lt;/ui-select-match&gt;
+&lt;ui-select-choices repeat=&quot;option in selectOptions.career | propsFilter: {name: $select.search} &quot;&gt;
+&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
+&lt;/ui-select-choices&gt;
+&lt;/ui-select&gt;
+</code></pre><h2 id="multiple-choice"><a href="#multiple-choice" class="headerlink" title="multiple choice"></a>multiple choice</h2><p>pitfalls</p>
+<blockquote>
+<p>multiple, </p>
+</blockquote>
+<pre><code>&lt;ui-select multiple ng-model=&quot;loan_plan.careers&quot; theme=&quot;bootstrap&quot; ng-disabled=&quot;disabled&quot;&gt;
+&lt;ui-select-match &gt; {{$item.name}} &lt;/ui-select-match&gt;
+&lt;ui-select-choices repeat=&quot;option in careersOptions | propsFilter: {name: $select.search} &quot;&gt;
+&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
+&lt;small&gt;
+&lt;span ng-bind-html=&quot;&apos;&apos;+ option.description | highlight: $select.search&quot;&gt;&lt;/span&gt;
+&lt;/small&gt;
+&lt;/ui-select-choices&gt;
+&lt;/ui-select&gt;
+</code></pre><h1 id="DEBUG-skill"><a href="#DEBUG-skill" class="headerlink" title="DEBUG skill"></a>DEBUG skill</h1><p>Check the existence of service on the console</p>
+<blockquote>
+<p>injector = angular.element(document.body).injector()<br>injector.get(‘ServiceName’)<br>    angular.js:68 Uncaught Error: [$injector:unpr] Unknown provider: ServiceNameProvider &lt;- ServiceName(…)(anonymous function) @ angular.js:68(anonymous function) @ angular.js:4289getService @ angular.js:4437(anonymous function) @ angular.js:4294getService @ angular.js:4437(anonymous function) @ VM168822:1InjectedScript._evaluateOn @ (program):878InjectedScript._evaluateAndWrap @ (program):811InjectedScript.evaluateOnCallFrame @ (program):936(anonymous function) @ banks.js:2</p>
+</blockquote>
+<h1 id="RESTful"><a href="#RESTful" class="headerlink" title="RESTful"></a>RESTful</h1><p>success callback</p>
+<p>error callback</p>
 
-app.controller(&apos;BanksIndexCtrl&apos;, function($rootScope, $scope, $http, $resource, $q, bankService, $auth) {
-      $q.all([$scope.BankService.all().$promise]).then(function(ret){
-        $scope.banks = ret[0]
-    }
-});
-</code></pre><h1 id="type-2-Verbosed-mode-Service-side"><a href="#type-2-Verbosed-mode-Service-side" class="headerlink" title="type 2(Verbosed mode): Service side"></a>type 2(Verbosed mode): Service side</h1><pre><code>angular.module(&apos;bankModule&apos;, [])
-    .service(&apos;bankService&apos;, function($resource, $http) {
-        var Bank;
-        return Bank = (function() {
-            function Bank(BankListId, errorHandler) {
-                var defaults;
-                this.service = $resource(&apos;/api/v1/banks/:id&apos;,
-                {
-                    id: &apos;@id&apos;
-                },
-                {
-                    update: {method: &apos;PUT&apos;},
-                    delete: { method: &apos;DELETE&apos;, params: {id: &apos;@id&apos;} },
-                    create: { method: &apos;POST&apos;, params: {bank: &apos;@bank&apos;} }
-                });
-                this.errorHandler = errorHandler;
-                defaults = $http.defaults.headers;
-                defaults.patch = defaults.patch || {};
-                defaults.patch[&apos;Content-Type&apos;] = &apos;application/json&apos;;
-            }
-            Bank.prototype.all = function() {
-                return this.service.query((function() {
-                    return null;
-                }), this.errorHandler);
-            };
-            Bank.prototype.create = function(bank) {
-                return new this.service({
-                    Bank: bank
-                }).$create((function() {
-                    return null;
-                }), this.errorHandler);
-            };
-            Bank.prototype.update = function(bank, bank_id) {
-                return new this.service({
-                    Bank: bank
-                }).$update({
-                    id: bank_id
-                }, (function() {
-                    return null;
-                }), this.errorHandler);
-            };
-            Bank.prototype.get = function(id){
-                return this.service.get({id: id}, (function() {
-                    return null;
-                }), this.errorHandler);
-            }
-            Bank.prototype.delete = function(id){
-                return this.service.delete({id: id}, (function() {
-                    return null;
-                }), this.errorHandler);
-            }
-            return Bank;
-        })();
-    });
-</code></pre>
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
-	</div>
-
       
 
       
