@@ -6,27 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Angular Rails RESTful | Poc on Rails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Prepare ngRoute, ngResource servicesvar myApp = angular.module(&amp;apos;myapplication&amp;apos;, [&amp;apos;ngRoute&amp;apos;, &amp;apos;ngResource&amp;apos;]); 
-
-//Factory
-myApp.factory(&amp;apos;Users&amp;apos;, [&amp;apos;$resourc">
+  <meta name="description" content="Integrate Angular (frontend) and Rails (backend) with RESTful APIs.
+This post is inspired by this post">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular Rails RESTful">
 <meta property="og:url" content="http://poc7667.github.io/2016/07/03/angular-rails-RESTful/index.html">
 <meta property="og:site_name" content="Poc on Rails">
-<meta property="og:description" content="Prepare ngRoute, ngResource servicesvar myApp = angular.module(&amp;apos;myapplication&amp;apos;, [&amp;apos;ngRoute&amp;apos;, &amp;apos;ngResource&amp;apos;]); 
-
-//Factory
-myApp.factory(&amp;apos;Users&amp;apos;, [&amp;apos;$resourc">
-<meta property="og:image" content="https://www.google.com.tw/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&sig2=itfFBS_iY3jnd2U1ZxNr3Q">
-<meta property="og:updated_time" content="2016-07-03T17:33:48.000Z">
+<meta property="og:description" content="Integrate Angular (frontend) and Rails (backend) with RESTful APIs.
+This post is inspired by this post">
+<meta property="og:updated_time" content="2016-07-03T18:25:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Rails RESTful">
-<meta name="twitter:description" content="Prepare ngRoute, ngResource servicesvar myApp = angular.module(&amp;apos;myapplication&amp;apos;, [&amp;apos;ngRoute&amp;apos;, &amp;apos;ngResource&amp;apos;]); 
-
-//Factory
-myApp.factory(&amp;apos;Users&amp;apos;, [&amp;apos;$resourc">
-<meta name="twitter:image" content="https://www.google.com.tw/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&sig2=itfFBS_iY3jnd2U1ZxNr3Q">
+<meta name="twitter:description" content="Integrate Angular (frontend) and Rails (backend) with RESTful APIs.
+This post is inspired by this post">
   
     <link rel="alternative" href="/atom.xml" title="Poc on Rails" type="application/atom+xml">
   
@@ -227,7 +219,9 @@ myApp.factory(&amp;apos;Users&amp;apos;, [&amp;apos;$resourc">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q" alt="This post is inspired by this post"> </p>
+        <p>Integrate Angular (frontend) and Rails (backend) with RESTful APIs.</p>
+<p><a href="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q" target="_blank" rel="external">This post is inspired by this post</a> </p>
+<a id="more"></a> 
 <h1 id="Prepare-ngRoute-ngResource-services"><a href="#Prepare-ngRoute-ngResource-services" class="headerlink" title="Prepare ngRoute, ngResource services"></a>Prepare <code>ngRoute</code>, <code>ngResource</code> services</h1><pre><code>var myApp = angular.module(&apos;myapplication&apos;, [&apos;ngRoute&apos;, &apos;ngResource&apos;]); 
 
 //Factory
@@ -288,18 +282,18 @@ end
     
 <nav id="article-nav">
   
-    <a href="/2016/07/03/token-auth/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/07/03/postgreSQL/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Devise Token Auth
+          PostgreSQL cheatsheet
         
       </div>
     </a>
   
   
-    <a href="/2016/07/03/suburi/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SUBURI setting on Rails with Nginx</div>
+    <a href="/2016/07/03/aws/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AWS</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
