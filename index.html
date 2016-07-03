@@ -199,10 +199,10 @@
 
       <div class="body-wrap">
   
-    <article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-angular-rails-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/mysql/" class="article-date">
+      <a href="/2016/07/03/angular-rails-RESTful/" class="article-date">
   	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
@@ -216,7 +216,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/mysql/">MySQL configuration</a>
+      <a class="article-title" href="/2016/07/03/angular-rails-RESTful/">Angular Rails RESTful</a>
     </h1>
   
 
@@ -225,22 +225,58 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Forget-the-root-password-OSX"><a href="#Forget-the-root-password-OSX" class="headerlink" title="Forget the root password (OSX)"></a>Forget the root password (OSX)</h1><pre><code>mysql.server stop
-mysql.server start --skip-grant-tables 
-mysql
-mysql&gt; use mysql;
-mysql&gt; UPDATE user SET password=PASSWORD(&apos;YOUR_NEW_PASSWORD_HERE&apos;) WHERE user = &apos;root&apos;;
-mysql&gt; exit;
-mysql.server stop
-mysql.server start
-</code></pre><h1 id="login-on-ubuntu"><a href="#login-on-ubuntu" class="headerlink" title="login on ubuntu"></a>login on ubuntu</h1><pre><code>mysql -u root -p
-</code></pre><h1 id="find-the-pid-file-location"><a href="#find-the-pid-file-location" class="headerlink" title="find the pid file location"></a>find the pid file location</h1><pre><code>mysqladmin -uroot -p&lt;ROOT_PASSWORD&gt; variables | grep sock
-</code></pre><h1 id="change-pid-file-location"><a href="#change-pid-file-location" class="headerlink" title="change pid file location"></a>change pid file location</h1><p>edit /etc/mysql/my.cnf</p>
-<pre><code>socket = /tmp/mysqld.sock
-pid-file = /tmp/mysqld.pid
-</code></pre><h1 id="Unable-to-lock-ibdata1-error-11"><a href="#Unable-to-lock-ibdata1-error-11" class="headerlink" title="Unable to lock ./ibdata1, error: 11"></a>Unable to lock ./ibdata1, error: 11</h1><h1 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h1><pre><code>- https://gist.github.com/poc7667/3850d140df135106fefcd44532f6837f
+        <p><img src="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q" alt="This post is inspired by this post"> </p>
+<h1 id="Prepare-ngRoute-ngResource-services"><a href="#Prepare-ngRoute-ngResource-services" class="headerlink" title="Prepare ngRoute, ngResource services"></a>Prepare <code>ngRoute</code>, <code>ngResource</code> services</h1><pre><code>var myApp = angular.module(&apos;myapplication&apos;, [&apos;ngRoute&apos;, &apos;ngResource&apos;]); 
 
-- http://blog.toright.com/posts/1145/mysql-%E6%94%B9-root-%E5%AF%86%E7%A2%BC%E5%BF%85%E5%8B%9D%E6%96%B9%E6%B3%95%EF%BC%88%E7%AD%86%E8%A8%98%EF%BC%89.html
+//Factory
+myApp.factory(&apos;Users&apos;, [&apos;$resource&apos;,function($resource){
+  return $resource(&apos;/users.json&apos;, {},{
+    query: { method: &apos;GET&apos;, isArray: true },
+    create: { method: &apos;POST&apos; }
+  })
+}]);
+
+myApp.factory(&apos;User&apos;, [&apos;$resource&apos;, function($resource){
+  return $resource(&apos;/users/:id.json&apos;, {}, {
+    show: { method: &apos;GET&apos; },
+    update: { method: &apos;PUT&apos;, params: {id: &apos;@id&apos;} },
+    delete: { method: &apos;DELETE&apos;, params: {id: &apos;@id&apos;} }
+  });
+}]);
+</code></pre><h1 id="CRUD-create-a-User"><a href="#CRUD-create-a-User" class="headerlink" title="CRUD: create a User"></a>CRUD: create a User</h1><h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1><ul>
+<li>FORM 裡面的 element 通常都會跟著 form name 名稱做連動 ‘userForm’<br>利用 _destroy 屬性 去刪除</li>
+</ul>
+<h2 id="Handle-nested-params-in-Rails"><a href="#Handle-nested-params-in-Rails" class="headerlink" title="Handle nested params in Rails"></a>Handle nested params in Rails</h2><p>The raw params would look like this way</p>
+<pre><code>{&quot;user&quot;=&gt;
+  {&quot;addresses&quot;=&gt;
+    [{&quot;street1&quot;=&gt;&quot;台灣新北市&quot;, &quot;street2&quot;=&gt;&quot;&quot;, &quot;city&quot;=&gt;&quot;&quot;, &quot;state&quot;=&gt;&quot;&quot;, &quot;country&quot;=&gt;&quot;&quot;, &quot;zipcode&quot;=&gt;&quot;&quot;},
+     {&quot;street1&quot;=&gt;
+       &quot; 台南&quot;,
+      &quot;street2&quot;=&gt;&quot;&quot;,
+      &quot;city&quot;=&gt;&quot;&quot;,
+      &quot;state&quot;=&gt;&quot;&quot;,
+      &quot;country&quot;=&gt;&quot;&quot;,
+      &quot;zipcode&quot;=&gt;&quot;&quot;}]},
+    &quot;action&quot;=&gt;&quot;create&quot;,
+    &quot;controller&quot;=&gt;&quot;users&quot;,
+    &quot;format&quot;=&gt;&quot;json&quot;}
+</code></pre><p>Clean the <strong>user_params</strong> in controller</p>
+<pre><code>def user_params
+  unless params[&quot;user&quot;][&quot;addresses&quot;].blank?
+    params[&quot;user&quot;][&quot;addresses_attributes&quot;] = params[&quot;user&quot;][&quot;addresses&quot;]
+    params[&quot;user&quot;].delete(&quot;addresses&quot;)
+  end
+  params.fetch(:user, {}).permit(:first_name, :last_name, :email, :phone,
+                                 :addresses_attributes =&gt; [:id, :street1, :street2, :city, :state, :country, :zipcode, :_destroy, :user_id])
+end
+</code></pre><h2 id="User-model"><a href="#User-model" class="headerlink" title="User model"></a>User model</h2><p>accepts_nested_attributes_for is useful </p>
+<pre><code>class User &lt; ActiveRecord::Base
+  has_many :addresses, :dependent =&gt; :destroy
+  accepts_nested_attributes_for :addresses, allow_destroy: true, reject_if: :all_blank
+  def as_json(options={})
+    super(:include =&gt; [:addresses])
+  end
+end
 </code></pre>
       
     </div>
@@ -249,7 +285,7 @@ pid-file = /tmp/mysqld.pid
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anguar-rails/">anguar, rails</a></li></ul>
 	</div>
 
       
@@ -364,114 +400,6 @@ end
 
 
   
-    <article id="post-angular-rails-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/angular-rails-RESTful/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/angular-rails-RESTful/">Angular Rails RESTful</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q" alt="This post is inspired by this post"> </p>
-<h1 id="Prepare-ngRoute-ngResource-services"><a href="#Prepare-ngRoute-ngResource-services" class="headerlink" title="Prepare ngRoute, ngResource services"></a>Prepare <code>ngRoute</code>, <code>ngResource</code> services</h1><pre><code>var myApp = angular.module(&apos;myapplication&apos;, [&apos;ngRoute&apos;, &apos;ngResource&apos;]); 
-
-//Factory
-myApp.factory(&apos;Users&apos;, [&apos;$resource&apos;,function($resource){
-  return $resource(&apos;/users.json&apos;, {},{
-    query: { method: &apos;GET&apos;, isArray: true },
-    create: { method: &apos;POST&apos; }
-  })
-}]);
-
-myApp.factory(&apos;User&apos;, [&apos;$resource&apos;, function($resource){
-  return $resource(&apos;/users/:id.json&apos;, {}, {
-    show: { method: &apos;GET&apos; },
-    update: { method: &apos;PUT&apos;, params: {id: &apos;@id&apos;} },
-    delete: { method: &apos;DELETE&apos;, params: {id: &apos;@id&apos;} }
-  });
-}]);
-</code></pre><h1 id="CRUD-create-a-User"><a href="#CRUD-create-a-User" class="headerlink" title="CRUD: create a User"></a>CRUD: create a User</h1><h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1><ul>
-<li>FORM 裡面的 element 通常都會跟著 form name 名稱做連動 ‘userForm’<br>利用 _destroy 屬性 去刪除</li>
-</ul>
-<h2 id="Handle-nested-params-in-Rails"><a href="#Handle-nested-params-in-Rails" class="headerlink" title="Handle nested params in Rails"></a>Handle nested params in Rails</h2><p>The raw params would look like this way</p>
-<pre><code>{&quot;user&quot;=&gt;
-  {&quot;addresses&quot;=&gt;
-    [{&quot;street1&quot;=&gt;&quot;台灣新北市&quot;, &quot;street2&quot;=&gt;&quot;&quot;, &quot;city&quot;=&gt;&quot;&quot;, &quot;state&quot;=&gt;&quot;&quot;, &quot;country&quot;=&gt;&quot;&quot;, &quot;zipcode&quot;=&gt;&quot;&quot;},
-     {&quot;street1&quot;=&gt;
-       &quot; 台南&quot;,
-      &quot;street2&quot;=&gt;&quot;&quot;,
-      &quot;city&quot;=&gt;&quot;&quot;,
-      &quot;state&quot;=&gt;&quot;&quot;,
-      &quot;country&quot;=&gt;&quot;&quot;,
-      &quot;zipcode&quot;=&gt;&quot;&quot;}]},
-    &quot;action&quot;=&gt;&quot;create&quot;,
-    &quot;controller&quot;=&gt;&quot;users&quot;,
-    &quot;format&quot;=&gt;&quot;json&quot;}
-</code></pre><p>Clean the <strong>user_params</strong> in controller</p>
-<pre><code>def user_params
-  unless params[&quot;user&quot;][&quot;addresses&quot;].blank?
-    params[&quot;user&quot;][&quot;addresses_attributes&quot;] = params[&quot;user&quot;][&quot;addresses&quot;]
-    params[&quot;user&quot;].delete(&quot;addresses&quot;)
-  end
-  params.fetch(:user, {}).permit(:first_name, :last_name, :email, :phone,
-                                 :addresses_attributes =&gt; [:id, :street1, :street2, :city, :state, :country, :zipcode, :_destroy, :user_id])
-end
-</code></pre><h2 id="User-model"><a href="#User-model" class="headerlink" title="User model"></a>User model</h2><p>accepts_nested_attributes_for is useful </p>
-<pre><code>class User &lt; ActiveRecord::Base
-  has_many :addresses, :dependent =&gt; :destroy
-  accepts_nested_attributes_for :addresses, allow_destroy: true, reject_if: :all_blank
-  def as_json(options={})
-    super(:include =&gt; [:addresses])
-  end
-end
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anguar-rails/">anguar, rails</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-suburi" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -528,6 +456,65 @@ ActionController::RoutingError (No route matches [GET] &quot;/&quot;):
     <div class="article-info article-info-index">
       
       
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-postgreSQL" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/postgreSQL/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/postgreSQL/">PostgreSQL cheatsheet</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CONF location <code>/usr/local/var/postgres</code></p>
+<pre><code>CREATE USER postgres WITH PASSWORD &apos;&lt;YOUR_PASSWORD&gt;&apos;;
+ALTER USER postgres WITH SUPERUSER;
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+	</div>
+
       
 
       
@@ -617,10 +604,10 @@ eg: cp /usr/local/Cellar/postgresql/9.5.1/homebrew.mxcl.postgresql.plist ~/Libra
 
 
   
-    <article id="post-postgreSQL" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/postgreSQL/" class="article-date">
+      <a href="/2016/07/03/mysql/" class="article-date">
   	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
@@ -634,7 +621,7 @@ eg: cp /usr/local/Cellar/postgresql/9.5.1/homebrew.mxcl.postgresql.plist ~/Libra
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/postgreSQL/">PostgreSQL cheatsheet</a>
+      <a class="article-title" href="/2016/07/03/mysql/">MySQL configuration</a>
     </h1>
   
 
@@ -643,9 +630,22 @@ eg: cp /usr/local/Cellar/postgresql/9.5.1/homebrew.mxcl.postgresql.plist ~/Libra
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>CONF location <code>/usr/local/var/postgres</code></p>
-<pre><code>CREATE USER postgres WITH PASSWORD &apos;&lt;YOUR_PASSWORD&gt;&apos;;
-ALTER USER postgres WITH SUPERUSER;
+        <h1 id="Forget-the-root-password-OSX"><a href="#Forget-the-root-password-OSX" class="headerlink" title="Forget the root password (OSX)"></a>Forget the root password (OSX)</h1><pre><code>mysql.server stop
+mysql.server start --skip-grant-tables 
+mysql
+mysql&gt; use mysql;
+mysql&gt; UPDATE user SET password=PASSWORD(&apos;YOUR_NEW_PASSWORD_HERE&apos;) WHERE user = &apos;root&apos;;
+mysql&gt; exit;
+mysql.server stop
+mysql.server start
+</code></pre><h1 id="login-on-ubuntu"><a href="#login-on-ubuntu" class="headerlink" title="login on ubuntu"></a>login on ubuntu</h1><pre><code>mysql -u root -p
+</code></pre><h1 id="find-the-pid-file-location"><a href="#find-the-pid-file-location" class="headerlink" title="find the pid file location"></a>find the pid file location</h1><pre><code>mysqladmin -uroot -p&lt;ROOT_PASSWORD&gt; variables | grep sock
+</code></pre><h1 id="change-pid-file-location"><a href="#change-pid-file-location" class="headerlink" title="change pid file location"></a>change pid file location</h1><p>edit /etc/mysql/my.cnf</p>
+<pre><code>socket = /tmp/mysqld.sock
+pid-file = /tmp/mysqld.pid
+</code></pre><h1 id="Unable-to-lock-ibdata1-error-11"><a href="#Unable-to-lock-ibdata1-error-11" class="headerlink" title="Unable to lock ./ibdata1, error: 11"></a>Unable to lock ./ibdata1, error: 11</h1><h1 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h1><pre><code>- https://gist.github.com/poc7667/3850d140df135106fefcd44532f6837f
+
+- http://blog.toright.com/posts/1145/mysql-%E6%94%B9-root-%E5%AF%86%E7%A2%BC%E5%BF%85%E5%8B%9D%E6%96%B9%E6%B3%95%EF%BC%88%E7%AD%86%E8%A8%98%EF%BC%89.html
 </code></pre>
       
     </div>
@@ -654,7 +654,7 @@ ALTER USER postgres WITH SUPERUSER;
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
 	</div>
 
       
@@ -676,10 +676,10 @@ ALTER USER postgres WITH SUPERUSER;
 
 
   
-    <article id="post-js-debugger-skills" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/js-debugger-skills/" class="article-date">
+      <a href="/2016/07/03/git/" class="article-date">
   	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
@@ -693,7 +693,7 @@ ALTER USER postgres WITH SUPERUSER;
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/js-debugger-skills/">JS debugger CheatSheet</a>
+      <a class="article-title" href="/2016/07/03/git/">Git cheatsheet</a>
     </h1>
   
 
@@ -702,10 +702,12 @@ ALTER USER postgres WITH SUPERUSER;
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Embed-errorception-into-your-website"><a href="#Embed-errorception-into-your-website" class="headerlink" title="Embed errorception  into your website"></a>Embed errorception  into your website</h1><p>You’ll never know where an exception happens on the client side.</p>
-<p>JS除錯第三方的好工具，客戶端的環境千百種，靠開發窮舉測試幾乎是不可能的任務。</p>
-<p>Simply illustrate how to install it on an Angular js project.</p>
-<p>Put the snippet at the every page’s header section.<br>Make it be executed as soon as possible.</p>
+        <ul>
+<li><p>find the mistakenly deleted lines in a flie</p>
+<p>  git log -S  ‘page_signin’ js/admin.config.router.js</p>
+</li>
+</ul>
+
       
     </div>
     
@@ -713,15 +715,11 @@ ALTER USER postgres WITH SUPERUSER;
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/03/js-debugger-skills/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -880,11 +878,11 @@ ALTER USER postgres WITH SUPERUSER;
 
 
   
-    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-debugger-skills" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/git/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+      <a href="/2016/07/03/js-debugger-skills/" class="article-date">
+  	<time datetime="2016-07-03T17:14:42.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
   
@@ -897,7 +895,7 @@ ALTER USER postgres WITH SUPERUSER;
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/git/">Git cheatsheet</a>
+      <a class="article-title" href="/2016/07/03/js-debugger-skills/">JS debugger CheatSheet</a>
     </h1>
   
 
@@ -906,12 +904,10 @@ ALTER USER postgres WITH SUPERUSER;
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>find the mistakenly deleted lines in a flie</p>
-<p>  git log -S  ‘page_signin’ js/admin.config.router.js</p>
-</li>
-</ul>
-
+        <h1 id="Embed-errorception-into-your-website"><a href="#Embed-errorception-into-your-website" class="headerlink" title="Embed errorception  into your website"></a>Embed errorception  into your website</h1><p>You’ll never know where an exception happens on the client side.</p>
+<p>JS除錯第三方的好工具，客戶端的環境千百種，靠開發窮舉測試幾乎是不可能的任務。</p>
+<p>Simply illustrate how to install it on an Angular js project.</p>
+<p>Put the snippet at the every page’s header section.<br>Make it be executed as soon as possible.</p>
       
     </div>
     
@@ -919,11 +915,15 @@ ALTER USER postgres WITH SUPERUSER;
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/03/js-debugger-skills/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
