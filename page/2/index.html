@@ -867,147 +867,6 @@ $timeout(function(){
 
 
   
-    <article id="post-angular-resource-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/09/angular-resource-RESTful/" class="article-date">
-  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/angular-resource-RESTful/">angular resource RESTful</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="type-1-Controller"><a href="#type-1-Controller" class="headerlink" title="type 1: Controller"></a>type 1: Controller</h1><pre><code>app.controller(&apos;ProductIndexCtrl&apos;,
-    function($scope, $resource, $q, $stateParams, productService) {
-        $q.all([
-            productService.query({
-                product_id: $stateParams.id
-            }).$promise
-</code></pre><p>Update</p>
-<pre><code>productService.update({product_id: product_id},{product: product})
-</code></pre><p>Create</p>
-<pre><code>productService.create({},{product: product})
-</code></pre><h1 id="type-1-Service"><a href="#type-1-Service" class="headerlink" title="type 1: Service"></a>type 1: Service</h1><pre><code>angular.module(&apos;productModule&apos;, [])
-    .service(&apos;productService&apos;, function($resource, $http) {
-            var product = $resource(&apos;/api/v1/products/:product_id&apos;, {
-                product_id: &apos;@product_id&apos;,
-            }, {
-                 update: { method:&apos;PUT&apos; },
-                 create: { method: &apos;POST&apos; },
-                 delete: { method: &apos;DELETE&apos;}
-            });
-            return product;
-        }
-    );
-</code></pre><h1 id="type-2-controller"><a href="#type-2-controller" class="headerlink" title="type 2: controller"></a>type 2: controller</h1><pre><code>app.controller(&apos;BanksBaseCtrl&apos;, function($scope, $resource, $q, bankService, $auth, $http) {
-    $scope.BankService = new bankService();
-});
-
-app.controller(&apos;BanksIndexCtrl&apos;, function($rootScope, $scope, $http, $resource, $q, bankService, $auth) {
-      $q.all([$scope.BankService.all().$promise]).then(function(ret){
-        $scope.banks = ret[0]
-    }
-});
-</code></pre><h1 id="type-2-Verbosed-mode-Service-side"><a href="#type-2-Verbosed-mode-Service-side" class="headerlink" title="type 2(Verbosed mode): Service side"></a>type 2(Verbosed mode): Service side</h1><pre><code>angular.module(&apos;bankModule&apos;, [])
-    .service(&apos;bankService&apos;, function($resource, $http) {
-        var Bank;
-        return Bank = (function() {
-            function Bank(BankListId, errorHandler) {
-                var defaults;
-                this.service = $resource(&apos;/api/v1/banks/:id&apos;,
-                {
-                    id: &apos;@id&apos;
-                },
-                {
-                    update: {method: &apos;PUT&apos;},
-                    delete: { method: &apos;DELETE&apos;, params: {id: &apos;@id&apos;} },
-                    create: { method: &apos;POST&apos;, params: {bank: &apos;@bank&apos;} }
-                });
-                this.errorHandler = errorHandler;
-                defaults = $http.defaults.headers;
-                defaults.patch = defaults.patch || {};
-                defaults.patch[&apos;Content-Type&apos;] = &apos;application/json&apos;;
-            }
-            Bank.prototype.all = function() {
-                return this.service.query((function() {
-                    return null;
-                }), this.errorHandler);
-            };
-            Bank.prototype.create = function(bank) {
-                return new this.service({
-                    Bank: bank
-                }).$create((function() {
-                    return null;
-                }), this.errorHandler);
-            };
-            Bank.prototype.update = function(bank, bank_id) {
-                return new this.service({
-                    Bank: bank
-                }).$update({
-                    id: bank_id
-                }, (function() {
-                    return null;
-                }), this.errorHandler);
-            };
-            Bank.prototype.get = function(id){
-                return this.service.get({id: id}, (function() {
-                    return null;
-                }), this.errorHandler);
-            }
-            Bank.prototype.delete = function(id){
-                return this.service.delete({id: id}, (function() {
-                    return null;
-                }), this.errorHandler);
-            }
-            return Bank;
-        })();
-    });
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1058,6 +917,127 @@ app.controller(&apos;BanksIndexCtrl&apos;, function($rootScope, $scope, $http, $
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-aunglar-router" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/aunglar-router/" class="article-date">
+  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/aunglar-router/">angular-pattern</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Router ‘/app/dashboard-v1’ -&gt;  State ‘app.dashboard-v1’</li>
+<li>Router ‘/app/ui’ -&gt;  State ‘app.ui’</li>
+</ul>
+<h1 id="snippet"><a href="#snippet" class="headerlink" title="snippet"></a>snippet</h1><pre><code>$urlRouterProvider
+    .otherwise(&apos;/app/dashboard-v1&apos;);
+$stateProvider
+    .state(&apos;app.ui&apos;, {
+        url: &apos;/ui&apos;,
+        template: &apos;&lt;div ui-view class=&quot;fade-in-up&quot;&gt;&lt;/div&gt;&apos;
+    })
+    .state(&apos;app.ui.buttons&apos;, {
+        url: &apos;/buttons&apos;,
+        templateUrl: &apos;tpl/ui_buttons.html&apos;
+    })
+</code></pre><p>ui-router的状态</p>
+<p>參考 <a href="http://blog.csdn.net/mooner_guo/article/details/42459861" target="_blank" rel="external">http://blog.csdn.net/mooner_guo/article/details/42459861</a></p>
+<p>Parent state 以及 children state 依靠 “.” 區分 namespace</p>
+<blockquote>
+<p>question : patent state<br>question.init.attention.text : 子狀態children state</p>
+</blockquote>
+<pre><code>$stateProvider.state(&apos;question&apos;,{     //母模块
+          ....
+    }).state(&apos;question.init.attention.test&apos;,{       //子状态1  显示view1
+            url:&quot;/test&quot;,
+      views:{
+          /*&apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          },*/
+          &apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }
+   }).state(&apos;question.init.attention.test&apos;,(        //子状态2 显示view2
+             url:&quot;/test2&quot;,
+      views:{
+          &apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          }
+          /*&apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }*/
+      }
+   )}.state(&apos;question.init.attention.test&apos;,{       //子状态3    显示view1，view2
+       url:&quot;/test2&quot;,
+      views:{
+          &apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          }
+          &apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }
+      }
+  });
+</code></pre><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Abstract - {boolean=} - An abstract state will never be directly activated, but can provide inherited properties to its common children states.</p>
+<pre><code>$stateProvider
+    .state(&apos;loan&apos;, {
+        abstract: true,
+        url: &apos;/loan&apos;,
+        templateUrl: &apos;tpl/app.html&apos;
+    })
+    .state(&apos;loan.loan_manager&apos;, {
+        // abstract: true,
+        url: &apos;/loan_manager&apos;,
+        templateUrl: &apos;tpl/ui_buttons.html&apos;
+    })
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
 	</div>
 
       
