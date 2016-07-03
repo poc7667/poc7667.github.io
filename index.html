@@ -29,7 +29,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="null" class="js-avatar">
+			<img lazy-src="https://avatars1.githubusercontent.com/u/4974355?v=3&amp;s=460" class="js-avatar">
 			
 		</a>
 
@@ -76,7 +76,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -98,13 +98,7 @@
 					<nav class="header-nav">
 						<div class="social">
 							
-								<a class="github" target="_blank" href="#" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-					        
-								<a class="rss" target="_blank" href="#" title="rss">rss</a>
-					        
-								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+								<a class="github" target="_blank" href="https://github.com/poc7667" title="github">github</a>
 					        
 						</div>
 					</nav>
@@ -122,17 +116,7 @@
 				<section class="switch-part switch-part3">
 					<div id="js-friends">
 					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://lazyair.co">LazyAIR 廉價航空比價</a>
 			        
 			        </div>
 				</section>
@@ -142,7 +126,7 @@
 				
 				<section class="switch-part switch-part4">
 				
-					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+					<div id="js-aboutme">A fullstack developer. Lives in Milpitas, Bay Area.</div>
 				</section>
 				
 			</div>
@@ -161,7 +145,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="null" class="js-avatar">
+				<img lazy-src="https://avatars1.githubusercontent.com/u/4974355?v=3&amp;s=460" class="js-avatar">
 			
 			</div>
 			<hgroup>
@@ -183,13 +167,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss">rss</a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+						<a class="github" target="_blank" href="https://github.com/poc7667" title="github">github</a>
 			        
 				</div>
 			</nav>
@@ -343,6 +321,114 @@ end
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rails-angular/">rails, angular</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-angular-rails-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/angular-rails-RESTful/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/angular-rails-RESTful/">Angular Rails RESTful</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q" alt="This post is inspired by this post"> </p>
+<h1 id="Prepare-ngRoute-ngResource-services"><a href="#Prepare-ngRoute-ngResource-services" class="headerlink" title="Prepare ngRoute, ngResource services"></a>Prepare <code>ngRoute</code>, <code>ngResource</code> services</h1><pre><code>var myApp = angular.module(&apos;myapplication&apos;, [&apos;ngRoute&apos;, &apos;ngResource&apos;]); 
+
+//Factory
+myApp.factory(&apos;Users&apos;, [&apos;$resource&apos;,function($resource){
+  return $resource(&apos;/users.json&apos;, {},{
+    query: { method: &apos;GET&apos;, isArray: true },
+    create: { method: &apos;POST&apos; }
+  })
+}]);
+
+myApp.factory(&apos;User&apos;, [&apos;$resource&apos;, function($resource){
+  return $resource(&apos;/users/:id.json&apos;, {}, {
+    show: { method: &apos;GET&apos; },
+    update: { method: &apos;PUT&apos;, params: {id: &apos;@id&apos;} },
+    delete: { method: &apos;DELETE&apos;, params: {id: &apos;@id&apos;} }
+  });
+}]);
+</code></pre><h1 id="CRUD-create-a-User"><a href="#CRUD-create-a-User" class="headerlink" title="CRUD: create a User"></a>CRUD: create a User</h1><h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1><ul>
+<li>FORM 裡面的 element 通常都會跟著 form name 名稱做連動 ‘userForm’<br>利用 _destroy 屬性 去刪除</li>
+</ul>
+<h2 id="Handle-nested-params-in-Rails"><a href="#Handle-nested-params-in-Rails" class="headerlink" title="Handle nested params in Rails"></a>Handle nested params in Rails</h2><p>The raw params would look like this way</p>
+<pre><code>{&quot;user&quot;=&gt;
+  {&quot;addresses&quot;=&gt;
+    [{&quot;street1&quot;=&gt;&quot;台灣新北市&quot;, &quot;street2&quot;=&gt;&quot;&quot;, &quot;city&quot;=&gt;&quot;&quot;, &quot;state&quot;=&gt;&quot;&quot;, &quot;country&quot;=&gt;&quot;&quot;, &quot;zipcode&quot;=&gt;&quot;&quot;},
+     {&quot;street1&quot;=&gt;
+       &quot; 台南&quot;,
+      &quot;street2&quot;=&gt;&quot;&quot;,
+      &quot;city&quot;=&gt;&quot;&quot;,
+      &quot;state&quot;=&gt;&quot;&quot;,
+      &quot;country&quot;=&gt;&quot;&quot;,
+      &quot;zipcode&quot;=&gt;&quot;&quot;}]},
+    &quot;action&quot;=&gt;&quot;create&quot;,
+    &quot;controller&quot;=&gt;&quot;users&quot;,
+    &quot;format&quot;=&gt;&quot;json&quot;}
+</code></pre><p>Clean the <strong>user_params</strong> in controller</p>
+<pre><code>def user_params
+  unless params[&quot;user&quot;][&quot;addresses&quot;].blank?
+    params[&quot;user&quot;][&quot;addresses_attributes&quot;] = params[&quot;user&quot;][&quot;addresses&quot;]
+    params[&quot;user&quot;].delete(&quot;addresses&quot;)
+  end
+  params.fetch(:user, {}).permit(:first_name, :last_name, :email, :phone,
+                                 :addresses_attributes =&gt; [:id, :street1, :street2, :city, :state, :country, :zipcode, :_destroy, :user_id])
+end
+</code></pre><h2 id="User-model"><a href="#User-model" class="headerlink" title="User model"></a>User model</h2><p>accepts_nested_attributes_for is useful </p>
+<pre><code>class User &lt; ActiveRecord::Base
+  has_many :addresses, :dependent =&gt; :destroy
+  accepts_nested_attributes_for :addresses, allow_destroy: true, reject_if: :all_blank
+  def as_json(options={})
+    super(:include =&gt; [:addresses])
+  end
+end
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anguar-rails/">anguar, rails</a></li></ul>
 	</div>
 
       
@@ -568,193 +654,6 @@ ALTER USER postgres WITH SUPERUSER;
 
 
   
-    <article id="post-angular-rails-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/angular-rails-RESTful/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/angular-rails-RESTful/">Angular Rails RESTful</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q" alt="This post is inspired by this post"> </p>
-<h1 id="Prepare-ngRoute-ngResource-services"><a href="#Prepare-ngRoute-ngResource-services" class="headerlink" title="Prepare ngRoute, ngResource services"></a>Prepare <code>ngRoute</code>, <code>ngResource</code> services</h1><pre><code>var myApp = angular.module(&apos;myapplication&apos;, [&apos;ngRoute&apos;, &apos;ngResource&apos;]); 
-
-//Factory
-myApp.factory(&apos;Users&apos;, [&apos;$resource&apos;,function($resource){
-  return $resource(&apos;/users.json&apos;, {},{
-    query: { method: &apos;GET&apos;, isArray: true },
-    create: { method: &apos;POST&apos; }
-  })
-}]);
-
-myApp.factory(&apos;User&apos;, [&apos;$resource&apos;, function($resource){
-  return $resource(&apos;/users/:id.json&apos;, {}, {
-    show: { method: &apos;GET&apos; },
-    update: { method: &apos;PUT&apos;, params: {id: &apos;@id&apos;} },
-    delete: { method: &apos;DELETE&apos;, params: {id: &apos;@id&apos;} }
-  });
-}]);
-</code></pre><h1 id="CRUD-create-a-User"><a href="#CRUD-create-a-User" class="headerlink" title="CRUD: create a User"></a>CRUD: create a User</h1><h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1><ul>
-<li>FORM 裡面的 element 通常都會跟著 form name 名稱做連動 ‘userForm’<br>利用 _destroy 屬性 去刪除</li>
-</ul>
-<h2 id="Handle-nested-params-in-Rails"><a href="#Handle-nested-params-in-Rails" class="headerlink" title="Handle nested params in Rails"></a>Handle nested params in Rails</h2><p>The raw params would look like this way</p>
-<pre><code>{&quot;user&quot;=&gt;
-  {&quot;addresses&quot;=&gt;
-    [{&quot;street1&quot;=&gt;&quot;台灣新北市&quot;, &quot;street2&quot;=&gt;&quot;&quot;, &quot;city&quot;=&gt;&quot;&quot;, &quot;state&quot;=&gt;&quot;&quot;, &quot;country&quot;=&gt;&quot;&quot;, &quot;zipcode&quot;=&gt;&quot;&quot;},
-     {&quot;street1&quot;=&gt;
-       &quot; 台南&quot;,
-      &quot;street2&quot;=&gt;&quot;&quot;,
-      &quot;city&quot;=&gt;&quot;&quot;,
-      &quot;state&quot;=&gt;&quot;&quot;,
-      &quot;country&quot;=&gt;&quot;&quot;,
-      &quot;zipcode&quot;=&gt;&quot;&quot;}]},
-    &quot;action&quot;=&gt;&quot;create&quot;,
-    &quot;controller&quot;=&gt;&quot;users&quot;,
-    &quot;format&quot;=&gt;&quot;json&quot;}
-</code></pre><p>Clean the <strong>user_params</strong> in controller</p>
-<pre><code>def user_params
-  unless params[&quot;user&quot;][&quot;addresses&quot;].blank?
-    params[&quot;user&quot;][&quot;addresses_attributes&quot;] = params[&quot;user&quot;][&quot;addresses&quot;]
-    params[&quot;user&quot;].delete(&quot;addresses&quot;)
-  end
-  params.fetch(:user, {}).permit(:first_name, :last_name, :email, :phone,
-                                 :addresses_attributes =&gt; [:id, :street1, :street2, :city, :state, :country, :zipcode, :_destroy, :user_id])
-end
-</code></pre><h2 id="User-model"><a href="#User-model" class="headerlink" title="User model"></a>User model</h2><p>accepts_nested_attributes_for is useful </p>
-<pre><code>class User &lt; ActiveRecord::Base
-  has_many :addresses, :dependent =&gt; :destroy
-  accepts_nested_attributes_for :addresses, allow_destroy: true, reject_if: :all_blank
-  def as_json(options={})
-    super(:include =&gt; [:addresses])
-  end
-end
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anguar-rails/">anguar, rails</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-aws" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/aws/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/aws/">AWS</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>add another aws configure</li>
-</ul>
-<p>eg: assign a new profile name</p>
-<blockquote>
-<p>aws configure –profile ezfly</p>
-</blockquote>
-<ul>
-<li>use direnv to load a different aws profile</li>
-</ul>
-<ul>
-<li>ssh login without pem file</li>
-</ul>
-<p>open <code>/etc/ssh/sshd_config</code></p>
-<p>Before</p>
-<blockquote>
-<p>PasswordAuthentication no</p>
-</blockquote>
-<p>After</p>
-<blockquote>
-<p>PasswordAuthentication yes</p>
-</blockquote>
-<p>change PasswordAuthentication no to PasswordAuthentication yes</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws/">aws</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -857,6 +756,85 @@ end
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-aws" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/aws/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/aws/">AWS</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>add another aws configure</li>
+</ul>
+<p>eg: assign a new profile name</p>
+<blockquote>
+<p>aws configure –profile ezfly</p>
+</blockquote>
+<ul>
+<li>use direnv to load a different aws profile</li>
+</ul>
+<ul>
+<li>ssh login without pem file</li>
+</ul>
+<p>open <code>/etc/ssh/sshd_config</code></p>
+<p>Before</p>
+<blockquote>
+<p>PasswordAuthentication no</p>
+</blockquote>
+<p>After</p>
+<blockquote>
+<p>PasswordAuthentication yes</p>
+</blockquote>
+<p>change PasswordAuthentication no to PasswordAuthentication yes</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws/">aws</a></li></ul>
 	</div>
 
       
