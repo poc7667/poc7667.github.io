@@ -4,33 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>JS debugger skills | Poc on Rails</title>
+  <title>JS debugger CheatSheet | Poc on Rails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Expand objects in arrayPaste this function to the chrome dev tool console
-then pp(The array you wanna show)
-var pp = (function(){
-    var MAX_DEPTH = 100;
-    return function(item, depth){
-        dep">
+  <meta name="description" content="Embed errorexception  into your websiteYou’ll never know where an exception happens on the client side.
+JS除錯第三方的好工具，客戶端的環境千百種，靠開發窮舉測試幾乎是不可能的任務。
+Simply illustrate how to install it on an Angular js pro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS debugger skills">
+<meta property="og:title" content="JS debugger CheatSheet">
 <meta property="og:url" content="http://poc7667.github.io/2016/07/03/js-debugger-skills/index.html">
 <meta property="og:site_name" content="Poc on Rails">
-<meta property="og:description" content="Expand objects in arrayPaste this function to the chrome dev tool console
-then pp(The array you wanna show)
-var pp = (function(){
-    var MAX_DEPTH = 100;
-    return function(item, depth){
-        dep">
-<meta property="og:updated_time" content="2016-07-03T17:33:48.000Z">
+<meta property="og:description" content="Embed errorexception  into your websiteYou’ll never know where an exception happens on the client side.
+JS除錯第三方的好工具，客戶端的環境千百種，靠開發窮舉測試幾乎是不可能的任務。
+Simply illustrate how to install it on an Angular js pro">
+<meta property="og:updated_time" content="2016-07-03T17:46:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS debugger skills">
-<meta name="twitter:description" content="Expand objects in arrayPaste this function to the chrome dev tool console
-then pp(The array you wanna show)
-var pp = (function(){
-    var MAX_DEPTH = 100;
-    return function(item, depth){
-        dep">
+<meta name="twitter:title" content="JS debugger CheatSheet">
+<meta name="twitter:description" content="Embed errorexception  into your websiteYou’ll never know where an exception happens on the client side.
+JS除錯第三方的好工具，客戶端的環境千百種，靠開發窮舉測試幾乎是不可能的任務。
+Simply illustrate how to install it on an Angular js pro">
   
     <link rel="alternative" href="/atom.xml" title="Poc on Rails" type="application/atom+xml">
   
@@ -233,7 +224,7 @@ var pp = (function(){
         
   
     <h1 class="article-title" itemprop="name">
-      JS debugger skills
+      JS debugger CheatSheet
     </h1>
   
 
@@ -253,7 +244,30 @@ var pp = (function(){
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Expand-objects-in-array"><a href="#Expand-objects-in-array" class="headerlink" title="Expand objects in array"></a>Expand objects in array</h1><p>Paste this function to the chrome dev tool console</p>
+        <h1 id="Embed-errorexception-into-your-website"><a href="#Embed-errorexception-into-your-website" class="headerlink" title="Embed errorexception  into your website"></a>Embed errorexception  into your website</h1><p>You’ll never know where an exception happens on the client side.</p>
+<p>JS除錯第三方的好工具，客戶端的環境千百種，靠開發窮舉測試幾乎是不可能的任務。</p>
+<p>Simply illustrate how to install it on an Angular js project.</p>
+<p>Put the snippet at the every page’s header section.<br>Make it be executed as soon as possible.</p>
+<ul>
+<li><!-- ErrorException --></li>
+<li><script></li>
+<li>(function(_,e,rr,s){<em>errs=[s];var c=</em>.onerror;_.onerror=function(){var a=arguments;_errs.push(a);</li>
+<li>c&amp;&amp;c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];</li>
+<li>c.src=”//beacon.errorception.com/“+s+”.js”;c.async=!0;b.parentNode.insertBefore(c,b)};</li>
+<li><em>.addEventListener?</em>.addEventListener(“load”,b,!1):_.attachEvent(“onload”,b)})</li>
+<li>(window,document,”script”,”5776cCXCCX7900024c”);</li>
+<li></script></li>
+</ul>
+<p><code>Angular integration</code>: open up an angular config file make sure your module name called <code>app</code>, and inject this snippet.</p>
+<pre><code>+app.config(function($provide) {
+*  $provide.decorator(&quot;$exceptionHandler&quot;, [&apos;$delegate&apos;, function($delegate) {
+*    return function(exception, cause) {
+*      _errs.push(exception);
+*      $delegate(exception, cause);
+*    }
+*  }])
++});
+</code></pre><h1 id="Expand-objects-in-array"><a href="#Expand-objects-in-array" class="headerlink" title="Expand objects in array"></a>Expand objects in array</h1><p>Paste this function to the chrome dev tool console</p>
 <p>then pp(<code>The array you wanna show</code>)</p>
 <pre><code>var pp = (function(){
     var MAX_DEPTH = 100;
@@ -283,18 +297,9 @@ var pp = (function(){
     
 <nav id="article-nav">
   
-    <a href="/2016/07/03/token-auth/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Devise Token Auth
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/07/03/aws/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AWS</div>
+    <a href="/2016/07/03/token-auth/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Devise Token Auth</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -329,7 +334,7 @@ var pp = (function(){
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="js-debugger-skills" data-title="JS debugger skills" data-url="http://poc7667.github.io/2016/07/03/js-debugger-skills/"></div>
+	<div class="ds-thread" data-thread-key="js-debugger-skills" data-title="JS debugger CheatSheet" data-url="http://poc7667.github.io/2016/07/03/js-debugger-skills/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
