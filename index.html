@@ -76,7 +76,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -107,7 +107,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 20px;">ROR</a> <a href="/tags/Rails/" style="font-size: 15px;">Rails</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 15px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
+						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 16.67px;">ROR</a> <a href="/tags/Rails/" style="font-size: 13.33px;">Rails</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 13.33px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
 					</div>
 				</section>
 				
@@ -177,6 +177,426 @@
 
       <div class="body-wrap">
   
+    <article id="post-back-up-databases" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/17/back-up-databases/" class="article-date">
+  	<time datetime="2016-07-17T18:14:27.000Z" itemprop="datePublished">2016-07-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/17/back-up-databases/">back-up-databases</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I refer to <a href="http://backup.github.io/backup/v4/getting-started/" target="_blank" rel="external">http://backup.github.io/backup/v4/getting-started/</a> to back-up our databases periodically.</p>
+<p>Suppose our database is <code>postgresql</code></p>
+<pre><code>backup generate:model --trigger backupAlphaLoan --databases=&quot;postgresql&quot; --storages=&quot;local&quot; --compressor=&quot;gzip&quot;
+
+backup perform --trigger backupAlphaLoan
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-angular-course-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/13/angular-course-notes/" class="article-date">
+  	<time datetime="2016-07-14T02:26:14.000Z" itemprop="datePublished">2016-07-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/13/angular-course-notes/">angular-course-notes</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="2016-07-13"><a href="#2016-07-13" class="headerlink" title="2016-07-13"></a>2016-07-13</h1><p>利用 ng-class 動態地元件上style</p>
+<h2 id="ng-controller-for"><a href="#ng-controller-for" class="headerlink" title="ng controller for"></a>ng controller for</h2><pre><code>&lt;script&gt;
+    angular.module(&quot;exampleApp&quot;, [])
+            .controller(&quot;defaultCtrl&quot;, function ($scope) {
+                $scope.settings = {
+                    Rows: &quot;Red&quot;,
+                    Columns: &quot;Green&quot;
+                };
+            });
+&lt;/script&gt;
+&lt;style&gt;
+    tr.Red { background-color: lightcoral; }
+    tr.Green { background-color: lightgreen;}
+    tr.Blue { background-color: lightblue; }
+&lt;/style&gt;
+&lt;table class=&quot;table&quot;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;#&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Done&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tr ng-repeat=&quot;item in todos&quot; ng-class=&quot;settings.Rows&quot;&gt;
+        &lt;td&gt;{{$index + 1}}&lt;/td&gt;
+        &lt;td&gt;{{item.action}}&lt;/td&gt;
+        &lt;td ng-style=&quot;{&apos;background-color&apos;: settings.Columns}&quot;&gt;
+            {{item.complete}}
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-react-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/12/react-notes/" class="article-date">
+  	<time datetime="2016-07-13T01:42:44.000Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/12/react-notes/">react-course-notes</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Prop 是constant 的角色, state 的子集合</p>
+<p>所以要改變子孫的 prop, 就從最上層的 container 開始改變。</p>
+<p>向下傳遞的除了資料流以外也可以是</p>
+<p>one way 資料流： (dispatcher) -&gt; (store) -&gt; (view) -&gt; (action) —-&gt; (dispatcher)</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/12/react-notes/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ios-reading-cocoa-and-core-services" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/10/ios-reading-cocoa-and-core-services/" class="article-date">
+  	<time datetime="2016-07-11T00:53:15.000Z" itemprop="datePublished">2016-07-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/10/ios-reading-cocoa-and-core-services/">ios-reading-cocoa-and-core-services</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="What-the-framework-does"><a href="#What-the-framework-does" class="headerlink" title="What the framework does"></a>What the framework does</h1><p>I think poeple are usually compare the difference between framework and libraries.</p>
+<p>For my point of view,</p>
+<p>A modern framework not only provides a set of useful libraries but also provides the callbacks for putting hooks on the necessary place and a MVC model for developers to develop it.</p>
+<p>A framework is a must to separate of concerns which can ease the complexity of design.</p>
+<p>Libraries are more like external API, we just use it, call it.</p>
+<h1 id="Why-you’re-interested-in-the-framework"><a href="#Why-you’re-interested-in-the-framework" class="headerlink" title="Why you’re interested in the framework"></a>Why you’re interested in the framework</h1><p>To learn a language is relatively easy for me now. </p>
+<p>But a framework will take maybe 5 times or more to learn it.</p>
+<p>You need to understand the live cycle, callbacks, components, and some memory issues and multi-threading issues behind the hood.</p>
+<p>It’s a hard way in the beginning.</p>
+<p>However once you get familiared with a framework.</p>
+<p>It can shorten the time of developing products with a good quality and make your project structure in a elegant way.</p>
+<h1 id="A-brief-summary-of-how-the-framework-is-used"><a href="#A-brief-summary-of-how-the-framework-is-used" class="headerlink" title="A brief summary of how the framework is used"></a>A brief summary of how the framework is used</h1><p>It depends on what kind of features does your app need.</p>
+<p>When it comes to develop an iOS app, at least, you will need <code>cocoa touch framework</code> to provide basic UI components and <code>Standard system view controllers</code> to provide a blue-print for the entry.</p>
+<p>If you need to swap files among iOS/macbooks devices, you might need to AirDrop framework.</p>
+<p>If there is a PUB-SUB message flow within your service,  you might need Push notification framework  to help you make the feature.</p>
+<h1 id="Summary-of-iOS-frameworks"><a href="#Summary-of-iOS-frameworks" class="headerlink" title="Summary of iOS frameworks"></a>Summary of iOS frameworks</h1><h2 id="Cocoa-Touch-Layer"><a href="#Cocoa-Touch-Layer" class="headerlink" title="Cocoa Touch Layer"></a>Cocoa Touch Layer</h2><p>Cocoa Touch is a collection of frameworks which are providing appearance (UI) for our app and multi-tasking, touch-based input, push notifications.</p>
+<h2 id="Standard-system-view-controllers"><a href="#Standard-system-view-controllers" class="headerlink" title="Standard system view controllers"></a>Standard system view controllers</h2><ul>
+<li><p>Display or edit contact information: pick a ctrl from Address Book UI framework.</p>
+</li>
+<li><p>Compose an email or SMS: pick a ctrl from message ui fk.</p>
+</li>
+<li><p>Open or preview the contents of a file: Use the UIDocumentInteractionController class</p>
+</li>
+</ul>
+<h2 id="Handoff"><a href="#Handoff" class="headerlink" title="Handoff"></a>Handoff</h2><ul>
+<li>Handoff is a feature to enable user can migrate their tasks from one device(iPhone) to another device(maybe Mac).</li>
+</ul>
+<p>Handoff makes this experience as seamless as possible.</p>
+<p>Of course, to use it you need to study its official API.</p>
+<h2 id="Document-picker"><a href="#Document-picker" class="headerlink" title="Document picker"></a>Document picker</h2><p>Enable user can access files outside from the current app.</p>
+<p>Simple mechanism for sharing documents within apps.</p>
+<h2 id="AirDrop"><a href="#AirDrop" class="headerlink" title="AirDrop"></a>AirDrop</h2><p>Share photos, documents, URLs with nearby devices.</p>
+<h2 id="Textkit"><a href="#Textkit" class="headerlink" title="Textkit"></a>Textkit</h2><p>Textkit a full-featured to organize paragraphs, columns, …</p>
+<ul>
+<li>comments: well, I prefer to keep content as simple as possible. Too much fexlibility will harm the reading experience. eg. I like the philosophy of Medium</li>
+</ul>
+<h2 id="Multitasking"><a href="#Multitasking" class="headerlink" title="Multitasking"></a>Multitasking</h2><p>If you want to do some tasks after the app is switched to the backgorund. You need to use it to enable your app can work in the backgorund.</p>
+<h1 id="Auto-layout"><a href="#Auto-layout" class="headerlink" title="Auto layout"></a>Auto layout</h1><p>Help you build dynamic interfaces with little code.</p>
+<p>Comment: I hate to layout components with storyboard. It should be done with some css-similar syntax </p>
+<h1 id="Storyboards"><a href="#Storyboards" class="headerlink" title="Storyboards"></a>Storyboards</h1><p>A way to defin <code>segues</code> which are transitions from one view CTRL to another. These transitions allow you to captire the flow of UI in addition to the content.</p>
+<h1 id="UI-State-preservation"><a href="#UI-State-preservation" class="headerlink" title="UI State preservation"></a>UI State preservation</h1><p>It can restore the last time App’s state. Provide a good user experience.</p>
+<h1 id="Apple-push-notification-services"><a href="#Apple-push-notification-services" class="headerlink" title="Apple push notification services"></a>Apple push notification services</h1><p>To alert user notifications.</p>
+<ul>
+<li>The app muse request the delivery of notifications and process the notification content once it’s delivered.</li>
+<li>Provide a server-side process to generate the notifications in the first place.</li>
+</ul>
+<p>Comment: I’ve done thise before, but only on Rubymotion toolchain.</p>
+<h1 id="Local-notification"><a href="#Local-notification" class="headerlink" title="Local notification."></a>Local notification.</h1><p>The notifications coming from the app itself. you can schedule it.</p>
+<h1 id="Gesture-Recognizers"><a href="#Gesture-Recognizers" class="headerlink" title="Gesture Recognizers"></a>Gesture Recognizers</h1><p>TL;DR</p>
+<h1 id="Framworks"><a href="#Framworks" class="headerlink" title="Framworks"></a>Framworks</h1><ul>
+<li>Address Book UI Framework:  contacts-related events</li>
+<li>EventKit : calendar-related events</li>
+<li>MapKit</li>
+<li>Message UI </li>
+<li>GameKit, iAD, </li>
+</ul>
+<h1 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h1><ul>
+<li><a href="http://mightysignal.com/top-ios-sdks" target="_blank" rel="external">TOP IOS SDKS</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-java-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/08/java-notes/" class="article-date">
+  	<time datetime="2016-07-09T03:27:51.000Z" itemprop="datePublished">2016-07-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/08/java-notes/">java-notes</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a> 
+<h1 id="2016-07-15"><a href="#2016-07-15" class="headerlink" title="2016-07-15"></a>2016-07-15</h1><p>Object has <strong>state</strong> , <strong>behaviour</strong> (public methods)</p>
+<p>Person toater = new Person(“poc”);</p>
+<p>// new 這個關鍵字讓memory allocate delayed 執行，JVM runtime 再去 allocate memory.</p>
+<p>重要觀念：</p>
+<ul>
+<li><p>Abstraction: is a technique which helps identify which information can be hidden</p>
+</li>
+<li><p>Encapsulation is the result of information hiding</p>
+</li>
+</ul>
+<p>JAVA primitive 交換, 字串交換, obj裡面的attributes 交換 要了解。</p>
+<p>default value at 物件裡面會被init，但是在 local 就沒有init。</p>
+<p>To ensure a object is immutable, you should make sure all its members are immutable</p>
+<p>String API:</p>
+<ul>
+<li>String builder </li>
+</ul>
+<p>String inturned: <a href="http://stackoverflow.com/questions/10578984/what-is-string-interning" target="_blank" rel="external">stkoverflow</a></p>
+<p><a href="http://tech.meituan.com/in_depth_understanding_string_intern.html" target="_blank" rel="external">http://tech.meituan.com/in_depth_understanding_string_intern.html</a></p>
+<h1 id="2016-07-08"><a href="#2016-07-08" class="headerlink" title="2016-07-08"></a>2016-07-08</h1><p>static method : </p>
+<ul>
+<li>Can not use NON-static vars, methods</li>
+<li><p>Can use obj references and class names</p>
+<pre><code>class A {
+    int e; // instance var
+    static int i; // class var    
+}
+</code></pre></li>
+</ul>
+<p>Exception 流程</p>
+<pre><code>Scanner sc = new Scanner();
+try{
+    System.out.println(&quot;enter total:&quot;);
+    double sub_total = sc.nextDouble();
+}catch(InputMismatchException e)
+{
+    sc.next(); //eat newline
+    System.out.println(&quot;retry again&quot;);
+    continue;
+}
+</code></pre><p>複習一下 try catch, throw, thorws, finally</p>
+<p><a href="https://segmentfault.com/a/1190000004681136" target="_blank" rel="external">https://segmentfault.com/a/1190000004681136</a></p>
+<p>Use <code>hasNextDouble</code>, <code>hasNextInt</code> to replace <code>try...catch()</code>. it costs less!</p>
+<h1 id="String-Number-formatter"><a href="#String-Number-formatter" class="headerlink" title="String/Number formatter"></a>String/Number formatter</h1><h1 id="CompareNumber"><a href="#CompareNumber" class="headerlink" title="CompareNumber"></a>CompareNumber</h1><pre><code>if (xxxNum.isEmpty())
+</code></pre><h1 id="CompareString"><a href="#CompareString" class="headerlink" title="CompareString"></a>CompareString</h1><pre><code>if (String.new.compareToIgnoreCase())
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-rails-factories" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -221,6 +641,62 @@
         <p class="article-more-link">
           <a  href="/2016/07/06/rails-factories/#more">more >></a>
         </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-angular-directives" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/06/angular-directives/" class="article-date">
+  	<time datetime="2016-07-07T03:27:06.000Z" itemprop="datePublished">2016-07-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/06/angular-directives/">angular-directives</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Directives"><a href="#Directives" class="headerlink" title="Directives"></a>Directives</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+	</div>
+
+      
+
       
       <div class="clearfix"></div>
     </div>
@@ -283,10 +759,10 @@
 
 
   
-    <article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-aws" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/mysql/" class="article-date">
+      <a href="/2016/07/03/aws/" class="article-date">
   	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
@@ -300,7 +776,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/mysql/">MySQL configuration</a>
+      <a class="article-title" href="/2016/07/03/aws/">AWS</a>
     </h1>
   
 
@@ -309,23 +785,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Forget-the-root-password-OSX"><a href="#Forget-the-root-password-OSX" class="headerlink" title="Forget the root password (OSX)"></a>Forget the root password (OSX)</h1><pre><code>mysql.server stop
-mysql.server start --skip-grant-tables 
-mysql
-mysql&gt; use mysql;
-mysql&gt; UPDATE user SET password=PASSWORD(&apos;YOUR_NEW_PASSWORD_HERE&apos;) WHERE user = &apos;root&apos;;
-mysql&gt; exit;
-mysql.server stop
-mysql.server start
-</code></pre><h1 id="login-on-ubuntu"><a href="#login-on-ubuntu" class="headerlink" title="login on ubuntu"></a>login on ubuntu</h1><pre><code>mysql -u root -p
-</code></pre><h1 id="find-the-pid-file-location"><a href="#find-the-pid-file-location" class="headerlink" title="find the pid file location"></a>find the pid file location</h1><pre><code>mysqladmin -uroot -p&lt;ROOT_PASSWORD&gt; variables | grep sock
-</code></pre><h1 id="change-pid-file-location"><a href="#change-pid-file-location" class="headerlink" title="change pid file location"></a>change pid file location</h1><p>edit /etc/mysql/my.cnf</p>
-<pre><code>socket = /tmp/mysqld.sock
-pid-file = /tmp/mysqld.pid
-</code></pre><h1 id="Unable-to-lock-ibdata1-error-11"><a href="#Unable-to-lock-ibdata1-error-11" class="headerlink" title="Unable to lock ./ibdata1, error: 11"></a>Unable to lock ./ibdata1, error: 11</h1><h1 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h1><pre><code>- https://gist.github.com/poc7667/3850d140df135106fefcd44532f6837f
+        <ul>
+<li>add another aws configure</li>
+</ul>
+<p>eg: assign a new profile name</p>
+<blockquote>
+<p>aws configure –profile ezfly</p>
+</blockquote>
+<ul>
+<li>use direnv to load a different aws profile</li>
+</ul>
+<ul>
+<li>ssh login without pem file</li>
+</ul>
+<p>open <code>/etc/ssh/sshd_config</code></p>
+<p>Before</p>
+<blockquote>
+<p>PasswordAuthentication no</p>
+</blockquote>
+<p>After</p>
+<blockquote>
+<p>PasswordAuthentication yes</p>
+</blockquote>
+<p>change PasswordAuthentication no to PasswordAuthentication yes</p>
 
-- http://blog.toright.com/posts/1145/mysql-%E6%94%B9-root-%E5%AF%86%E7%A2%BC%E5%BF%85%E5%8B%9D%E6%96%B9%E6%B3%95%EF%BC%88%E7%AD%86%E8%A8%98%EF%BC%89.html
-</code></pre>
       
     </div>
     
@@ -333,84 +816,9 @@ pid-file = /tmp/mysqld.pid
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws/">aws</a></li></ul>
 	</div>
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-suburi" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/suburi/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/suburi/">SUBURI setting on Rails with Nginx</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h1><ul>
-<li>ENV[‘RAILS_RELATIVE_URL_ROOT’]=/browse/</li>
-</ul>
-<h1 id="routes-rb"><a href="#routes-rb" class="headerlink" title="routes.rb"></a>routes.rb</h1><pre><code>scope ENV[&apos;RAILS_RELATIVE_URL_ROOT&apos;] do
-    get &apos;browse/category_detail&apos;
-    get &apos;*path&apos; =&gt; redirect(&apos;/&apos;)
-end
-</code></pre><h1 id="application-rb"><a href="#application-rb" class="headerlink" title="application.rb"></a>application.rb</h1><pre><code>class Application &lt; Rails::Application
-  config.relative_url_root = ENV[&apos;RAILS_RELATIVE_URL_ROOT&apos;]
-end
-</code></pre><h1 id="Error-in-production-log"><a href="#Error-in-production-log" class="headerlink" title="Error in production log"></a>Error in production log</h1><pre><code>I, [2015-10-20T07:07:15.956058 #30522]  INFO -- : Started GET &quot;/&quot; for 127.0.0.1 at 2015-10-20 07:07:15 +0000
-F, [2015-10-20T07:07:15.957575 #30522] FATAL -- :
-ActionController::RoutingError (No route matches [GET] &quot;/&quot;):
-</code></pre><h1 id="nginx-conf"><a href="#nginx-conf" class="headerlink" title="nginx.conf"></a>nginx.conf</h1><pre><code>server {
-        listen 443;
-        server_name WEBSITE.COM;
-    location /browse {
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        proxy_redirect off;
-        proxy_pass http://unix:/tmp/puma.broswe.sock:/;
-    }
-}%
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
       
 
       
@@ -523,10 +931,10 @@ end
 
 
   
-    <article id="post-angular-rails-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-suburi" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/angular-rails-RESTful/" class="article-date">
+      <a href="/2016/07/03/suburi/" class="article-date">
   	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
@@ -540,7 +948,7 @@ end
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/angular-rails-RESTful/">Angular Rails RESTful</a>
+      <a class="article-title" href="/2016/07/03/suburi/">SUBURI setting on Rails with Nginx</a>
     </h1>
   
 
@@ -549,24 +957,38 @@ end
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Integrate Angular (frontend) and Rails (backend) with RESTful APIs.</p>
-<p><a href="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q">This post is inspired by this post</a> </p>
+        <h1 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h1><ul>
+<li>ENV[‘RAILS_RELATIVE_URL_ROOT’]=/browse/</li>
+</ul>
+<h1 id="routes-rb"><a href="#routes-rb" class="headerlink" title="routes.rb"></a>routes.rb</h1><pre><code>scope ENV[&apos;RAILS_RELATIVE_URL_ROOT&apos;] do
+    get &apos;browse/category_detail&apos;
+    get &apos;*path&apos; =&gt; redirect(&apos;/&apos;)
+end
+</code></pre><h1 id="application-rb"><a href="#application-rb" class="headerlink" title="application.rb"></a>application.rb</h1><pre><code>class Application &lt; Rails::Application
+  config.relative_url_root = ENV[&apos;RAILS_RELATIVE_URL_ROOT&apos;]
+end
+</code></pre><h1 id="Error-in-production-log"><a href="#Error-in-production-log" class="headerlink" title="Error in production log"></a>Error in production log</h1><pre><code>I, [2015-10-20T07:07:15.956058 #30522]  INFO -- : Started GET &quot;/&quot; for 127.0.0.1 at 2015-10-20 07:07:15 +0000
+F, [2015-10-20T07:07:15.957575 #30522] FATAL -- :
+ActionController::RoutingError (No route matches [GET] &quot;/&quot;):
+</code></pre><h1 id="nginx-conf"><a href="#nginx-conf" class="headerlink" title="nginx.conf"></a>nginx.conf</h1><pre><code>server {
+        listen 443;
+        server_name WEBSITE.COM;
+    location /browse {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_pass http://unix:/tmp/puma.broswe.sock:/;
+    }
+}%
+</code></pre>
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anguar-rails/">anguar, rails</a></li></ul>
-	</div>
-
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/03/angular-rails-RESTful/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -610,21 +1032,7 @@ end
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>遇到新舊版DB衝突，通常升級資料庫之後會遇到</p>
-<pre><code>FATAL:  database files are incompatible with server
-DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.5.1.
-launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-</code></pre><p>Backup the old DB store and create a new one.</p>
-<pre><code>mv /usr/local/var/postgres /usr/local/var/postgresOLD
-initdb /usr/local/var/postgres
-</code></pre><p>If you want to start the DB on boot</p>
-<pre><code>cp /usr/local/Cellar/postgresql/&lt;VERSION&gt;/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/
-eg: cp /usr/local/Cellar/postgresql/9.5.1/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents
-</code></pre><p>Dump database</p>
-<pre><code>pg_dump -h localhost -U postgres -f alpa.dump AlphaLoan_production -Fc
-</code></pre><p>Restore database</p>
-<pre><code>pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d AlphaLoan_production ./alpa.dump
-</code></pre>
+        <p>Notes for postgresql operation</p>
       
     </div>
     
@@ -633,6 +1041,82 @@ eg: cp /usr/local/Cellar/postgresql/9.5.1/homebrew.mxcl.postgresql.plist ~/Libra
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DB/">DB</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/03/postgres/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/mysql/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/mysql/">MySQL configuration</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Forget-the-root-password-OSX"><a href="#Forget-the-root-password-OSX" class="headerlink" title="Forget the root password (OSX)"></a>Forget the root password (OSX)</h1><pre><code>mysql.server stop
+mysql.server start --skip-grant-tables 
+mysql
+mysql&gt; use mysql;
+mysql&gt; UPDATE user SET password=PASSWORD(&apos;YOUR_NEW_PASSWORD_HERE&apos;) WHERE user = &apos;root&apos;;
+mysql&gt; exit;
+mysql.server stop
+mysql.server start
+</code></pre><h1 id="login-on-ubuntu"><a href="#login-on-ubuntu" class="headerlink" title="login on ubuntu"></a>login on ubuntu</h1><pre><code>mysql -u root -p
+</code></pre><h1 id="find-the-pid-file-location"><a href="#find-the-pid-file-location" class="headerlink" title="find the pid file location"></a>find the pid file location</h1><pre><code>mysqladmin -uroot -p&lt;ROOT_PASSWORD&gt; variables | grep sock
+</code></pre><h1 id="change-pid-file-location"><a href="#change-pid-file-location" class="headerlink" title="change pid file location"></a>change pid file location</h1><p>edit /etc/mysql/my.cnf</p>
+<pre><code>socket = /tmp/mysqld.sock
+pid-file = /tmp/mysqld.pid
+</code></pre><h1 id="Unable-to-lock-ibdata1-error-11"><a href="#Unable-to-lock-ibdata1-error-11" class="headerlink" title="Unable to lock ./ibdata1, error: 11"></a>Unable to lock ./ibdata1, error: 11</h1><h1 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h1><pre><code>- https://gist.github.com/poc7667/3850d140df135106fefcd44532f6837f
+
+- http://blog.toright.com/posts/1145/mysql-%E6%94%B9-root-%E5%AF%86%E7%A2%BC%E5%BF%85%E5%8B%9D%E6%96%B9%E6%B3%95%EF%BC%88%E7%AD%86%E8%A8%98%EF%BC%89.html
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
 	</div>
 
       
@@ -716,144 +1200,6 @@ eg: cp /usr/local/Cellar/postgresql/9.5.1/homebrew.mxcl.postgresql.plist ~/Libra
 
 
   
-    <article id="post-aws" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/aws/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/aws/">AWS</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>add another aws configure</li>
-</ul>
-<p>eg: assign a new profile name</p>
-<blockquote>
-<p>aws configure –profile ezfly</p>
-</blockquote>
-<ul>
-<li>use direnv to load a different aws profile</li>
-</ul>
-<ul>
-<li>ssh login without pem file</li>
-</ul>
-<p>open <code>/etc/ssh/sshd_config</code></p>
-<p>Before</p>
-<blockquote>
-<p>PasswordAuthentication no</p>
-</blockquote>
-<p>After</p>
-<blockquote>
-<p>PasswordAuthentication yes</p>
-</blockquote>
-<p>change PasswordAuthentication no to PasswordAuthentication yes</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws/">aws</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-postgreSQL" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/postgreSQL/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/postgreSQL/">PostgreSQL cheatsheet</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>CONF location <code>/usr/local/var/postgres</code></p>
-<pre><code>CREATE USER postgres WITH PASSWORD &apos;&lt;YOUR_PASSWORD&gt;&apos;;
-ALTER USER postgres WITH SUPERUSER;
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -898,6 +1244,67 @@ ALTER USER postgres WITH SUPERUSER;
 
       
 
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-angular-rails-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/angular-rails-RESTful/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/angular-rails-RESTful/">Angular Rails RESTful</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Integrate Angular (frontend) and Rails (backend) with RESTful APIs.</p>
+<p><a href="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q">This post is inspired by this post</a> </p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anguar-rails/">anguar, rails</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/03/angular-rails-RESTful/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1133,6 +1540,67 @@ end
 
 
   
+    <article id="post-paperclip_with_s3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/paperclip_with_s3/" class="article-date">
+  	<time datetime="2016-04-16T06:09:04.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/paperclip_with_s3/">paperclip with s3</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h1><p>aws-sdk version should &lt; 2.0</p>
+<p>Gemfile</p>
+<pre><code>gem &quot;paperclip&quot;
+gem &apos;aws-sdk&apos;, &apos;&lt; 2.0&apos;
+# http://stackoverflow.com/questions/28374401/nameerror-uninitialized-constant-paperclipstorages3aws
+</code></pre><h1 id="AWS-S3-Ruby-Cheat-sheet"><a href="#AWS-S3-Ruby-Cheat-sheet" class="headerlink" title="AWS S3 (Ruby) Cheat sheet"></a>AWS S3 (Ruby) Cheat sheet</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROR/">ROR</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-rails-cheat-sheet" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1260,67 +1728,6 @@ end
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rails/">rails</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-paperclip_with_s3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/15/paperclip_with_s3/" class="article-date">
-  	<time datetime="2016-04-16T06:09:04.000Z" itemprop="datePublished">2016-04-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/15/paperclip_with_s3/">paperclip with s3</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h1><p>aws-sdk version should &lt; 2.0</p>
-<p>Gemfile</p>
-<pre><code>gem &quot;paperclip&quot;
-gem &apos;aws-sdk&apos;, &apos;&lt; 2.0&apos;
-# http://stackoverflow.com/questions/28374401/nameerror-uninitialized-constant-paperclipstorages3aws
-</code></pre><h1 id="AWS-S3-Ruby-Cheat-sheet"><a href="#AWS-S3-Ruby-Cheat-sheet" class="headerlink" title="AWS S3 (Ruby) Cheat sheet"></a>AWS S3 (Ruby) Cheat sheet</h1>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROR/">ROR</a></li></ul>
 	</div>
 
       
@@ -1591,6 +1998,62 @@ $timeout(function(){
 
 
   
+    <article id="post-assets" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/11/assets/" class="article-date">
+  	<time datetime="2016-04-11T18:50:37.000Z" itemprop="datePublished">2016-04-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/11/assets/">Rails Assets</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Compilie-the-assets-in-the-local-machine-then-deploy-to-remote-server"><a href="#Compilie-the-assets-in-the-local-machine-then-deploy-to-remote-server" class="headerlink" title="Compilie the assets in the local machine then deploy to remote server"></a>Compilie the assets in the local machine then deploy to remote server</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROR/">ROR</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-leetcode" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1660,11 +2123,11 @@ class Solution(object):
 
 
   
-    <article id="post-assets" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-aunglar-router" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/11/assets/" class="article-date">
-  	<time datetime="2016-04-11T18:50:37.000Z" itemprop="datePublished">2016-04-11</time>
+      <a href="/2016/04/09/aunglar-router/" class="article-date">
+  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
 </a>
     </div>
   
@@ -1677,7 +2140,7 @@ class Solution(object):
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/11/assets/">Rails Assets</a>
+      <a class="article-title" href="/2016/04/09/aunglar-router/">angular-pattern</a>
     </h1>
   
 
@@ -1686,7 +2149,72 @@ class Solution(object):
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Compilie-the-assets-in-the-local-machine-then-deploy-to-remote-server"><a href="#Compilie-the-assets-in-the-local-machine-then-deploy-to-remote-server" class="headerlink" title="Compilie the assets in the local machine then deploy to remote server"></a>Compilie the assets in the local machine then deploy to remote server</h1>
+        <ul>
+<li>Router ‘/app/dashboard-v1’ -&gt;  State ‘app.dashboard-v1’</li>
+<li>Router ‘/app/ui’ -&gt;  State ‘app.ui’</li>
+</ul>
+<h1 id="snippet"><a href="#snippet" class="headerlink" title="snippet"></a>snippet</h1><pre><code>$urlRouterProvider
+    .otherwise(&apos;/app/dashboard-v1&apos;);
+$stateProvider
+    .state(&apos;app.ui&apos;, {
+        url: &apos;/ui&apos;,
+        template: &apos;&lt;div ui-view class=&quot;fade-in-up&quot;&gt;&lt;/div&gt;&apos;
+    })
+    .state(&apos;app.ui.buttons&apos;, {
+        url: &apos;/buttons&apos;,
+        templateUrl: &apos;tpl/ui_buttons.html&apos;
+    })
+</code></pre><p>ui-router的状态</p>
+<p>參考 <a href="http://blog.csdn.net/mooner_guo/article/details/42459861" target="_blank" rel="external">http://blog.csdn.net/mooner_guo/article/details/42459861</a></p>
+<p>Parent state 以及 children state 依靠 “.” 區分 namespace</p>
+<blockquote>
+<p>question : patent state<br>question.init.attention.text : 子狀態children state</p>
+</blockquote>
+<pre><code>$stateProvider.state(&apos;question&apos;,{     //母模块
+          ....
+    }).state(&apos;question.init.attention.test&apos;,{       //子状态1  显示view1
+            url:&quot;/test&quot;,
+      views:{
+          /*&apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          },*/
+          &apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }
+   }).state(&apos;question.init.attention.test&apos;,(        //子状态2 显示view2
+             url:&quot;/test2&quot;,
+      views:{
+          &apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          }
+          /*&apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }*/
+      }
+   )}.state(&apos;question.init.attention.test&apos;,{       //子状态3    显示view1，view2
+       url:&quot;/test2&quot;,
+      views:{
+          &apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          }
+          &apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }
+      }
+  });
+</code></pre><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Abstract - {boolean=} - An abstract state will never be directly activated, but can provide inherited properties to its common children states.</p>
+<pre><code>$stateProvider
+    .state(&apos;loan&apos;, {
+        abstract: true,
+        url: &apos;/loan&apos;,
+        templateUrl: &apos;tpl/app.html&apos;
+    })
+    .state(&apos;loan.loan_manager&apos;, {
+        // abstract: true,
+        url: &apos;/loan_manager&apos;,
+        templateUrl: &apos;tpl/ui_buttons.html&apos;
+    })
+</code></pre>
       
     </div>
     
@@ -1694,7 +2222,7 @@ class Solution(object):
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROR/">ROR</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
 	</div>
 
       
@@ -1983,127 +2511,6 @@ app.controller(&apos;BanksIndexCtrl&apos;, function($rootScope, $scope, $http, $
             return Bank;
         })();
     });
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-aunglar-router" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/09/aunglar-router/" class="article-date">
-  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/aunglar-router/">angular-pattern</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>Router ‘/app/dashboard-v1’ -&gt;  State ‘app.dashboard-v1’</li>
-<li>Router ‘/app/ui’ -&gt;  State ‘app.ui’</li>
-</ul>
-<h1 id="snippet"><a href="#snippet" class="headerlink" title="snippet"></a>snippet</h1><pre><code>$urlRouterProvider
-    .otherwise(&apos;/app/dashboard-v1&apos;);
-$stateProvider
-    .state(&apos;app.ui&apos;, {
-        url: &apos;/ui&apos;,
-        template: &apos;&lt;div ui-view class=&quot;fade-in-up&quot;&gt;&lt;/div&gt;&apos;
-    })
-    .state(&apos;app.ui.buttons&apos;, {
-        url: &apos;/buttons&apos;,
-        templateUrl: &apos;tpl/ui_buttons.html&apos;
-    })
-</code></pre><p>ui-router的状态</p>
-<p>參考 <a href="http://blog.csdn.net/mooner_guo/article/details/42459861" target="_blank" rel="external">http://blog.csdn.net/mooner_guo/article/details/42459861</a></p>
-<p>Parent state 以及 children state 依靠 “.” 區分 namespace</p>
-<blockquote>
-<p>question : patent state<br>question.init.attention.text : 子狀態children state</p>
-</blockquote>
-<pre><code>$stateProvider.state(&apos;question&apos;,{     //母模块
-          ....
-    }).state(&apos;question.init.attention.test&apos;,{       //子状态1  显示view1
-            url:&quot;/test&quot;,
-      views:{
-          /*&apos;first&apos;:{
-              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
-          },*/
-          &apos;second&apos;:{
-              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
-          }
-   }).state(&apos;question.init.attention.test&apos;,(        //子状态2 显示view2
-             url:&quot;/test2&quot;,
-      views:{
-          &apos;first&apos;:{
-              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
-          }
-          /*&apos;second&apos;:{
-              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
-          }*/
-      }
-   )}.state(&apos;question.init.attention.test&apos;,{       //子状态3    显示view1，view2
-       url:&quot;/test2&quot;,
-      views:{
-          &apos;first&apos;:{
-              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
-          }
-          &apos;second&apos;:{
-              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
-          }
-      }
-  });
-</code></pre><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Abstract - {boolean=} - An abstract state will never be directly activated, but can provide inherited properties to its common children states.</p>
-<pre><code>$stateProvider
-    .state(&apos;loan&apos;, {
-        abstract: true,
-        url: &apos;/loan&apos;,
-        templateUrl: &apos;tpl/app.html&apos;
-    })
-    .state(&apos;loan.loan_manager&apos;, {
-        // abstract: true,
-        url: &apos;/loan_manager&apos;,
-        templateUrl: &apos;tpl/ui_buttons.html&apos;
-    })
 </code></pre>
       
     </div>

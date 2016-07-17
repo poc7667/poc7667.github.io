@@ -6,25 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>PostgreSQL setting | Poc on Rails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="遇到新舊版DB衝突，通常升級資料庫之後會遇到
-FATAL:  database files are incompatible with server
-DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.5.1.
-launc">
+  <meta name="description" content="Notes for postgresql operation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PostgreSQL setting">
 <meta property="og:url" content="http://poc7667.github.io/2016/07/03/postgres/index.html">
 <meta property="og:site_name" content="Poc on Rails">
-<meta property="og:description" content="遇到新舊版DB衝突，通常升級資料庫之後會遇到
-FATAL:  database files are incompatible with server
-DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.5.1.
-launc">
-<meta property="og:updated_time" content="2016-07-03T17:33:48.000Z">
+<meta property="og:description" content="Notes for postgresql operation">
+<meta property="og:updated_time" content="2016-07-17T18:54:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgreSQL setting">
-<meta name="twitter:description" content="遇到新舊版DB衝突，通常升級資料庫之後會遇到
-FATAL:  database files are incompatible with server
-DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.5.1.
-launc">
+<meta name="twitter:description" content="Notes for postgresql operation">
   
     <link rel="alternative" href="/atom.xml" title="Poc on Rails" type="application/atom+xml">
   
@@ -89,7 +80,7 @@ launc">
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -120,7 +111,7 @@ launc">
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 20px;">ROR</a> <a href="/tags/Rails/" style="font-size: 15px;">Rails</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 15px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
+						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 16.67px;">ROR</a> <a href="/tags/Rails/" style="font-size: 13.33px;">Rails</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 13.33px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
 					</div>
 				</section>
 				
@@ -225,7 +216,9 @@ launc">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>遇到新舊版DB衝突，通常升級資料庫之後會遇到</p>
+        <p>Notes for postgresql operation</p>
+<a id="more"></a> 
+<p>遇到新舊版DB衝突，通常升級資料庫之後會遇到</p>
 <pre><code>FATAL:  database files are incompatible with server
 DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.5.1.
 launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
@@ -239,7 +232,18 @@ eg: cp /usr/local/Cellar/postgresql/9.5.1/homebrew.mxcl.postgresql.plist ~/Libra
 <pre><code>pg_dump -h localhost -U postgres -f alpa.dump AlphaLoan_production -Fc
 </code></pre><p>Restore database</p>
 <pre><code>pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d AlphaLoan_production ./alpa.dump
-</code></pre>
+</code></pre><p>PSQL configuration file location <code>/usr/local/var/postgres</code> </p>
+<pre><code>CREATE USER postgres WITH PASSWORD &apos;&lt;YOUR_PASSWORD&gt;&apos;;
+ALTER USER postgres WITH SUPERUSER;
+</code></pre><p>Login postgresql on ubuntu and change password</p>
+<pre><code>sudo su - postgres ; psql
+ALTER USER &quot;postgres&quot; WITH PASSWORD &apos;alphaloan123&apos;;
+postgres=# ALTER USER &quot;postgres&quot; WITH PASSWORD &apos;alphaloan123&apos;;
+ALTER ROLE
+postgres=# \q
+</code></pre><p>md5 peer authentication 問題</p>
+<p><a href="http://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge" target="_blank" rel="external">http://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge</a></p>
+
       
     </div>
     
@@ -248,18 +252,18 @@ eg: cp /usr/local/Cellar/postgresql/9.5.1/homebrew.mxcl.postgresql.plist ~/Libra
     
 <nav id="article-nav">
   
-    <a href="/2016/07/03/angular-rails-RESTful/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/07/03/suburi/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Angular Rails RESTful
+          SUBURI setting on Rails with Nginx
         
       </div>
     </a>
   
   
-    <a href="/2016/07/03/brew/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Homebrew</div>
+    <a href="/2016/07/03/mysql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL configuration</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
