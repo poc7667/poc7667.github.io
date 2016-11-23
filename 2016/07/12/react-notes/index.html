@@ -18,7 +18,7 @@ one way 資料流： (dispatcher) -&amp;gt; (store) -&amp;gt; (view) -&amp;gt; (
 所以要改變子孫的 prop, 就從最上層的 container 開始改變。
 向下傳遞的除了資料流以外也可以是
 one way 資料流： (dispatcher) -&amp;gt; (store) -&amp;gt; (view) -&amp;gt; (action) —-&amp;gt; (dispatcher)">
-<meta property="og:updated_time" content="2016-07-14T02:29:37.000Z">
+<meta property="og:updated_time" content="2016-07-27T03:57:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-course-notes">
 <meta name="twitter:description" content="Prop 是constant 的角色, state 的子集合
@@ -89,7 +89,7 @@ one way 資料流： (dispatcher) -&amp;gt; (store) -&amp;gt; (view) -&amp;gt; (
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -120,7 +120,7 @@ one way 資料流： (dispatcher) -&amp;gt; (store) -&amp;gt; (view) -&amp;gt; (
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 16.67px;">ROR</a> <a href="/tags/Rails/" style="font-size: 13.33px;">Rails</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/devops/" style="font-size: 10px;">devops</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 13.33px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
+						<a href="/tags/AWS/" style="font-size: 10px;">AWS</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 15px;">ROR</a> <a href="/tags/Rails/" style="font-size: 12.5px;">Rails</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/devops/" style="font-size: 10px;">devops</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/iOS/" style="font-size: 17.5px;">iOS</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 12.5px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
 					</div>
 				</section>
 				
@@ -230,6 +230,16 @@ one way 資料流： (dispatcher) -&amp;gt; (store) -&amp;gt; (view) -&amp;gt; (
 <p>向下傳遞的除了資料流以外也可以是</p>
 <p>one way 資料流： (dispatcher) -&gt; (store) -&gt; (view) -&gt; (action) —-&gt; (dispatcher)</p>
 <a id="more"></a> 
+<h1 id="2016-07-26"><a href="#2016-07-26" class="headerlink" title="2016-07-26"></a>2016-07-26</h1><p>Good practice.</p>
+<p>盡量保持 stateless.</p>
+<p>你也可以只建立一個 parent component, 只用來負責 hold states, 不用來畫也可以。</p>
+<p>component lifycycle:</p>
+<p>這邊提到的 mount willMount 說的是 mount 到 VDOM</p>
+<p>大多時間都會在 didMount 做事情，因為這個callback才會 trigger re-render.<br>(記住，都只是在 VDOM 操作，不要養成 reail dom)</p>
+<p>Will mount (從ROOT 觸發到 leaf)<br>Did mount ( leaf 回傳到 root), leaf 最先trigger 在把 callback 傳回給root</p>
+<h2 id="Immutability"><a href="#Immutability" class="headerlink" title="Immutability"></a>Immutability</h2><p>不要嘗試去 modify state, 直接 creat new array and replace the old one</p>
+<h2 id="data-flow-概念"><a href="#data-flow-概念" class="headerlink" title="data flow 概念"></a>data flow 概念</h2><p>通常 remote-api-interaction 不要四散在各地的componest, 集中在 top 執行。</p>
+<p>通常 action 會在 leaf 觸發，一個 checkbox 之類 在一路的calback 到root</p>
 <h1 id="material"><a href="#material" class="headerlink" title="material"></a>material</h1><p>Text book: pro react</p>
 <p>練習  project <a href="https://github.com/jiayihu/react-kanban" target="_blank" rel="external">https://github.com/jiayihu/react-kanban</a></p>
 <h1 id="建立環境"><a href="#建立環境" class="headerlink" title="建立環境"></a>建立環境</h1><h2 id="React-hello-world-example"><a href="#React-hello-world-example" class="headerlink" title="React hello world example"></a>React hello world example</h2><ul>

@@ -6,31 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>java-notes | Poc on Rails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2016-07-15Object has state , behaviour (public methods)
-Person toater = new Person(“poc”);
-// new 這個關鍵字讓memory allocate delayed 執行，JVM runtime 再去 allocate memory.
-重要觀念：
-
-Abstraction: is a technique">
+  <meta name="description" content="要去看這邊的 code /Users/poc/workspace/courses-UCSC/java-comprehensive/resources/Demo Codes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java-notes">
 <meta property="og:url" content="http://poc7667.github.io/2016/07/08/java-notes/index.html">
 <meta property="og:site_name" content="Poc on Rails">
-<meta property="og:description" content="2016-07-15Object has state , behaviour (public methods)
-Person toater = new Person(“poc”);
-// new 這個關鍵字讓memory allocate delayed 執行，JVM runtime 再去 allocate memory.
-重要觀念：
-
-Abstraction: is a technique">
-<meta property="og:updated_time" content="2016-07-16T04:26:13.000Z">
+<meta property="og:description" content="要去看這邊的 code /Users/poc/workspace/courses-UCSC/java-comprehensive/resources/Demo Codes">
+<meta property="og:image" content="https://i.imgur.com/Y0K3ixe.png=300x">
+<meta property="og:image" content="https://i.imgur.com/hKEcLTG.png=300x">
+<meta property="og:updated_time" content="2016-08-14T23:13:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java-notes">
-<meta name="twitter:description" content="2016-07-15Object has state , behaviour (public methods)
-Person toater = new Person(“poc”);
-// new 這個關鍵字讓memory allocate delayed 執行，JVM runtime 再去 allocate memory.
-重要觀念：
-
-Abstraction: is a technique">
+<meta name="twitter:description" content="要去看這邊的 code /Users/poc/workspace/courses-UCSC/java-comprehensive/resources/Demo Codes">
+<meta name="twitter:image" content="https://i.imgur.com/Y0K3ixe.png=300x">
   
     <link rel="alternative" href="/atom.xml" title="Poc on Rails" type="application/atom+xml">
   
@@ -95,7 +83,7 @@ Abstraction: is a technique">
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -126,7 +114,7 @@ Abstraction: is a technique">
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 16.67px;">ROR</a> <a href="/tags/Rails/" style="font-size: 13.33px;">Rails</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/devops/" style="font-size: 10px;">devops</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 13.33px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
+						<a href="/tags/AWS/" style="font-size: 10px;">AWS</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 15px;">ROR</a> <a href="/tags/Rails/" style="font-size: 12.5px;">Rails</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/devops/" style="font-size: 10px;">devops</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/iOS/" style="font-size: 17.5px;">iOS</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 12.5px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
 					</div>
 				</section>
 				
@@ -231,7 +219,31 @@ Abstraction: is a technique">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a> 
+        <p>要去看這邊的 code /Users/poc/workspace/courses-UCSC/java-comprehensive/resources/Demo Codes</p>
+<a id="more"></a> 
+<h1 id="2016-08-12"><a href="#2016-08-12" class="headerlink" title="2016-08-12"></a>2016-08-12</h1><p>Demoday7 , dbtestapp.</p>
+<p>DBCreaterApp</p>
+<h1 id="exception"><a href="#exception" class="headerlink" title="exception"></a>exception</h1><p>unchecked exception: like Array outofboundary exception, you don’t have to write exception handling.<br>checked exception: 有些程式寫法，你一定要準備 exception, otherwise the compiler will blame you.</p>
+<h1 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h1><p>facade pattern: 物質本身沒有改變、只是在外面<strong>加上</strong>一層。<br>Design Pattern</p>
+<p>Decorator: 不改變原來行為，額外附加上去</p>
+<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><p>primitive type array 在new 的時候，就把空間建立好。</p>
+<p>objects of array 在new 的時候，會建立好 array 的時候，就把空間建立好。<br>但是object的空間、還沒有去 initializer</p>
+<pre><code>Product[] products = new Product[5];
+</code></pre><h1 id="Functional"><a href="#Functional" class="headerlink" title="Functional"></a>Functional</h1><p>functional interface 只會有一個 funciton. (p71.)</p>
+<p>P77 要練習</p>
+<h1 id="2016-07-22"><a href="#2016-07-22" class="headerlink" title="2016-07-22"></a>2016-07-22</h1><p>寫出 @Override 可以避免手殘變成 Overloading, compiler 會提示你幫你檢查  </p>
+<pre><code>@Override
+public String toString(){
+    return &quot;Parent():&quot;+super.toString()+&quot;overrite string&quot;;
+}
+</code></pre><p>super() 一定要放在最前面</p>
+<p><img src="https://i.imgur.com/Y0K3ixe.png=300x" alt="inline" title="Title"></p>
+<p><a href="http://slashlook.com/articles_20130711.html" target="_blank" rel="external">Polymorphism upcast/downcast</a></p>
+<p>Java downcast/upcast 要去搞懂。</p>
+<p>子孫認得祖先，祖先不認得子孫（硬要來的話只可以 explicit castc）</p>
+<pre><code>Object o = new Software();
+Software s = o; //a compiler error would occur
+</code></pre><p>Parent 沒可能 downcast 成為 child<br><img src="https://i.imgur.com/hKEcLTG.png=300x" alt="inline" title="Title"></p>
 <h1 id="2016-07-15"><a href="#2016-07-15" class="headerlink" title="2016-07-15"></a>2016-07-15</h1><p>Object has <strong>state</strong> , <strong>behaviour</strong> (public methods)</p>
 <p>Person toater = new Person(“poc”);</p>
 <p>// new 這個關鍵字讓memory allocate delayed 執行，JVM runtime 再去 allocate memory.</p>

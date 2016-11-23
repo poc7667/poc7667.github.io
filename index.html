@@ -76,7 +76,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -107,7 +107,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 16.67px;">ROR</a> <a href="/tags/Rails/" style="font-size: 13.33px;">Rails</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/devops/" style="font-size: 10px;">devops</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 13.33px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
+						<a href="/tags/AWS/" style="font-size: 10px;">AWS</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript-require-js/" style="font-size: 10px;">Javascript, require.js</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROR/" style="font-size: 15px;">ROR</a> <a href="/tags/Rails/" style="font-size: 12.5px;">Rails</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/anguar-rails/" style="font-size: 10px;">anguar, rails</a> <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/deployment/" style="font-size: 10px;">deployment</a> <a href="/tags/devops/" style="font-size: 10px;">devops</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/iOS/" style="font-size: 17.5px;">iOS</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/rails/" style="font-size: 12.5px;">rails</a> <a href="/tags/rails-angular/" style="font-size: 10px;">rails, angular</a> <a href="/tags/rspec/" style="font-size: 10px;">rspec</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a>
 					</div>
 				</section>
 				
@@ -176,6 +176,626 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-nginx-angular-html5mode" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/10/nginx-angular-html5mode/" class="article-date">
+  	<time datetime="2016-08-11T03:49:03.000Z" itemprop="datePublished">2016-08-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/10/nginx-angular-html5mode/">nginx-angular-html5mode</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This code is about how to turn on the HTML5 mode on Angular js and rewrite the request on Nginx side.</p>
+<h1 id="Angular-side"><a href="#Angular-side" class="headerlink" title="Angular side"></a>Angular side</h1><p>Remeber to put <code>&lt;base href=&quot;/&quot;&gt;</code> before including any js file.</p>
+<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><pre><code>location / {
+  auth_basic &quot;Restricted&quot;;
+  auth_basic_user_file /etc/nginx/.htpasswd;  #For Basic Auth
+</code></pre><ul>
+<li>try_files $uri $uri/ /index.html ; # make HTML5 workable<br>+<br>}</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-node-js-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/03/node-js-notes/" class="article-date">
+  	<time datetime="2016-08-04T02:18:05.000Z" itemprop="datePublished">2016-08-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/03/node-js-notes/">node_js_notes</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-postgres" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/23/postgres/" class="article-date">
+  	<time datetime="2016-07-23T16:03:49.000Z" itemprop="datePublished">2016-07-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/23/postgres/">PostgreSQL setting</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Notes for postgresql operation</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DB/">DB</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/23/postgres/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ui-view" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/21/ui-view/" class="article-date">
+  	<time datetime="2016-07-22T02:48:58.000Z" itemprop="datePublished">2016-07-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/21/ui-view/">ui-view</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>subview, superview, frame</p>
+<p>一個 view 可以有多個 subview, 因此該view 變成 superview</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ios-table-view-controller" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/21/ios-table-view-controller/" class="article-date">
+  	<time datetime="2016-07-22T02:18:30.000Z" itemprop="datePublished">2016-07-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/21/ios-table-view-controller/">ios-table-view-controller</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Assign your cell identifier, it should corresponds to the identifier in the VC</p>
+<pre><code>let cell = tableView.dequeueReusableCellWithIdentifier(&quot;myCell&quot;, forIndexPath: indexPath)
+</code></pre><p><img src="https://i.imgur.com/qOP62Pk.png=300x" alt="inline" title="Title"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ios-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/21/ios-notes/" class="article-date">
+  	<time datetime="2016-07-22T02:02:55.000Z" itemprop="datePublished">2016-07-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/21/ios-notes/">ios-notes</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Notes for learning iOS / Swift </p>
+<ul>
+<li>Optional</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/21/ios-notes/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-payment-on-rails" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/21/payment-on-rails/" class="article-date">
+  	<time datetime="2016-07-21T17:37:32.000Z" itemprop="datePublished">2016-07-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/21/payment-on-rails/">payment-on-rails</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://cweb.pay2go.com/" target="_blank" rel="external">智富寶串接 </a></p>
+<p>簡單的流程是 我們這邊準備好 金額、商品描述、啟用哪些付款方式 之類的，然後通過 form post 的方式丟 request ( 我之前的做法是有一個假頁面，上面只顯示正在跳轉到付款網頁，然後就把 form post 出去 ) ，之後就是他們的頁面了，處理完了之後有幾個參數可以指定 , notify url 是他們背景呼叫我們的，我們可以在這裡去更新訂單的支付狀態， return url / custom url ( 根據不同的付款方式而不同 ) 是在前端跳轉回我們自己的頁面的 url ， 兩種 url 都是 post 過來的<br>至於有哪些參數就直接看文檔嘍，不算太複雜<br>不過對於非即時的付款方式(例如 ATM 轉賬，用戶在頁面上操作完只是得到一個轉賬賬號) 我也還沒有搞懂他們是怎麼回傳狀態的，上次請 James 幫忙問，也沒有結果</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-aws-ses" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/21/aws-ses/" class="article-date">
+  	<time datetime="2016-07-21T16:28:46.000Z" itemprop="datePublished">2016-07-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/21/aws-ses/">aws-ses</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Setting-of-AWS-SES"><a href="#Setting-of-AWS-SES" class="headerlink" title="Setting of AWS SES"></a>Setting of AWS SES</h1><p>Do not contain <code>smtp</code> in the server address <a href="https://github.com/drewblas/aws-ses/issues/60" target="_blank" rel="external">Ref</a></p>
+<pre><code>email-smtp.eu-west-1.amazonaws.com -&gt;  email.eu-west-1.amazonaws.com
+</code></pre><h1 id="Register-a-new-domain-on-SES"><a href="#Register-a-new-domain-on-SES" class="headerlink" title="Register a new domain  on SES"></a>Register a new domain  on SES</h1><p><img src="https://i.imgur.com/qdEEaMD.png=300x" alt="inline" title="Title"></p>
+<p>If you’re using Route 53 for hosting your domain, you can simply click the “Route 53” button on the bottom of the page. It will automatically configure the setting for you.<br><img src="https://i.imgur.com/BX3nH2F.png=300x" alt="inline" title="Title"></p>
+<h1 id="Register-email"><a href="#Register-email" class="headerlink" title="Register email"></a>Register email</h1><p>In the sandbox environment, you’re only able to send mail to the verfied users.</p>
+<p><img src="https://i.imgur.com/hi88YGk.png=300x" alt="inline" title="Title"></p>
+<h1 id="Get-your-SMTP-setting-and-credential"><a href="#Get-your-SMTP-setting-and-credential" class="headerlink" title="Get your SMTP setting and credential"></a>Get your SMTP setting and credential</h1><p><img src="https://i.imgur.com/FtD3SU2.png=300x" alt="inline" title="Title"></p>
+<pre><code>ActionMailer::Base.smtp_settings = {
+    :address =&gt; ENV[&quot;SES_SERVER&quot;],
+    :port =&gt; &quot;587&quot;,
+    :domain =&gt; &quot;jiyubi.com&quot;,
+    :user_name =&gt; ENV[&quot;SES_USER&quot;],
+    :password =&gt; ENV[&quot;SES_PASSWORD&quot;],
+    :authentication =&gt; &quot;plain&quot;,
+    :enable_starttls_auto =&gt; true
+}
+</code></pre><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://www.hkitblog.com/?p=24711" target="_blank" rel="external">一年免費玩盡 Amazon 雲端服務 – 低成本 EDM 電郵服務</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/">AWS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nginx-setting" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/19/nginx-setting/" class="article-date">
+  	<time datetime="2016-07-19T22:44:51.000Z" itemprop="datePublished">2016-07-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/19/nginx-setting/">nginx-cheat-sheet</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h1><ul>
+<li>check syntax <code>nginx -t</code></li>
+</ul>
+<h1 id="Sections"><a href="#Sections" class="headerlink" title="Sections"></a>Sections</h1><ul>
+<li>basic auth</li>
+</ul>
+<h1 id="basic-auth-Set-Up-Password-Authentication-with-Nginx-on-Ubuntu-14-04"><a href="#basic-auth-Set-Up-Password-Authentication-with-Nginx-on-Ubuntu-14-04" class="headerlink" title="basic auth (Set Up Password Authentication with Nginx on Ubuntu 14.04)"></a>basic auth (Set Up Password Authentication with Nginx on Ubuntu 14.04)</h1><p>install  <code>apache2-utils</code> first</p>
+<pre><code>sudo apt-get install apache2-utils
+</code></pre><p>cd to <code>/etc/nginx</code></p>
+<pre><code>htpasswd -c .htpasswd deploy
+</code></pre><p>Nginx.conf</p>
+<pre><code>server {
+      listen 3000;
+      server_name www.sample.co sample.co;
+      location / {
+          auth_basic &quot;Restricted&quot;;
+          auth_basic_user_file /etc/nginx/.htpasswd;  #For Basic Auth
+      }
+}
+</code></pre><h1 id="Allow-direcotry-browse-mode"><a href="#Allow-direcotry-browse-mode" class="headerlink" title="Allow direcotry browse mode"></a>Allow direcotry browse mode</h1><p>Add <code>autoindex on;</code></p>
+<pre><code>server {
+    listen      80 ;
+    server_name SERVER_NAME;
+    root /var/www/MEAN-development;
+    location / {
+     autoindex on;
+    }
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-to-do-list" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/17/to-do-list/" class="article-date">
+  	<time datetime="2016-07-17T23:21:39.000Z" itemprop="datePublished">2016-07-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/17/to-do-list/">to-do-list</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h1><p><a href="http://abalone0204.github.io/" target="_blank" rel="external">‎Denny Ku Blog: JS 技術分享, Text mining, 天眼通plugin的作者</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-back-up-databases" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -264,7 +884,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="2016-07-13"><a href="#2016-07-13" class="headerlink" title="2016-07-13"></a>2016-07-13</h1><p>利用 ng-class 動態地元件上style</p>
+        <h1 id="2016-08-10"><a href="#2016-08-10" class="headerlink" title="2016-08-10"></a>2016-08-10</h1><p><a href="https://github.com/decentcamper/MeanStackDevelopment/tree/30377_002" target="_blank" rel="external">https://github.com/decentcamper/MeanStackDevelopment/tree/30377_002</a><br>Sample code put in <code>NodeJs/Tutorial3/EvneEmitterPattern</code><br>參考 EvenEmitter module<br>require(‘evnets’).EvenEmitter</p>
+<p>callback 裡面千萬不要 throw exception, 因為發生exception的時候，這段block已經不再原本的stack.</p>
+<p>Don’t throw exception in ASYNC,</p>
+<p>Never <code>return</code> in CB function</p>
+<ul>
+<li><p>setTimeOut 才有能力把你的code 變成 ASYNC</p>
+<p>  [1,2,3,4,5].forEach(function(url, index){</p>
+<pre><code>setTimeout(function(){
+    console.log( url + &quot;completed&quot;);
+}, 100);
+</code></pre><p>  })</p>
+</li>
+</ul>
+<p>release our own package</p>
+<pre><code>module.export 
+
+exports
+
+npm add
+
+npm publish
+</code></pre><p>理解 Javascript 裡面的 event loop 異步操作的原理</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="external">JavaScript 运行机制详解：再谈Event Loop</a></li>
+<li><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" target="_blank" rel="external">Philip Roberts: What the heck is the event loop anyway? | JSConf EU </a></li>
+</ul>
+<h1 id="2016-07-20"><a href="#2016-07-20" class="headerlink" title="2016-07-20"></a>2016-07-20</h1><p>ES6 + Webpack 開發 Angular</p>
+<p>xnpm install -g gulp karma karma-cli webpack</p>
+<h1 id="2016-07-13"><a href="#2016-07-13" class="headerlink" title="2016-07-13"></a>2016-07-13</h1><p>利用 <code>ng-class</code> 動態地元件上style</p>
 <h2 id="ng-controller-for"><a href="#ng-controller-for" class="headerlink" title="ng controller for"></a>ng controller for</h2><pre><code>&lt;script&gt;
     angular.module(&quot;exampleApp&quot;, [])
             .controller(&quot;defaultCtrl&quot;, function ($scope) {
@@ -525,53 +1173,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a> 
-<h1 id="2016-07-15"><a href="#2016-07-15" class="headerlink" title="2016-07-15"></a>2016-07-15</h1><p>Object has <strong>state</strong> , <strong>behaviour</strong> (public methods)</p>
-<p>Person toater = new Person(“poc”);</p>
-<p>// new 這個關鍵字讓memory allocate delayed 執行，JVM runtime 再去 allocate memory.</p>
-<p>重要觀念：</p>
-<ul>
-<li><p>Abstraction: is a technique which helps identify which information can be hidden</p>
-</li>
-<li><p>Encapsulation is the result of information hiding</p>
-</li>
-</ul>
-<p>JAVA primitive 交換, 字串交換, obj裡面的attributes 交換 要了解。</p>
-<p>default value at 物件裡面會被init，但是在 local 就沒有init。</p>
-<p>To ensure a object is immutable, you should make sure all its members are immutable</p>
-<p>String API:</p>
-<ul>
-<li>String builder </li>
-</ul>
-<p>String inturned: <a href="http://stackoverflow.com/questions/10578984/what-is-string-interning" target="_blank" rel="external">stkoverflow</a></p>
-<p><a href="http://tech.meituan.com/in_depth_understanding_string_intern.html" target="_blank" rel="external">http://tech.meituan.com/in_depth_understanding_string_intern.html</a></p>
-<h1 id="2016-07-08"><a href="#2016-07-08" class="headerlink" title="2016-07-08"></a>2016-07-08</h1><p>static method : </p>
-<ul>
-<li>Can not use NON-static vars, methods</li>
-<li><p>Can use obj references and class names</p>
-<pre><code>class A {
-    int e; // instance var
-    static int i; // class var    
-}
-</code></pre></li>
-</ul>
-<p>Exception 流程</p>
-<pre><code>Scanner sc = new Scanner();
-try{
-    System.out.println(&quot;enter total:&quot;);
-    double sub_total = sc.nextDouble();
-}catch(InputMismatchException e)
-{
-    sc.next(); //eat newline
-    System.out.println(&quot;retry again&quot;);
-    continue;
-}
-</code></pre><p>複習一下 try catch, throw, thorws, finally</p>
-<p><a href="https://segmentfault.com/a/1190000004681136" target="_blank" rel="external">https://segmentfault.com/a/1190000004681136</a></p>
-<p>Use <code>hasNextDouble</code>, <code>hasNextInt</code> to replace <code>try...catch()</code>. it costs less!</p>
-<h1 id="String-Number-formatter"><a href="#String-Number-formatter" class="headerlink" title="String/Number formatter"></a>String/Number formatter</h1><h1 id="CompareNumber"><a href="#CompareNumber" class="headerlink" title="CompareNumber"></a>CompareNumber</h1><pre><code>if (xxxNum.isEmpty())
-</code></pre><h1 id="CompareString"><a href="#CompareString" class="headerlink" title="CompareString"></a>CompareString</h1><pre><code>if (String.new.compareToIgnoreCase())
-</code></pre>
+        <p>要去看這邊的 code /Users/poc/workspace/courses-UCSC/java-comprehensive/resources/Demo Codes</p>
       
     </div>
     
@@ -584,6 +1186,10 @@ try{
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/08/java-notes/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -763,10 +1369,71 @@ try{
 
 
   
-    <article id="post-token-auth" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-angular-rails-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/token-auth/" class="article-date">
+      <a href="/2016/07/03/angular-rails-RESTful/" class="article-date">
+  	<time datetime="2016-07-03T18:25:42.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/angular-rails-RESTful/">Angular Rails RESTful</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Integrate Angular (frontend) and Rails (backend) with RESTful APIs.</p>
+<p><a href="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q">This post is inspired by this post</a> </p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anguar-rails/">anguar, rails</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/03/angular-rails-RESTful/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-aws" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/aws/" class="article-date">
   	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
@@ -780,7 +1447,7 @@ try{
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/token-auth/">Devise Token Auth</a>
+      <a class="article-title" href="/2016/07/03/aws/">AWS</a>
     </h1>
   
 
@@ -789,43 +1456,29 @@ try{
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Only <code>email confirmation</code> feature tested for this tutorial,</p>
-<p>In this tutorial we will validate the model <code>Admin</code> rather than the most common model <code>User</code>.</p>
-<p>if gem <code>devise</code> not installel yet</p>
+        <ul>
+<li>add another aws configure</li>
+</ul>
+<p>eg: assign a new profile name</p>
 <blockquote>
-<p>rails g devise:install</p>
+<p>aws configure –profile ezfly</p>
 </blockquote>
-<p>Add auth for model <code>Admin</code> (make sure the model <code>Admin</code> has been created, otherwise the following generated migration table will make some troubles.)</p>
+<ul>
+<li>use direnv to load a different aws profile</li>
+</ul>
+<ul>
+<li>ssh login without pem file</li>
+</ul>
+<p>open <code>/etc/ssh/sshd_config</code></p>
+<p>Before</p>
 <blockquote>
-<p>rails g devise_token_auth:install Admin admin_auth</p>
+<p>PasswordAuthentication no</p>
 </blockquote>
-<h1 id="Gemfile"><a href="#Gemfile" class="headerlink" title="Gemfile"></a>Gemfile</h1><pre><code>gem &apos;devise&apos;, &apos;4.0.0&apos;
-gem &apos;devise_token_auth&apos;, &apos;0.1.37&apos;
-</code></pre><h1 id="Application-controller-disable-CSRF-on-JSON-query"><a href="#Application-controller-disable-CSRF-on-JSON-query" class="headerlink" title="Application controller (disable CSRF on JSON query)"></a>Application controller (disable CSRF on JSON query)</h1><pre><code>class ApplicationController &lt; ActionController::Base
-  include DeviseTokenAuth::Concerns::SetUserByToken
-  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format.json? }  
-end
-</code></pre><h1 id="model-admin-rb-in-this-case-I-don’t-need-email-cofirm-after-registering-So-I-take-off-it"><a href="#model-admin-rb-in-this-case-I-don’t-need-email-cofirm-after-registering-So-I-take-off-it" class="headerlink" title="model/admin.rb (in this case, I don’t need email cofirm after registering, So I take off it)"></a>model/admin.rb (in this case, I don’t need email cofirm after registering, So I take off it)</h1><pre><code>class Admin &lt; ActiveRecord::Base
-  # Include default devise modules.
-  devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :trackable, :validatable,
-          :omniauthable
-  include DeviseTokenAuth::Concerns::User
-end
-</code></pre><h1 id="Angular-configuration-please-refer-to-the-route-rb"><a href="#Angular-configuration-please-refer-to-the-route-rb" class="headerlink" title="Angular configuration (please refer to the route.rb)"></a>Angular configuration (please refer to the route.rb)</h1><pre><code>app.config(function($authProvider) {
-    $authProvider.configure({
-        apiUrl: &apos;/api/v1/&apos;,
-        tokenValidationPath: &apos;/admin_auth/validate_token&apos;,
-        signOutUrl: &apos;/admin_auth/sign_out&apos;,
-        ...
-        Please refer to the official documentation for the following setting
-});
-</code></pre><h1 id="route-rb"><a href="#route-rb" class="headerlink" title="route.rb"></a>route.rb</h1><pre><code>namespace :api do
-  namespace :v1, defaults: {format: &apos;json&apos;} do
-    mount_devise_token_auth_for &apos;Admin&apos;, at: &apos;admin_auth&apos;
-  end
-end
-</code></pre><p>Ref: <a href="https://github.com/lynndylanhurley/devise_token_auth#using-multiple-models" target="_blank" rel="external">https://github.com/lynndylanhurley/devise_token_auth#using-multiple-models</a></p>
+<p>After</p>
+<blockquote>
+<p>PasswordAuthentication yes</p>
+</blockquote>
+<p>change PasswordAuthentication no to PasswordAuthentication yes</p>
 
       
     </div>
@@ -834,7 +1487,68 @@ end
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rails-angular/">rails, angular</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws/">aws</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/git/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/git/">Git cheatsheet</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>find the mistakenly deleted lines in a flie</p>
+<p>  git log -S  ‘page_signin’ js/admin.config.router.js</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
       
@@ -931,68 +1645,6 @@ ActionController::RoutingError (No route matches [GET] &quot;/&quot;):
 
 
   
-    <article id="post-brew" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/brew/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/brew/">Homebrew</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>Search all versions for a ansible<ul>
-<li>brew search ansible</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1065,10 +1717,10 @@ pid-file = /tmp/mysqld.pid
 
 
   
-    <article id="post-angular-rails-RESTful" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-token-auth" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/angular-rails-RESTful/" class="article-date">
+      <a href="/2016/07/03/token-auth/" class="article-date">
   	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
@@ -1082,7 +1734,7 @@ pid-file = /tmp/mysqld.pid
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/angular-rails-RESTful/">Angular Rails RESTful</a>
+      <a class="article-title" href="/2016/07/03/token-auth/">Devise Token Auth</a>
     </h1>
   
 
@@ -1091,8 +1743,44 @@ pid-file = /tmp/mysqld.pid
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Integrate Angular (frontend) and Rails (backend) with RESTful APIs.</p>
-<p><a href="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwirs9_m4JnMAhWFGpQKHXiMCJkQFggcMAA&amp;url=https%3A%2F%2Fblog.joshsoftware.com%2F2014%2F11%2F18%2Fhow-to-create-nested-form-using-angularjs%2F&amp;usg=AFQjCNH_5JwCAnpEl8oQ8KTw9VizRrG7Cg&amp;sig2=itfFBS_iY3jnd2U1ZxNr3Q">This post is inspired by this post</a> </p>
+        <p>Only <code>email confirmation</code> feature tested for this tutorial,</p>
+<p>In this tutorial we will validate the model <code>Admin</code> rather than the most common model <code>User</code>.</p>
+<p>if gem <code>devise</code> not installel yet</p>
+<blockquote>
+<p>rails g devise:install</p>
+</blockquote>
+<p>Add auth for model <code>Admin</code> (make sure the model <code>Admin</code> has been created, otherwise the following generated migration table will make some troubles.)</p>
+<blockquote>
+<p>rails g devise_token_auth:install Admin admin_auth</p>
+</blockquote>
+<h1 id="Gemfile"><a href="#Gemfile" class="headerlink" title="Gemfile"></a>Gemfile</h1><pre><code>gem &apos;devise&apos;, &apos;4.0.0&apos;
+gem &apos;devise_token_auth&apos;, &apos;0.1.37&apos;
+</code></pre><h1 id="Application-controller-disable-CSRF-on-JSON-query"><a href="#Application-controller-disable-CSRF-on-JSON-query" class="headerlink" title="Application controller (disable CSRF on JSON query)"></a>Application controller (disable CSRF on JSON query)</h1><pre><code>class ApplicationController &lt; ActionController::Base
+  include DeviseTokenAuth::Concerns::SetUserByToken
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format.json? }  
+end
+</code></pre><h1 id="model-admin-rb-in-this-case-I-don’t-need-email-cofirm-after-registering-So-I-take-off-it"><a href="#model-admin-rb-in-this-case-I-don’t-need-email-cofirm-after-registering-So-I-take-off-it" class="headerlink" title="model/admin.rb (in this case, I don’t need email cofirm after registering, So I take off it)"></a>model/admin.rb (in this case, I don’t need email cofirm after registering, So I take off it)</h1><pre><code>class Admin &lt; ActiveRecord::Base
+  # Include default devise modules.
+  devise :database_authenticatable, :registerable,
+          :recoverable, :rememberable, :trackable, :validatable,
+          :omniauthable
+  include DeviseTokenAuth::Concerns::User
+end
+</code></pre><h1 id="Angular-configuration-please-refer-to-the-route-rb"><a href="#Angular-configuration-please-refer-to-the-route-rb" class="headerlink" title="Angular configuration (please refer to the route.rb)"></a>Angular configuration (please refer to the route.rb)</h1><pre><code>app.config(function($authProvider) {
+    $authProvider.configure({
+        apiUrl: &apos;/api/v1/&apos;,
+        tokenValidationPath: &apos;/admin_auth/validate_token&apos;,
+        signOutUrl: &apos;/admin_auth/sign_out&apos;,
+        ...
+        Please refer to the official documentation for the following setting
+});
+</code></pre><h1 id="route-rb"><a href="#route-rb" class="headerlink" title="route.rb"></a>route.rb</h1><pre><code>namespace :api do
+  namespace :v1, defaults: {format: &apos;json&apos;} do
+    mount_devise_token_auth_for &apos;Admin&apos;, at: &apos;admin_auth&apos;
+  end
+end
+</code></pre><p>Ref: <a href="https://github.com/lynndylanhurley/devise_token_auth#using-multiple-models" target="_blank" rel="external">https://github.com/lynndylanhurley/devise_token_auth#using-multiple-models</a></p>
+
       
     </div>
     
@@ -1100,15 +1788,11 @@ pid-file = /tmp/mysqld.pid
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anguar-rails/">anguar, rails</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rails-angular/">rails, angular</a></li></ul>
 	</div>
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/03/angular-rails-RESTful/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1126,10 +1810,10 @@ pid-file = /tmp/mysqld.pid
 
 
   
-    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-brew" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/git/" class="article-date">
+      <a href="/2016/07/03/brew/" class="article-date">
   	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
@@ -1143,7 +1827,7 @@ pid-file = /tmp/mysqld.pid
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/git/">Git cheatsheet</a>
+      <a class="article-title" href="/2016/07/03/brew/">Homebrew</a>
     </h1>
   
 
@@ -1153,8 +1837,9 @@ pid-file = /tmp/mysqld.pid
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><p>find the mistakenly deleted lines in a flie</p>
-<p>  git log -S  ‘page_signin’ js/admin.config.router.js</p>
+<li>Search all versions for a ansible<ul>
+<li>brew search ansible</li>
+</ul>
 </li>
 </ul>
 
@@ -1165,146 +1850,7 @@ pid-file = /tmp/mysqld.pid
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-postgres" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/postgres/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/postgres/">PostgreSQL setting</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Notes for postgresql operation</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DB/">DB</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/03/postgres/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-aws" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/aws/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/aws/">AWS</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>add another aws configure</li>
-</ul>
-<p>eg: assign a new profile name</p>
-<blockquote>
-<p>aws configure –profile ezfly</p>
-</blockquote>
-<ul>
-<li>use direnv to load a different aws profile</li>
-</ul>
-<ul>
-<li>ssh login without pem file</li>
-</ul>
-<p>open <code>/etc/ssh/sshd_config</code></p>
-<p>Before</p>
-<blockquote>
-<p>PasswordAuthentication no</p>
-</blockquote>
-<p>After</p>
-<blockquote>
-<p>PasswordAuthentication yes</p>
-</blockquote>
-<p>change PasswordAuthentication no to PasswordAuthentication yes</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws/">aws</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
 	</div>
 
       
@@ -1544,154 +2090,6 @@ end
 
 
   
-    <article id="post-rails-cheat-sheet" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/15/rails-cheat-sheet/" class="article-date">
-  	<time datetime="2016-04-16T06:09:04.000Z" itemprop="datePublished">2016-04-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/15/rails-cheat-sheet/">rails-cheat-sheet</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="If-rb-readlin-not-working-you-can-not-type-double-chars-in-your-console-try-this"><a href="#If-rb-readlin-not-working-you-can-not-type-double-chars-in-your-console-try-this" class="headerlink" title="If rb-readlin not working, you can not type double chars in your console , try this"></a>If rb-readlin not working, you can not type double chars in your console , try this</h1><p>CONFIGURE_OPTS=”–disable-install-doc –with-readline-dir=/usr/local/opt/readline” rbenv install 2.3.1</p>
-<ul>
-<li><p>new Model</p>
-<p>  rails g model Bank name:string description:text</p>
-</li>
-</ul>
-<h1 id="Strong-params"><a href="#Strong-params" class="headerlink" title="Strong params"></a>Strong params</h1><p>Params</p>
-<pre><code>{&quot;product&quot;=&gt;
-  {&quot;id&quot;=&gt;9,
-   &quot;specs&quot;=&gt;
-    [{&quot;type&quot;=&gt;&quot;text&quot;, &quot;value&quot;=&gt;&quot;price&quot;},
-     {&quot;type&quot;=&gt;&quot;float&quot;, &quot;value&quot;=&gt;&quot;description&quot;},
-     {&quot;type&quot;=&gt;&quot;text&quot;, &quot;value&quot;=&gt;&quot;我好帥&quot;}],
-     ...
-</code></pre><p>Whielist SPECS params (JSON format)</p>
-<pre><code>def product_params
-  params.require(:product).permit(
-    :name,
-    :specs =&gt; [:type, :value]
-  )
-end
-</code></pre><h1 id="Many-to-Many"><a href="#Many-to-Many" class="headerlink" title="Many to Many"></a>Many to Many</h1><p>Generate migration, remember the params should be real name of data table</p>
-<pre><code>rails generate migration CreateJoinTableLoanPlanCareer loan_plans careers
-</code></pre><p>JSON API</p>
-<pre><code>json.extract! @loan_plan, :id,
-json.careers @loan_plan.careers do |t|
-    json.id t.id
-    json.name t.name
-    json.description t.description
-end
-</code></pre><h1 id="Sanitize-Nested-params"><a href="#Sanitize-Nested-params" class="headerlink" title="Sanitize Nested params"></a>Sanitize Nested params</h1><p>Raw params</p>
-<pre><code> &quot;loan_plan&quot; =&gt; {
-                  &quot;id&quot; =&gt; 32,
-             &quot;careers&quot; =&gt; [
-        [0] {
-                     &quot;id&quot; =&gt; 8,
-                   &quot;name&quot; =&gt; &quot;police officer123434&quot;,
-            &quot;description&quot; =&gt; &quot;Tattooed vinyl jean shorts irony. Iphone wolf kinfolk austin venmo semiotics authentic slow-carb. Farm-to-table poutine letterpress asymmetrical hammock microdosing. 3 wolf moon viral offal portland.&quot;
-        },
-        [1] {
-                     &quot;id&quot; =&gt; 9,
-                   &quot;name&quot; =&gt; &quot;engineer&quot;,
-            &quot;description&quot; =&gt; &quot;Wes anderson polaroid jean shorts meggings etsy roof listicle 90&apos;s. Tote bag plaid green juice. Microdosing 8-bit austin migas.&quot;
-        }
-    ]
-},
-</code></pre><p>You want to preserve careers with IDs, the syntax is strange, somehow this is the Rails way :(</p>
-<pre><code>def loan_plan_params
-  params.require(:loan_plan).permit(
-    :id, 
-    {:careers=&gt;:id}
-  )
-end
-</code></pre><h1 id="Rspec"><a href="#Rspec" class="headerlink" title="Rspec"></a>Rspec</h1><p>RSpec examples</p>
-<pre><code>https://github.com/eliotsykes/rspec-rails-examples
-https://gist.github.com/kyletcarlson/6234923
-https://www.anchor.com.au/wp-content/uploads/rspec_cheatsheet_attributed.pdf
-</code></pre><p>Enable should syntax</p>
-<pre><code>config.expect_with :rspec do |c|
-  c.syntax = [:should, :expect]
-end
-</code></pre><h1 id="Migration"><a href="#Migration" class="headerlink" title="Migration"></a>Migration</h1><p>Add field</p>
-<pre><code>rails generate migration add_specs_to_products specs:json
-</code></pre><h2 id="Rollback"><a href="#Rollback" class="headerlink" title="Rollback"></a>Rollback</h2><pre><code>rake db:migrate:status
-rake db:rollback STEP=1
-</code></pre><p>Migration for belong_to and has_many</p>
-<pre><code>rails g model LoanPlan bank:references name:string description:text lowerbound_rate:float upperbound_rate:float payment_fee:float start_date:datetime end_date:datetime min_lease:integer max_lease:integer min_installments:integer max_installments:integer min_loan_amount:float max_loan_amount:float
-</code></pre><h1 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h1><p>With namespace</p>
-<pre><code>rails g controller Admin::Dashboard index create delete
-</code></pre><p>Api generator</p>
-<pre><code>rails g model Post title:string body:string
-rake db:migrate
-rails generate scaffold_controller api/Post --model-name=Post
-</code></pre><h1 id="paperclip"><a href="#paperclip" class="headerlink" title="paperclip"></a>paperclip</h1><p>add logo_image to model <code>Bank</code></p>
-<pre><code>rails generate paperclip Bank logo_image
-</code></pre><h1 id="Factory-girls"><a href="#Factory-girls" class="headerlink" title="Factory girls"></a>Factory girls</h1><p>make mock data to accelerate test performance</p>
-<p>利用 </p>
-<h1 id="annotate"><a href="#annotate" class="headerlink" title="annotate"></a>annotate</h1><p>It will append the fields/asttribute to your model files.</p>
-<ul>
-<li>rails g annotate:install</li>
-<li>rake annotate_models</li>
-</ul>
-<h2 id="spec-models-bank-spec-rb"><a href="#spec-models-bank-spec-rb" class="headerlink" title="spec/models/bank_spec.rb"></a>spec/models/bank_spec.rb</h2><pre><code>it &quot;assign bank name&quot; do
-  bank = FactoryGirl.create(:bank)
-  bank.update_attribute(:name, &quot;ChinaTrust&quot;)
-  bank.name.should eql(&quot;ChinaTrust&quot;)
-end
-</code></pre><p>##factories/bank_factory.rb    </p>
-<pre><code>FactoryGirl.define do
-  factory :bank do
-  end
-end
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rails/">rails</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-paperclip_with_s3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1871,6 +2269,154 @@ end
 
 
   
+    <article id="post-rails-cheat-sheet" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/rails-cheat-sheet/" class="article-date">
+  	<time datetime="2016-04-16T06:09:04.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/rails-cheat-sheet/">rails-cheat-sheet</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="If-rb-readlin-not-working-you-can-not-type-double-chars-in-your-console-try-this"><a href="#If-rb-readlin-not-working-you-can-not-type-double-chars-in-your-console-try-this" class="headerlink" title="If rb-readlin not working, you can not type double chars in your console , try this"></a>If rb-readlin not working, you can not type double chars in your console , try this</h1><p>CONFIGURE_OPTS=”–disable-install-doc –with-readline-dir=/usr/local/opt/readline” rbenv install 2.3.1</p>
+<ul>
+<li><p>new Model</p>
+<p>  rails g model Bank name:string description:text</p>
+</li>
+</ul>
+<h1 id="Strong-params"><a href="#Strong-params" class="headerlink" title="Strong params"></a>Strong params</h1><p>Params</p>
+<pre><code>{&quot;product&quot;=&gt;
+  {&quot;id&quot;=&gt;9,
+   &quot;specs&quot;=&gt;
+    [{&quot;type&quot;=&gt;&quot;text&quot;, &quot;value&quot;=&gt;&quot;price&quot;},
+     {&quot;type&quot;=&gt;&quot;float&quot;, &quot;value&quot;=&gt;&quot;description&quot;},
+     {&quot;type&quot;=&gt;&quot;text&quot;, &quot;value&quot;=&gt;&quot;我好帥&quot;}],
+     ...
+</code></pre><p>Whielist SPECS params (JSON format)</p>
+<pre><code>def product_params
+  params.require(:product).permit(
+    :name,
+    :specs =&gt; [:type, :value]
+  )
+end
+</code></pre><h1 id="Many-to-Many"><a href="#Many-to-Many" class="headerlink" title="Many to Many"></a>Many to Many</h1><p>Generate migration, remember the params should be real name of data table</p>
+<pre><code>rails generate migration CreateJoinTableLoanPlanCareer loan_plans careers
+</code></pre><p>JSON API</p>
+<pre><code>json.extract! @loan_plan, :id,
+json.careers @loan_plan.careers do |t|
+    json.id t.id
+    json.name t.name
+    json.description t.description
+end
+</code></pre><h1 id="Sanitize-Nested-params"><a href="#Sanitize-Nested-params" class="headerlink" title="Sanitize Nested params"></a>Sanitize Nested params</h1><p>Raw params</p>
+<pre><code> &quot;loan_plan&quot; =&gt; {
+                  &quot;id&quot; =&gt; 32,
+             &quot;careers&quot; =&gt; [
+        [0] {
+                     &quot;id&quot; =&gt; 8,
+                   &quot;name&quot; =&gt; &quot;police officer123434&quot;,
+            &quot;description&quot; =&gt; &quot;Tattooed vinyl jean shorts irony. Iphone wolf kinfolk austin venmo semiotics authentic slow-carb. Farm-to-table poutine letterpress asymmetrical hammock microdosing. 3 wolf moon viral offal portland.&quot;
+        },
+        [1] {
+                     &quot;id&quot; =&gt; 9,
+                   &quot;name&quot; =&gt; &quot;engineer&quot;,
+            &quot;description&quot; =&gt; &quot;Wes anderson polaroid jean shorts meggings etsy roof listicle 90&apos;s. Tote bag plaid green juice. Microdosing 8-bit austin migas.&quot;
+        }
+    ]
+},
+</code></pre><p>You want to preserve careers with IDs, the syntax is strange, somehow this is the Rails way :(</p>
+<pre><code>def loan_plan_params
+  params.require(:loan_plan).permit(
+    :id, 
+    {:careers=&gt;:id}
+  )
+end
+</code></pre><h1 id="Rspec"><a href="#Rspec" class="headerlink" title="Rspec"></a>Rspec</h1><p>RSpec examples</p>
+<pre><code>https://github.com/eliotsykes/rspec-rails-examples
+https://gist.github.com/kyletcarlson/6234923
+https://www.anchor.com.au/wp-content/uploads/rspec_cheatsheet_attributed.pdf
+</code></pre><p>Enable should syntax</p>
+<pre><code>config.expect_with :rspec do |c|
+  c.syntax = [:should, :expect]
+end
+</code></pre><h1 id="Migration"><a href="#Migration" class="headerlink" title="Migration"></a>Migration</h1><p>Add field</p>
+<pre><code>rails generate migration add_specs_to_products specs:json
+</code></pre><h2 id="Rollback"><a href="#Rollback" class="headerlink" title="Rollback"></a>Rollback</h2><pre><code>rake db:migrate:status
+rake db:rollback STEP=1
+</code></pre><p>Migration for belong_to and has_many</p>
+<pre><code>rails g model LoanPlan bank:references name:string description:text lowerbound_rate:float upperbound_rate:float payment_fee:float start_date:datetime end_date:datetime min_lease:integer max_lease:integer min_installments:integer max_installments:integer min_loan_amount:float max_loan_amount:float
+</code></pre><h1 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h1><p>With namespace</p>
+<pre><code>rails g controller Admin::Dashboard index create delete
+</code></pre><p>Api generator</p>
+<pre><code>rails g model Post title:string body:string
+rake db:migrate
+rails generate scaffold_controller api/Post --model-name=Post
+</code></pre><h1 id="paperclip"><a href="#paperclip" class="headerlink" title="paperclip"></a>paperclip</h1><p>add logo_image to model <code>Bank</code></p>
+<pre><code>rails generate paperclip Bank logo_image
+</code></pre><h1 id="Factory-girls"><a href="#Factory-girls" class="headerlink" title="Factory girls"></a>Factory girls</h1><p>make mock data to accelerate test performance</p>
+<p>利用 </p>
+<h1 id="annotate"><a href="#annotate" class="headerlink" title="annotate"></a>annotate</h1><p>It will append the fields/asttribute to your model files.</p>
+<ul>
+<li>rails g annotate:install</li>
+<li>rake annotate_models</li>
+</ul>
+<h2 id="spec-models-bank-spec-rb"><a href="#spec-models-bank-spec-rb" class="headerlink" title="spec/models/bank_spec.rb"></a>spec/models/bank_spec.rb</h2><pre><code>it &quot;assign bank name&quot; do
+  bank = FactoryGirl.create(:bank)
+  bank.update_attribute(:name, &quot;ChinaTrust&quot;)
+  bank.name.should eql(&quot;ChinaTrust&quot;)
+end
+</code></pre><p>##factories/bank_factory.rb    </p>
+<pre><code>FactoryGirl.define do
+  factory :bank do
+  end
+end
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rails/">rails</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-angular-dom-interactive" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -2002,6 +2548,62 @@ $timeout(function(){
 
 
   
+    <article id="post-assets" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/11/assets/" class="article-date">
+  	<time datetime="2016-04-11T18:50:37.000Z" itemprop="datePublished">2016-04-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/11/assets/">Rails Assets</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Compilie-the-assets-in-the-local-machine-then-deploy-to-remote-server"><a href="#Compilie-the-assets-in-the-local-machine-then-deploy-to-remote-server" class="headerlink" title="Compilie the assets in the local machine then deploy to remote server"></a>Compilie the assets in the local machine then deploy to remote server</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROR/">ROR</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-leetcode" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -2050,62 +2652,6 @@ class Solution(object):
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-assets" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/11/assets/" class="article-date">
-  	<time datetime="2016-04-11T18:50:37.000Z" itemprop="datePublished">2016-04-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/11/assets/">Rails Assets</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Compilie-the-assets-in-the-local-machine-then-deploy-to-remote-server"><a href="#Compilie-the-assets-in-the-local-machine-then-deploy-to-remote-server" class="headerlink" title="Compilie the assets in the local machine then deploy to remote server"></a>Compilie the assets in the local machine then deploy to remote server</h1>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROR/">ROR</a></li></ul>
 	</div>
 
       
@@ -2212,10 +2758,10 @@ ap(env)
 
 
   
-    <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-angular-cheatsheet" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/09/gulp/" class="article-date">
+      <a href="/2016/04/09/angular-cheatsheet/" class="article-date">
   	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
 </a>
     </div>
@@ -2229,7 +2775,7 @@ ap(env)
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/gulp/">gulp</a>
+      <a class="article-title" href="/2016/04/09/angular-cheatsheet/">angular-cheatsheet</a>
     </h1>
   
 
@@ -2238,153 +2784,51 @@ ap(env)
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>// const build = require(“public/plugin/v1/src/build_cfg.js”);</p>
-<p>// gulp.task(“build”, function (callback) {<br>//     build({ some: “public/plugin/v1/src/“ },<br>//         callback);<br>// });</p>
-<pre><code>// rjs({
-//     name: &apos;main&apos;,
-//     baseUrl: &apos;dist/js&apos;,
-//     out: &apos;carecadets.min.js&apos;
-// })
-</code></pre><p>gulp.task(‘build-plugin’, function(){<br>    rjs({<br>        name: “main”,<br>        baseUrl: export_cfg.src_dir,<br>        findNestedDependencies: true,<br>        include: true,<br>        wrap: true,<br>        removeCombined: true,<br>        allowSourceOverwrites: true,<br>        preserveLicenseComments: false,<br>        // paths: {<br>        //     requireLib: ‘./require’<br>        // },<br>        out    : export_cfg.name<br>    })<br>    .pipe(gulp.dest(export_cfg.dir));</p>
-<p>})<br>gulp.task(‘minify_plugin_js’,function(){<br>    gulp.src(v1_assets.js)<br>        .pipe(amdOptimize(“main”,{<br>            configFile: v1_assets.require_manifest_file,<br>            findNestedDependencies: true,<br>            wrap: true,</p>
-<pre><code>    include: true
-}))
-// .pipe(uglifyJS())
-.pipe(concatFile(&apos;dadasay.min.js&apos;))
-.pipe(gulp.dest(&apos;public/plugin/v1/js&apos;));
-</code></pre><p>})</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-aunglar-router" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/09/aunglar-router/" class="article-date">
-  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/aunglar-router/">angular-pattern</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>Router ‘/app/dashboard-v1’ -&gt;  State ‘app.dashboard-v1’</li>
-<li>Router ‘/app/ui’ -&gt;  State ‘app.ui’</li>
-</ul>
-<h1 id="snippet"><a href="#snippet" class="headerlink" title="snippet"></a>snippet</h1><pre><code>$urlRouterProvider
-    .otherwise(&apos;/app/dashboard-v1&apos;);
-$stateProvider
-    .state(&apos;app.ui&apos;, {
-        url: &apos;/ui&apos;,
-        template: &apos;&lt;div ui-view class=&quot;fade-in-up&quot;&gt;&lt;/div&gt;&apos;
-    })
-    .state(&apos;app.ui.buttons&apos;, {
-        url: &apos;/buttons&apos;,
-        templateUrl: &apos;tpl/ui_buttons.html&apos;
-    })
-</code></pre><p>ui-router的状态</p>
-<p>參考 <a href="http://blog.csdn.net/mooner_guo/article/details/42459861" target="_blank" rel="external">http://blog.csdn.net/mooner_guo/article/details/42459861</a></p>
-<p>Parent state 以及 children state 依靠 “.” 區分 namespace</p>
+        <h1 id="Show-un-safe-string-as-HTML"><a href="#Show-un-safe-string-as-HTML" class="headerlink" title="Show un-safe string as HTML"></a>Show un-safe string as HTML</h1><p>Add a filter</p>
+<pre><code>angular
+    .module(&apos;altairApp&apos;).filter(&apos;unsafe&apos;, function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
+});
+</code></pre><p>In the view</p>
+<pre><code>&lt;p ng-bind-html=&quot;product.description | unsafe&quot;&gt;&lt;/p&gt;
+</code></pre><h1 id="Dropdown-selection-single-and-multiple-choice"><a href="#Dropdown-selection-single-and-multiple-choice" class="headerlink" title="Dropdown selection: single and multiple choice"></a>Dropdown selection: single and multiple choice</h1><h2 id="single-choice"><a href="#single-choice" class="headerlink" title="single choice"></a>single choice</h2><p>pitfalls</p>
 <blockquote>
-<p>question : patent state<br>question.init.attention.text : 子狀態children state</p>
+ 
 </blockquote>
-<pre><code>$stateProvider.state(&apos;question&apos;,{     //母模块
-          ....
-    }).state(&apos;question.init.attention.test&apos;,{       //子状态1  显示view1
-            url:&quot;/test&quot;,
-      views:{
-          /*&apos;first&apos;:{
-              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
-          },*/
-          &apos;second&apos;:{
-              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
-          }
-   }).state(&apos;question.init.attention.test&apos;,(        //子状态2 显示view2
-             url:&quot;/test2&quot;,
-      views:{
-          &apos;first&apos;:{
-              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
-          }
-          /*&apos;second&apos;:{
-              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
-          }*/
-      }
-   )}.state(&apos;question.init.attention.test&apos;,{       //子状态3    显示view1，view2
-       url:&quot;/test2&quot;,
-      views:{
-          &apos;first&apos;:{
-              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
-          }
-          &apos;second&apos;:{
-              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
-          }
-      }
-  });
-</code></pre><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Abstract - {boolean=} - An abstract state will never be directly activated, but can provide inherited properties to its common children states.</p>
-<pre><code>$stateProvider
-    .state(&apos;loan&apos;, {
-        abstract: true,
-        url: &apos;/loan&apos;,
-        templateUrl: &apos;tpl/app.html&apos;
-    })
-    .state(&apos;loan.loan_manager&apos;, {
-        // abstract: true,
-        url: &apos;/loan_manager&apos;,
-        templateUrl: &apos;tpl/ui_buttons.html&apos;
-    })
-</code></pre>
+<pre><code>&lt;ui-select ng-model=&quot;user_profile.career&quot; theme=&quot;bootstrap&quot; required=&quot;true&quot;&gt;
+&lt;ui-select-match &gt; {{$select.selected.name}} &lt;/ui-select-match&gt;
+&lt;ui-select-choices repeat=&quot;option in selectOptions.career | propsFilter: {name: $select.search} &quot;&gt;
+&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
+&lt;/ui-select-choices&gt;
+&lt;/ui-select&gt;
+</code></pre><h2 id="multiple-choice"><a href="#multiple-choice" class="headerlink" title="multiple choice"></a>multiple choice</h2><p>pitfalls</p>
+<blockquote>
+<p>multiple, </p>
+</blockquote>
+<pre><code>&lt;ui-select multiple ng-model=&quot;loan_plan.careers&quot; theme=&quot;bootstrap&quot; ng-disabled=&quot;disabled&quot;&gt;
+&lt;ui-select-match &gt; {{$item.name}} &lt;/ui-select-match&gt;
+&lt;ui-select-choices repeat=&quot;option in careersOptions | propsFilter: {name: $select.search} &quot;&gt;
+&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
+&lt;small&gt;
+&lt;span ng-bind-html=&quot;&apos;&apos;+ option.description | highlight: $select.search&quot;&gt;&lt;/span&gt;
+&lt;/small&gt;
+&lt;/ui-select-choices&gt;
+&lt;/ui-select&gt;
+</code></pre><h1 id="DEBUG-skill"><a href="#DEBUG-skill" class="headerlink" title="DEBUG skill"></a>DEBUG skill</h1><p>Check the existence of service on the console</p>
+<blockquote>
+<p>injector = angular.element(document.body).injector()<br>injector.get(‘ServiceName’)<br>    angular.js:68 Uncaught Error: [$injector:unpr] Unknown provider: ServiceNameProvider &lt;- ServiceName(…)(anonymous function) @ angular.js:68(anonymous function) @ angular.js:4289getService @ angular.js:4437(anonymous function) @ angular.js:4294getService @ angular.js:4437(anonymous function) @ VM168822:1InjectedScript._evaluateOn @ (program):878InjectedScript._evaluateAndWrap @ (program):811InjectedScript.evaluateOnCallFrame @ (program):936(anonymous function) @ banks.js:2</p>
+</blockquote>
+<h1 id="RESTful"><a href="#RESTful" class="headerlink" title="RESTful"></a>RESTful</h1><p>success callback</p>
+<p>error callback</p>
+
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
-	</div>
-
       
 
       
@@ -2545,10 +2989,10 @@ app.controller(&apos;BanksIndexCtrl&apos;, function($rootScope, $scope, $http, $
 
 
   
-    <article id="post-angular-cheatsheet" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-aunglar-router" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/09/angular-cheatsheet/" class="article-date">
+      <a href="/2016/04/09/aunglar-router/" class="article-date">
   	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
 </a>
     </div>
@@ -2562,7 +3006,7 @@ app.controller(&apos;BanksIndexCtrl&apos;, function($rootScope, $scope, $http, $
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/angular-cheatsheet/">angular-cheatsheet</a>
+      <a class="article-title" href="/2016/04/09/aunglar-router/">angular-pattern</a>
     </h1>
   
 
@@ -2571,44 +3015,142 @@ app.controller(&apos;BanksIndexCtrl&apos;, function($rootScope, $scope, $http, $
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Show-un-safe-string-as-HTML"><a href="#Show-un-safe-string-as-HTML" class="headerlink" title="Show un-safe string as HTML"></a>Show un-safe string as HTML</h1><p>Add a filter</p>
-<pre><code>angular
-    .module(&apos;altairApp&apos;).filter(&apos;unsafe&apos;, function($sce) {
-    return function(val) {
-        return $sce.trustAsHtml(val);
-    };
-});
-</code></pre><p>In the view</p>
-<pre><code>&lt;p ng-bind-html=&quot;product.description | unsafe&quot;&gt;&lt;/p&gt;
-</code></pre><h1 id="Dropdown-selection-single-and-multiple-choice"><a href="#Dropdown-selection-single-and-multiple-choice" class="headerlink" title="Dropdown selection: single and multiple choice"></a>Dropdown selection: single and multiple choice</h1><h2 id="single-choice"><a href="#single-choice" class="headerlink" title="single choice"></a>single choice</h2><p>pitfalls</p>
+        <ul>
+<li>Router ‘/app/dashboard-v1’ -&gt;  State ‘app.dashboard-v1’</li>
+<li>Router ‘/app/ui’ -&gt;  State ‘app.ui’</li>
+</ul>
+<h1 id="snippet"><a href="#snippet" class="headerlink" title="snippet"></a>snippet</h1><pre><code>$urlRouterProvider
+    .otherwise(&apos;/app/dashboard-v1&apos;);
+$stateProvider
+    .state(&apos;app.ui&apos;, {
+        url: &apos;/ui&apos;,
+        template: &apos;&lt;div ui-view class=&quot;fade-in-up&quot;&gt;&lt;/div&gt;&apos;
+    })
+    .state(&apos;app.ui.buttons&apos;, {
+        url: &apos;/buttons&apos;,
+        templateUrl: &apos;tpl/ui_buttons.html&apos;
+    })
+</code></pre><p>ui-router的状态</p>
+<p>參考 <a href="http://blog.csdn.net/mooner_guo/article/details/42459861" target="_blank" rel="external">http://blog.csdn.net/mooner_guo/article/details/42459861</a></p>
+<p>Parent state 以及 children state 依靠 “.” 區分 namespace</p>
 <blockquote>
- 
+<p>question : patent state<br>question.init.attention.text : 子狀態children state</p>
 </blockquote>
-<pre><code>&lt;ui-select ng-model=&quot;user_profile.career&quot; theme=&quot;bootstrap&quot; required=&quot;true&quot;&gt;
-&lt;ui-select-match &gt; {{$select.selected.name}} &lt;/ui-select-match&gt;
-&lt;ui-select-choices repeat=&quot;option in selectOptions.career | propsFilter: {name: $select.search} &quot;&gt;
-&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
-&lt;/ui-select-choices&gt;
-&lt;/ui-select&gt;
-</code></pre><h2 id="multiple-choice"><a href="#multiple-choice" class="headerlink" title="multiple choice"></a>multiple choice</h2><p>pitfalls</p>
-<blockquote>
-<p>multiple, </p>
-</blockquote>
-<pre><code>&lt;ui-select multiple ng-model=&quot;loan_plan.careers&quot; theme=&quot;bootstrap&quot; ng-disabled=&quot;disabled&quot;&gt;
-&lt;ui-select-match &gt; {{$item.name}} &lt;/ui-select-match&gt;
-&lt;ui-select-choices repeat=&quot;option in careersOptions | propsFilter: {name: $select.search} &quot;&gt;
-&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
-&lt;small&gt;
-&lt;span ng-bind-html=&quot;&apos;&apos;+ option.description | highlight: $select.search&quot;&gt;&lt;/span&gt;
-&lt;/small&gt;
-&lt;/ui-select-choices&gt;
-&lt;/ui-select&gt;
-</code></pre><h1 id="DEBUG-skill"><a href="#DEBUG-skill" class="headerlink" title="DEBUG skill"></a>DEBUG skill</h1><p>Check the existence of service on the console</p>
-<blockquote>
-<p>injector = angular.element(document.body).injector()<br>injector.get(‘ServiceName’)<br>    angular.js:68 Uncaught Error: [$injector:unpr] Unknown provider: ServiceNameProvider &lt;- ServiceName(…)(anonymous function) @ angular.js:68(anonymous function) @ angular.js:4289getService @ angular.js:4437(anonymous function) @ angular.js:4294getService @ angular.js:4437(anonymous function) @ VM168822:1InjectedScript._evaluateOn @ (program):878InjectedScript._evaluateAndWrap @ (program):811InjectedScript.evaluateOnCallFrame @ (program):936(anonymous function) @ banks.js:2</p>
-</blockquote>
-<h1 id="RESTful"><a href="#RESTful" class="headerlink" title="RESTful"></a>RESTful</h1><p>success callback</p>
-<p>error callback</p>
+<pre><code>$stateProvider.state(&apos;question&apos;,{     //母模块
+          ....
+    }).state(&apos;question.init.attention.test&apos;,{       //子状态1  显示view1
+            url:&quot;/test&quot;,
+      views:{
+          /*&apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          },*/
+          &apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }
+   }).state(&apos;question.init.attention.test&apos;,(        //子状态2 显示view2
+             url:&quot;/test2&quot;,
+      views:{
+          &apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          }
+          /*&apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }*/
+      }
+   )}.state(&apos;question.init.attention.test&apos;,{       //子状态3    显示view1，view2
+       url:&quot;/test2&quot;,
+      views:{
+          &apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          }
+          &apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }
+      }
+  });
+</code></pre><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Abstract - {boolean=} - An abstract state will never be directly activated, but can provide inherited properties to its common children states.</p>
+<pre><code>$stateProvider
+    .state(&apos;loan&apos;, {
+        abstract: true,
+        url: &apos;/loan&apos;,
+        templateUrl: &apos;tpl/app.html&apos;
+    })
+    .state(&apos;loan.loan_manager&apos;, {
+        // abstract: true,
+        url: &apos;/loan_manager&apos;,
+        templateUrl: &apos;tpl/ui_buttons.html&apos;
+    })
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/gulp/" class="article-date">
+  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/gulp/">gulp</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>// const build = require(“public/plugin/v1/src/build_cfg.js”);</p>
+<p>// gulp.task(“build”, function (callback) {<br>//     build({ some: “public/plugin/v1/src/“ },<br>//         callback);<br>// });</p>
+<pre><code>// rjs({
+//     name: &apos;main&apos;,
+//     baseUrl: &apos;dist/js&apos;,
+//     out: &apos;carecadets.min.js&apos;
+// })
+</code></pre><p>gulp.task(‘build-plugin’, function(){<br>    rjs({<br>        name: “main”,<br>        baseUrl: export_cfg.src_dir,<br>        findNestedDependencies: true,<br>        include: true,<br>        wrap: true,<br>        removeCombined: true,<br>        allowSourceOverwrites: true,<br>        preserveLicenseComments: false,<br>        // paths: {<br>        //     requireLib: ‘./require’<br>        // },<br>        out    : export_cfg.name<br>    })<br>    .pipe(gulp.dest(export_cfg.dir));</p>
+<p>})<br>gulp.task(‘minify_plugin_js’,function(){<br>    gulp.src(v1_assets.js)<br>        .pipe(amdOptimize(“main”,{<br>            configFile: v1_assets.require_manifest_file,<br>            findNestedDependencies: true,<br>            wrap: true,</p>
+<pre><code>    include: true
+}))
+// .pipe(uglifyJS())
+.pipe(concatFile(&apos;dadasay.min.js&apos;))
+.pipe(gulp.dest(&apos;public/plugin/v1/js&apos;));
+</code></pre><p>})</p>
 
       
     </div>
@@ -2616,6 +3158,10 @@ app.controller(&apos;BanksIndexCtrl&apos;, function($rootScope, $scope, $http, $
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
       
 
       
