@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>ios-reading-cocoa-and-core-services | Poc on Rails</title>
+  <title>PostgreSQL cheatsheet | Poc on Rails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Cocoa Touch LayerCocoa Touch is a collection of frameworks which are providing appearance (UI) for our app and multi-tasking, touch-based input, push notifications.
-Standard system view controllers
-Di">
+  <meta name="description" content="CONF location /usr/local/var/postgres
+CREATE USER postgres WITH PASSWORD &amp;apos;&amp;lt;YOUR_PASSWORD&amp;gt;&amp;apos;;
+ALTER USER postgres WITH SUPERUSER;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios-reading-cocoa-and-core-services">
-<meta property="og:url" content="http://poc7667.github.io/2016/07/10/ios-reading-cocoa-and-core-services/index.html">
+<meta property="og:title" content="PostgreSQL cheatsheet">
+<meta property="og:url" content="http://poc7667.github.io/2016/11/23/postgreSQL/index.html">
 <meta property="og:site_name" content="Poc on Rails">
-<meta property="og:description" content="Cocoa Touch LayerCocoa Touch is a collection of frameworks which are providing appearance (UI) for our app and multi-tasking, touch-based input, push notifications.
-Standard system view controllers
-Di">
+<meta property="og:description" content="CONF location /usr/local/var/postgres
+CREATE USER postgres WITH PASSWORD &amp;apos;&amp;lt;YOUR_PASSWORD&amp;gt;&amp;apos;;
+ALTER USER postgres WITH SUPERUSER;">
 <meta property="og:updated_time" content="2016-11-23T19:31:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios-reading-cocoa-and-core-services">
-<meta name="twitter:description" content="Cocoa Touch LayerCocoa Touch is a collection of frameworks which are providing appearance (UI) for our app and multi-tasking, touch-based input, push notifications.
-Standard system view controllers
-Di">
+<meta name="twitter:title" content="PostgreSQL cheatsheet">
+<meta name="twitter:description" content="CONF location /usr/local/var/postgres
+CREATE USER postgres WITH PASSWORD &amp;apos;&amp;lt;YOUR_PASSWORD&amp;gt;&amp;apos;;
+ALTER USER postgres WITH SUPERUSER;">
   
     <link rel="alternative" href="/atom.xml" title="Poc on Rails" type="application/atom+xml">
   
@@ -185,11 +185,11 @@ Di">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-ios-reading-cocoa-and-core-services" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-postgreSQL" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/10/ios-reading-cocoa-and-core-services/" class="article-date">
-  	<time datetime="2016-07-11T00:53:15.000Z" itemprop="datePublished">2016-07-10</time>
+      <a href="/2016/11/23/postgreSQL/" class="article-date">
+  	<time datetime="2016-11-23T19:31:35.000Z" itemprop="datePublished">2016-11-23</time>
 </a>
     </div>
   
@@ -202,7 +202,7 @@ Di">
         
   
     <h1 class="article-title" itemprop="name">
-      ios-reading-cocoa-and-core-services
+      PostgreSQL cheatsheet
     </h1>
   
 
@@ -211,7 +211,7 @@ Di">
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
 	</div>
 
         
@@ -222,48 +222,10 @@ Di">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Cocoa-Touch-Layer"><a href="#Cocoa-Touch-Layer" class="headerlink" title="Cocoa Touch Layer"></a>Cocoa Touch Layer</h1><p>Cocoa Touch is a collection of frameworks which are providing appearance (UI) for our app and multi-tasking, touch-based input, push notifications.</p>
-<h2 id="Standard-system-view-controllers"><a href="#Standard-system-view-controllers" class="headerlink" title="Standard system view controllers"></a>Standard system view controllers</h2><ul>
-<li><p>Display or edit contact information: pick a ctrl from Address Book UI framework.</p>
-</li>
-<li><p>Compose an email or SMS: pick a ctrl from message ui fk.</p>
-</li>
-<li><p>Open or preview the contents of a file: Use the UIDocumentInteractionController class</p>
-</li>
-</ul>
-<h2 id="Handoff"><a href="#Handoff" class="headerlink" title="Handoff"></a>Handoff</h2><ul>
-<li>Handoff is a feature to enable user can migrate their tasks from one device(iPhone) to another device(maybe Mac).</li>
-</ul>
-<p>Handoff makes this experience as seamless as possible.</p>
-<p>Of course, to use it you need to study its official API.</p>
-<h2 id="Document-picker"><a href="#Document-picker" class="headerlink" title="Document picker"></a>Document picker</h2><p>Enable user can access files outside from the current app.</p>
-<p>Simple mechanism for sharing documents within apps.</p>
-<h2 id="AirDrop"><a href="#AirDrop" class="headerlink" title="AirDrop"></a>AirDrop</h2><p>Share photos, documents, URLs with nearby devices.</p>
-<h2 id="Textkit"><a href="#Textkit" class="headerlink" title="Textkit"></a>Textkit</h2><p>Textkit a full-featured to organize paragraphs, columns, …</p>
-<ul>
-<li>comments: well, I prefer to keep content as simple as possible. Too much fexlibility will harm the reading experience. eg. I like the philosophy of Medium</li>
-</ul>
-<h2 id="Multitasking"><a href="#Multitasking" class="headerlink" title="Multitasking"></a>Multitasking</h2><p>If you want to do some tasks after the app is switched to the backgorund. You need to use it to enable your app can work in the backgorund.</p>
-<h1 id="Auto-layout"><a href="#Auto-layout" class="headerlink" title="Auto layout"></a>Auto layout</h1><p>Help you build dynamic interfaces with little code.</p>
-<p>Comment: I hate to layout components with storyboard. It should be done with some css-similar syntax </p>
-<h1 id="Storyboards"><a href="#Storyboards" class="headerlink" title="Storyboards"></a>Storyboards</h1><p>A way to defin <code>segues</code> which are transitions from one view CTRL to another. These transitions allow you to captire the flow of UI in addition to the content.</p>
-<h1 id="UI-State-preservation"><a href="#UI-State-preservation" class="headerlink" title="UI State preservation"></a>UI State preservation</h1><p>It can restore the last time App’s state. Provide a good user experience.</p>
-<h1 id="Apple-push-notification-services"><a href="#Apple-push-notification-services" class="headerlink" title="Apple push notification services"></a>Apple push notification services</h1><p>To alert user notifications.</p>
-<ul>
-<li>The app muse request the delivery of notifications and process the notification content once it’s delivered.</li>
-<li>Provide a server-side process to generate the notifications in the first place.</li>
-</ul>
-<p>Comment: I’ve done thise before, but only on Rubymotion toolchain.</p>
-<h1 id="Local-notification"><a href="#Local-notification" class="headerlink" title="Local notification."></a>Local notification.</h1><p>The notifications coming from the app itself. you can schedule it.</p>
-<h1 id="Gesture-Recognizers"><a href="#Gesture-Recognizers" class="headerlink" title="Gesture Recognizers"></a>Gesture Recognizers</h1><p>TL;DR</p>
-<h1 id="Framworks"><a href="#Framworks" class="headerlink" title="Framworks"></a>Framworks</h1><ul>
-<li>Address Book UI Framework:  contacts-related events</li>
-<li>EventKit : calendar-related events</li>
-<li>MapKit</li>
-<li>Message UI </li>
-<li>GameKit, iAD, </li>
-</ul>
-
+        <p>CONF location <code>/usr/local/var/postgres</code></p>
+<pre><code>CREATE USER postgres WITH PASSWORD &apos;&lt;YOUR_PASSWORD&gt;&apos;;
+ALTER USER postgres WITH SUPERUSER;
+</code></pre>
       
     </div>
     
@@ -272,18 +234,18 @@ Di">
     
 <nav id="article-nav">
   
-    <a href="/2016/11/23/postgreSQL/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/23/postgres/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          PostgreSQL cheatsheet
+          PostgreSQL setting
         
       </div>
     </a>
   
   
-    <a href="/2016/07/06/rails-factories/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">factories</div>
+    <a href="/2016/07/10/ios-reading-cocoa-and-core-services/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ios-reading-cocoa-and-core-services</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -318,7 +280,7 @@ Di">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="ios-reading-cocoa-and-core-services" data-title="ios-reading-cocoa-and-core-services" data-url="http://poc7667.github.io/2016/07/10/ios-reading-cocoa-and-core-services/"></div>
+	<div class="ds-thread" data-thread-key="postgreSQL" data-title="PostgreSQL cheatsheet" data-url="http://poc7667.github.io/2016/11/23/postgreSQL/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
