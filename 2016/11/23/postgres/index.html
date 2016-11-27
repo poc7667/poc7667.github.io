@@ -6,16 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>PostgreSQL setting | Poc on Rails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Notes for postgresql operation">
+  <meta name="description" content="Quick notes for Postgresql 
+When you upgrade your PostgreSQL
+FATAL:  database files are incompatible with server
+DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not com">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PostgreSQL setting">
 <meta property="og:url" content="http://poc7667.github.io/2016/11/23/postgres/index.html">
 <meta property="og:site_name" content="Poc on Rails">
-<meta property="og:description" content="Notes for postgresql operation">
-<meta property="og:updated_time" content="2016-11-23T19:34:15.000Z">
+<meta property="og:description" content="Quick notes for Postgresql 
+When you upgrade your PostgreSQL
+FATAL:  database files are incompatible with server
+DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not com">
+<meta property="og:updated_time" content="2016-11-27T00:54:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgreSQL setting">
-<meta name="twitter:description" content="Notes for postgresql operation">
+<meta name="twitter:description" content="Quick notes for Postgresql 
+When you upgrade your PostgreSQL
+FATAL:  database files are incompatible with server
+DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not com">
   
     <link rel="alternative" href="/atom.xml" title="Poc on Rails" type="application/atom+xml">
   
@@ -216,29 +225,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Notes for postgresql operation</p>
-<a id="more"></a> 
-<p>遇到新舊版DB衝突，通常升級資料庫之後會遇到</p>
+        <p>Quick notes for Postgresql </p>
+<p>When you upgrade your PostgreSQL</p>
 <pre><code>FATAL:  database files are incompatible with server
 DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.5.1.
 launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-</code></pre><p>Backup the old DB store and create a new one.</p>
+</code></pre><a id="more"></a> 
+<p>Backup the old DB store and create a new one.</p>
 <pre><code>mv /usr/local/var/postgres /usr/local/var/postgresOLD
 initdb /usr/local/var/postgres
 </code></pre><p>If you want to start the DB on boot</p>
 <pre><code>cp /usr/local/Cellar/postgresql/&lt;VERSION&gt;/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/
 eg: cp /usr/local/Cellar/postgresql/9.5.1/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents
 </code></pre><p>Dump database</p>
-<pre><code>pg_dump -h localhost -U postgres -f alpa.dump AlphaLoan_production -Fc
+<pre><code>pg_dump -h localhost -U postgres -f testABC.dump TestABC_production -Fc
 </code></pre><p>Restore database</p>
-<pre><code>pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d AlphaLoan_production ./alpa.dump
+<pre><code>pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d TestABC_production ./testABC.dump
 </code></pre><p>PSQL configuration file location <code>/usr/local/var/postgres</code> </p>
 <pre><code>CREATE USER postgres WITH PASSWORD &apos;&lt;YOUR_PASSWORD&gt;&apos;;
 ALTER USER postgres WITH SUPERUSER;
 </code></pre><p>Login postgresql on ubuntu and change password</p>
 <pre><code>sudo su - postgres ; psql
-ALTER USER &quot;postgres&quot; WITH PASSWORD &apos;alphaloan123&apos;;
-postgres=# ALTER USER &quot;postgres&quot; WITH PASSWORD &apos;alphaloan123&apos;;
+ALTER USER &quot;postgres&quot; WITH PASSWORD &apos;TestABC123&apos;;
+postgres=# ALTER USER &quot;postgres&quot; WITH PASSWORD &apos;TestABC123&apos;;
 ALTER ROLE
 postgres=# \q
 </code></pre><h1 id="md5-peer-authentication-問題"><a href="#md5-peer-authentication-問題" class="headerlink" title="md5 peer authentication 問題"></a>md5 peer authentication 問題</h1><p>you need to change the auth method from <code>peer</code> to <code>md5</code> to enable Rails can works.</p>
