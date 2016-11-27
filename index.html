@@ -688,24 +688,9 @@ launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Setting-of-AWS-SES"><a href="#Setting-of-AWS-SES" class="headerlink" title="Setting of AWS SES"></a>Setting of AWS SES</h1><p>Do not contain <code>smtp</code> in the server address <a href="https://github.com/drewblas/aws-ses/issues/60" target="_blank" rel="external">Ref</a></p>
+        <h1 id="Setting-of-AWS-SES"><a href="#Setting-of-AWS-SES" class="headerlink" title="Setting of AWS SES"></a>Setting of AWS SES</h1><p>Do not contain <code>smtp</code> in the server address <a href="https://github.com/drewblas/aws-ses/issues/60">Ref</a></p>
 <pre><code>email-smtp.eu-west-1.amazonaws.com -&gt;  email.eu-west-1.amazonaws.com
-</code></pre><h1 id="Register-a-new-domain-on-SES"><a href="#Register-a-new-domain-on-SES" class="headerlink" title="Register a new domain  on SES"></a>Register a new domain  on SES</h1><p><img src="https://i.imgur.com/qdEEaMD.png=300x" alt="inline" title="Title"></p>
-<p>If you’re using Route 53 for hosting your domain, you can simply click the “Route 53” button on the bottom of the page. It will automatically configure the setting for you.<br><img src="https://i.imgur.com/BX3nH2F.png=300x" alt="inline" title="Title"></p>
-<h1 id="Register-email"><a href="#Register-email" class="headerlink" title="Register email"></a>Register email</h1><p>In the sandbox environment, you’re only able to send mail to the verfied users.</p>
-<p><img src="https://i.imgur.com/hi88YGk.png=300x" alt="inline" title="Title"></p>
-<h1 id="Get-your-SMTP-setting-and-credential"><a href="#Get-your-SMTP-setting-and-credential" class="headerlink" title="Get your SMTP setting and credential"></a>Get your SMTP setting and credential</h1><p><img src="https://i.imgur.com/FtD3SU2.png=300x" alt="inline" title="Title"></p>
-<pre><code>ActionMailer::Base.smtp_settings = {
-    :address =&gt; ENV[&quot;SES_SERVER&quot;],
-    :port =&gt; &quot;587&quot;,
-    :domain =&gt; &quot;jiyubi.com&quot;,
-    :user_name =&gt; ENV[&quot;SES_USER&quot;],
-    :password =&gt; ENV[&quot;SES_PASSWORD&quot;],
-    :authentication =&gt; &quot;plain&quot;,
-    :enable_starttls_auto =&gt; true
-}
-</code></pre><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://www.hkitblog.com/?p=24711" target="_blank" rel="external">一年免費玩盡 Amazon 雲端服務 – 低成本 EDM 電郵服務</a></p>
-
+</code></pre>
       
     </div>
     
@@ -718,6 +703,10 @@ launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/21/aws-ses/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1454,6 +1443,140 @@ npm publish
 
 
   
+    <article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/mysql/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/mysql/">MySQL configuration</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Forget-the-root-password-OSX"><a href="#Forget-the-root-password-OSX" class="headerlink" title="Forget the root password (OSX)"></a>Forget the root password (OSX)</h1><pre><code>mysql.server stop
+mysql.server start --skip-grant-tables 
+mysql
+mysql&gt; use mysql;
+mysql&gt; UPDATE user SET password=PASSWORD(&apos;YOUR_NEW_PASSWORD_HERE&apos;) WHERE user = &apos;root&apos;;
+mysql&gt; exit;
+mysql.server stop
+mysql.server start
+</code></pre><h1 id="login-on-ubuntu"><a href="#login-on-ubuntu" class="headerlink" title="login on ubuntu"></a>login on ubuntu</h1><pre><code>mysql -u root -p
+</code></pre><h1 id="find-the-pid-file-location"><a href="#find-the-pid-file-location" class="headerlink" title="find the pid file location"></a>find the pid file location</h1><pre><code>mysqladmin -uroot -p&lt;ROOT_PASSWORD&gt; variables | grep sock
+</code></pre><h1 id="change-pid-file-location"><a href="#change-pid-file-location" class="headerlink" title="change pid file location"></a>change pid file location</h1><p>edit /etc/mysql/my.cnf</p>
+<pre><code>socket = /tmp/mysqld.sock
+pid-file = /tmp/mysqld.pid
+</code></pre><h1 id="Unable-to-lock-ibdata1-error-11"><a href="#Unable-to-lock-ibdata1-error-11" class="headerlink" title="Unable to lock ./ibdata1, error: 11"></a>Unable to lock ./ibdata1, error: 11</h1><h1 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h1><pre><code>- https://gist.github.com/poc7667/3850d140df135106fefcd44532f6837f
+
+- http://blog.toright.com/posts/1145/mysql-%E6%94%B9-root-%E5%AF%86%E7%A2%BC%E5%BF%85%E5%8B%9D%E6%96%B9%E6%B3%95%EF%BC%88%E7%AD%86%E8%A8%98%EF%BC%89.html
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-brew" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/brew/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/brew/">Homebrew</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Search all versions for a ansible<ul>
+<li>brew search ansible</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1496,6 +1619,81 @@ npm publish
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-suburi" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/suburi/" class="article-date">
+  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/suburi/">SUBURI setting on Rails with Nginx</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h1><ul>
+<li>ENV[‘RAILS_RELATIVE_URL_ROOT’]=/browse/</li>
+</ul>
+<h1 id="routes-rb"><a href="#routes-rb" class="headerlink" title="routes.rb"></a>routes.rb</h1><pre><code>scope ENV[&apos;RAILS_RELATIVE_URL_ROOT&apos;] do
+    get &apos;browse/category_detail&apos;
+    get &apos;*path&apos; =&gt; redirect(&apos;/&apos;)
+end
+</code></pre><h1 id="application-rb"><a href="#application-rb" class="headerlink" title="application.rb"></a>application.rb</h1><pre><code>class Application &lt; Rails::Application
+  config.relative_url_root = ENV[&apos;RAILS_RELATIVE_URL_ROOT&apos;]
+end
+</code></pre><h1 id="Error-in-production-log"><a href="#Error-in-production-log" class="headerlink" title="Error in production log"></a>Error in production log</h1><pre><code>I, [2015-10-20T07:07:15.956058 #30522]  INFO -- : Started GET &quot;/&quot; for 127.0.0.1 at 2015-10-20 07:07:15 +0000
+F, [2015-10-20T07:07:15.957575 #30522] FATAL -- :
+ActionController::RoutingError (No route matches [GET] &quot;/&quot;):
+</code></pre><h1 id="nginx-conf"><a href="#nginx-conf" class="headerlink" title="nginx.conf"></a>nginx.conf</h1><pre><code>server {
+        listen 443;
+        server_name WEBSITE.COM;
+    location /browse {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_pass http://unix:/tmp/puma.broswe.sock:/;
+    }
+}%
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
       
 
       
@@ -1594,153 +1792,6 @@ npm publish
 
 
   
-    <article id="post-suburi" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/suburi/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/suburi/">SUBURI setting on Rails with Nginx</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h1><ul>
-<li>ENV[‘RAILS_RELATIVE_URL_ROOT’]=/browse/</li>
-</ul>
-<h1 id="routes-rb"><a href="#routes-rb" class="headerlink" title="routes.rb"></a>routes.rb</h1><pre><code>scope ENV[&apos;RAILS_RELATIVE_URL_ROOT&apos;] do
-    get &apos;browse/category_detail&apos;
-    get &apos;*path&apos; =&gt; redirect(&apos;/&apos;)
-end
-</code></pre><h1 id="application-rb"><a href="#application-rb" class="headerlink" title="application.rb"></a>application.rb</h1><pre><code>class Application &lt; Rails::Application
-  config.relative_url_root = ENV[&apos;RAILS_RELATIVE_URL_ROOT&apos;]
-end
-</code></pre><h1 id="Error-in-production-log"><a href="#Error-in-production-log" class="headerlink" title="Error in production log"></a>Error in production log</h1><pre><code>I, [2015-10-20T07:07:15.956058 #30522]  INFO -- : Started GET &quot;/&quot; for 127.0.0.1 at 2015-10-20 07:07:15 +0000
-F, [2015-10-20T07:07:15.957575 #30522] FATAL -- :
-ActionController::RoutingError (No route matches [GET] &quot;/&quot;):
-</code></pre><h1 id="nginx-conf"><a href="#nginx-conf" class="headerlink" title="nginx.conf"></a>nginx.conf</h1><pre><code>server {
-        listen 443;
-        server_name WEBSITE.COM;
-    location /browse {
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        proxy_redirect off;
-        proxy_pass http://unix:/tmp/puma.broswe.sock:/;
-    }
-}%
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/mysql/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/mysql/">MySQL configuration</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Forget-the-root-password-OSX"><a href="#Forget-the-root-password-OSX" class="headerlink" title="Forget the root password (OSX)"></a>Forget the root password (OSX)</h1><pre><code>mysql.server stop
-mysql.server start --skip-grant-tables 
-mysql
-mysql&gt; use mysql;
-mysql&gt; UPDATE user SET password=PASSWORD(&apos;YOUR_NEW_PASSWORD_HERE&apos;) WHERE user = &apos;root&apos;;
-mysql&gt; exit;
-mysql.server stop
-mysql.server start
-</code></pre><h1 id="login-on-ubuntu"><a href="#login-on-ubuntu" class="headerlink" title="login on ubuntu"></a>login on ubuntu</h1><pre><code>mysql -u root -p
-</code></pre><h1 id="find-the-pid-file-location"><a href="#find-the-pid-file-location" class="headerlink" title="find the pid file location"></a>find the pid file location</h1><pre><code>mysqladmin -uroot -p&lt;ROOT_PASSWORD&gt; variables | grep sock
-</code></pre><h1 id="change-pid-file-location"><a href="#change-pid-file-location" class="headerlink" title="change pid file location"></a>change pid file location</h1><p>edit /etc/mysql/my.cnf</p>
-<pre><code>socket = /tmp/mysqld.sock
-pid-file = /tmp/mysqld.pid
-</code></pre><h1 id="Unable-to-lock-ibdata1-error-11"><a href="#Unable-to-lock-ibdata1-error-11" class="headerlink" title="Unable to lock ./ibdata1, error: 11"></a>Unable to lock ./ibdata1, error: 11</h1><h1 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h1><pre><code>- https://gist.github.com/poc7667/3850d140df135106fefcd44532f6837f
-
-- http://blog.toright.com/posts/1145/mysql-%E6%94%B9-root-%E5%AF%86%E7%A2%BC%E5%BF%85%E5%8B%9D%E6%96%B9%E6%B3%95%EF%BC%88%E7%AD%86%E8%A8%98%EF%BC%89.html
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-token-auth" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1813,68 +1864,6 @@ end
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rails-angular/">rails, angular</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-brew" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/brew/" class="article-date">
-  	<time datetime="2016-07-03T17:33:48.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/brew/">Homebrew</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>Search all versions for a ansible<ul>
-<li>brew search ansible</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
 	</div>
 
       
@@ -2697,96 +2686,6 @@ class Solution(object):
 
 
   
-    <article id="post-angular-cheatsheet" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/09/angular-cheatsheet/" class="article-date">
-  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/angular-cheatsheet/">angular-cheatsheet</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Show-un-safe-string-as-HTML"><a href="#Show-un-safe-string-as-HTML" class="headerlink" title="Show un-safe string as HTML"></a>Show un-safe string as HTML</h1><p>Add a filter</p>
-<pre><code>angular
-    .module(&apos;altairApp&apos;).filter(&apos;unsafe&apos;, function($sce) {
-    return function(val) {
-        return $sce.trustAsHtml(val);
-    };
-});
-</code></pre><p>In the view</p>
-<pre><code>&lt;p ng-bind-html=&quot;product.description | unsafe&quot;&gt;&lt;/p&gt;
-</code></pre><h1 id="Dropdown-selection-single-and-multiple-choice"><a href="#Dropdown-selection-single-and-multiple-choice" class="headerlink" title="Dropdown selection: single and multiple choice"></a>Dropdown selection: single and multiple choice</h1><h2 id="single-choice"><a href="#single-choice" class="headerlink" title="single choice"></a>single choice</h2><p>pitfalls</p>
-<blockquote>
- 
-</blockquote>
-<pre><code>&lt;ui-select ng-model=&quot;user_profile.career&quot; theme=&quot;bootstrap&quot; required=&quot;true&quot;&gt;
-&lt;ui-select-match &gt; {{$select.selected.name}} &lt;/ui-select-match&gt;
-&lt;ui-select-choices repeat=&quot;option in selectOptions.career | propsFilter: {name: $select.search} &quot;&gt;
-&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
-&lt;/ui-select-choices&gt;
-&lt;/ui-select&gt;
-</code></pre><h2 id="multiple-choice"><a href="#multiple-choice" class="headerlink" title="multiple choice"></a>multiple choice</h2><p>pitfalls</p>
-<blockquote>
-<p>multiple, </p>
-</blockquote>
-<pre><code>&lt;ui-select multiple ng-model=&quot;loan_plan.careers&quot; theme=&quot;bootstrap&quot; ng-disabled=&quot;disabled&quot;&gt;
-&lt;ui-select-match &gt; {{$item.name}} &lt;/ui-select-match&gt;
-&lt;ui-select-choices repeat=&quot;option in careersOptions | propsFilter: {name: $select.search} &quot;&gt;
-&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
-&lt;small&gt;
-&lt;span ng-bind-html=&quot;&apos;&apos;+ option.description | highlight: $select.search&quot;&gt;&lt;/span&gt;
-&lt;/small&gt;
-&lt;/ui-select-choices&gt;
-&lt;/ui-select&gt;
-</code></pre><h1 id="DEBUG-skill"><a href="#DEBUG-skill" class="headerlink" title="DEBUG skill"></a>DEBUG skill</h1><p>Check the existence of service on the console</p>
-<blockquote>
-<p>injector = angular.element(document.body).injector()<br>injector.get(‘ServiceName’)<br>    angular.js:68 Uncaught Error: [$injector:unpr] Unknown provider: ServiceNameProvider &lt;- ServiceName(…)(anonymous function) @ angular.js:68(anonymous function) @ angular.js:4289getService @ angular.js:4437(anonymous function) @ angular.js:4294getService @ angular.js:4437(anonymous function) @ VM168822:1InjectedScript._evaluateOn @ (program):878InjectedScript._evaluateAndWrap @ (program):811InjectedScript.evaluateOnCallFrame @ (program):936(anonymous function) @ banks.js:2</p>
-</blockquote>
-<h1 id="RESTful"><a href="#RESTful" class="headerlink" title="RESTful"></a>RESTful</h1><p>success callback</p>
-<p>error callback</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -2837,212 +2736,6 @@ class Solution(object):
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-debugging_angular_with_rails" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/09/debugging_angular_with_rails/" class="article-date">
-  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/debugging_angular_with_rails/">gulp</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://i.imgur.com/EAh2GMN.png=300x" alt="inline" title="Title"></p>
-<p> “PATH_INFO”=&gt;”/portal/run@<a href="http://10.0.0.44:3000/portal/index.html" target="_blank" rel="external">http://10.0.0.44:3000/portal/index.html</a>“,<br> “REMOTE_ADDR”=&gt;”10.0.0.42”,<br> “puma.socket”=&gt;#<tcpsocket:fd 15="">,<br> “rack.hijack?”=&gt;true,<br> “rack.hijack”=&gt;#<puma::client:0x3fd47df7c984 @ready="true">,<br> “rack.input”=&gt;#<puma::nullio:0x007fa9005aa608>,<br> “rack.url_scheme”=&gt;”http”,<br> “rack.after_reply”=&gt;[],<br> “ORIGINAL_FULLPATH”=&gt;”/portal/run@<a href="http://10.0.0.44:3000/portal/index.html" target="_blank" rel="external">http://10.0.0.44:3000/portal/index.html</a>“,</puma::nullio:0x007fa9005aa608></puma::client:0x3fd47df7c984></tcpsocket:fd></p>
-<p>UNEXPECTED_PATH_PREFIX = “/portal/run@”<br>if  UNEXPECTED_PATH_PREFIX in env[“PATH_INFO”]<br>    env[“PATH_INFO”].gsub!(UNEXPECTED_PATH_PREFIX,””)<br>end<br> “PATH_INFO”</p>
-<p>  “ORIGINAL_FULLPATH”=&gt;”/portal/run@<a href="http://10.0.0.44:3000/portal/index.html" target="_blank" rel="external">http://10.0.0.44:3000/portal/index.html</a>“,</p>
-<pre><code>def call(env)
-host = env[&quot;HTTP_HOST&quot;]
-# [&quot;PATH_INFO&quot;, &quot;ORIGINAL_FULLPATH&quot;, &quot;REQUEST_URI&quot;].each do |item|
-[&quot;REQUEST_PATH&quot;, &quot;REQUEST_URI&quot;, &quot;ORIGINAL_FULLPATH&quot;, &quot;PATH_INFO&quot;].each do |item|
-  if env[item].include? host
-    start_of_pos = env[item].rindex(host)+host.length
-    env[item] = env[item][start_of_pos..-1]
-    if env[item].end_with? &quot;/portal/index.html&quot;
-      env[item]=&quot;/&quot;
-    end
-  end
-end
-
-[&quot;REQUEST_PATH&quot;, &quot;REQUEST_URI&quot;,
-  &quot;HTTP_REFERER&quot;,&quot;SERVER_NAME&quot;, &quot;SERVER_PORT&quot;,
-  &quot;ORIGINAL_FULLPATH&quot;, &quot;PATH_INFO&quot;].each do |k|
-    ap(&quot;#{k}:#{env[k]}&quot;)
-end
-
-ap(env)
-# binding.pry if env[&quot;REQUEST_PATH&quot;].include? &quot;/portal/index.html&quot;
-
-@status, @headers, @response = @app.call(env)
-[@status, @headers, @response]
-</code></pre><p>  end</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-aunglar-router" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/09/aunglar-router/" class="article-date">
-  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/aunglar-router/">angular-pattern</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>Router ‘/app/dashboard-v1’ -&gt;  State ‘app.dashboard-v1’</li>
-<li>Router ‘/app/ui’ -&gt;  State ‘app.ui’</li>
-</ul>
-<h1 id="snippet"><a href="#snippet" class="headerlink" title="snippet"></a>snippet</h1><pre><code>$urlRouterProvider
-    .otherwise(&apos;/app/dashboard-v1&apos;);
-$stateProvider
-    .state(&apos;app.ui&apos;, {
-        url: &apos;/ui&apos;,
-        template: &apos;&lt;div ui-view class=&quot;fade-in-up&quot;&gt;&lt;/div&gt;&apos;
-    })
-    .state(&apos;app.ui.buttons&apos;, {
-        url: &apos;/buttons&apos;,
-        templateUrl: &apos;tpl/ui_buttons.html&apos;
-    })
-</code></pre><p>ui-router的状态</p>
-<p>參考 <a href="http://blog.csdn.net/mooner_guo/article/details/42459861" target="_blank" rel="external">http://blog.csdn.net/mooner_guo/article/details/42459861</a></p>
-<p>Parent state 以及 children state 依靠 “.” 區分 namespace</p>
-<blockquote>
-<p>question : patent state<br>question.init.attention.text : 子狀態children state</p>
-</blockquote>
-<pre><code>$stateProvider.state(&apos;question&apos;,{     //母模块
-          ....
-    }).state(&apos;question.init.attention.test&apos;,{       //子状态1  显示view1
-            url:&quot;/test&quot;,
-      views:{
-          /*&apos;first&apos;:{
-              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
-          },*/
-          &apos;second&apos;:{
-              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
-          }
-   }).state(&apos;question.init.attention.test&apos;,(        //子状态2 显示view2
-             url:&quot;/test2&quot;,
-      views:{
-          &apos;first&apos;:{
-              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
-          }
-          /*&apos;second&apos;:{
-              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
-          }*/
-      }
-   )}.state(&apos;question.init.attention.test&apos;,{       //子状态3    显示view1，view2
-       url:&quot;/test2&quot;,
-      views:{
-          &apos;first&apos;:{
-              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
-          }
-          &apos;second&apos;:{
-              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
-          }
-      }
-  });
-</code></pre><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Abstract - {boolean=} - An abstract state will never be directly activated, but can provide inherited properties to its common children states.</p>
-<pre><code>$stateProvider
-    .state(&apos;loan&apos;, {
-        abstract: true,
-        url: &apos;/loan&apos;,
-        templateUrl: &apos;tpl/app.html&apos;
-    })
-    .state(&apos;loan.loan_manager&apos;, {
-        // abstract: true,
-        url: &apos;/loan_manager&apos;,
-        templateUrl: &apos;tpl/ui_buttons.html&apos;
-    })
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
 	</div>
 
       
@@ -3186,6 +2879,302 @@ app.controller(&apos;BanksIndexCtrl&apos;, function($rootScope, $scope, $http, $
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
 	</div>
 
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-aunglar-router" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/aunglar-router/" class="article-date">
+  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/aunglar-router/">angular-pattern</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Router ‘/app/dashboard-v1’ -&gt;  State ‘app.dashboard-v1’</li>
+<li>Router ‘/app/ui’ -&gt;  State ‘app.ui’</li>
+</ul>
+<h1 id="snippet"><a href="#snippet" class="headerlink" title="snippet"></a>snippet</h1><pre><code>$urlRouterProvider
+    .otherwise(&apos;/app/dashboard-v1&apos;);
+$stateProvider
+    .state(&apos;app.ui&apos;, {
+        url: &apos;/ui&apos;,
+        template: &apos;&lt;div ui-view class=&quot;fade-in-up&quot;&gt;&lt;/div&gt;&apos;
+    })
+    .state(&apos;app.ui.buttons&apos;, {
+        url: &apos;/buttons&apos;,
+        templateUrl: &apos;tpl/ui_buttons.html&apos;
+    })
+</code></pre><p>ui-router的状态</p>
+<p>參考 <a href="http://blog.csdn.net/mooner_guo/article/details/42459861" target="_blank" rel="external">http://blog.csdn.net/mooner_guo/article/details/42459861</a></p>
+<p>Parent state 以及 children state 依靠 “.” 區分 namespace</p>
+<blockquote>
+<p>question : patent state<br>question.init.attention.text : 子狀態children state</p>
+</blockquote>
+<pre><code>$stateProvider.state(&apos;question&apos;,{     //母模块
+          ....
+    }).state(&apos;question.init.attention.test&apos;,{       //子状态1  显示view1
+            url:&quot;/test&quot;,
+      views:{
+          /*&apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          },*/
+          &apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }
+   }).state(&apos;question.init.attention.test&apos;,(        //子状态2 显示view2
+             url:&quot;/test2&quot;,
+      views:{
+          &apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          }
+          /*&apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }*/
+      }
+   )}.state(&apos;question.init.attention.test&apos;,{       //子状态3    显示view1，view2
+       url:&quot;/test2&quot;,
+      views:{
+          &apos;first&apos;:{
+              template:&apos;&lt;div&gt;first&lt;/div&gt;&apos;
+          }
+          &apos;second&apos;:{
+              template:&apos;&lt;div&gt;second&lt;/div&gt;&apos;
+          }
+      }
+  });
+</code></pre><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Abstract - {boolean=} - An abstract state will never be directly activated, but can provide inherited properties to its common children states.</p>
+<pre><code>$stateProvider
+    .state(&apos;loan&apos;, {
+        abstract: true,
+        url: &apos;/loan&apos;,
+        templateUrl: &apos;tpl/app.html&apos;
+    })
+    .state(&apos;loan.loan_manager&apos;, {
+        // abstract: true,
+        url: &apos;/loan_manager&apos;,
+        templateUrl: &apos;tpl/ui_buttons.html&apos;
+    })
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-debugging_angular_with_rails" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/debugging_angular_with_rails/" class="article-date">
+  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/debugging_angular_with_rails/">gulp</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://i.imgur.com/EAh2GMN.png=300x" alt="inline" title="Title"></p>
+<p> “PATH_INFO”=&gt;”/portal/run@<a href="http://10.0.0.44:3000/portal/index.html" target="_blank" rel="external">http://10.0.0.44:3000/portal/index.html</a>“,<br> “REMOTE_ADDR”=&gt;”10.0.0.42”,<br> “puma.socket”=&gt;#<tcpsocket:fd 15="">,<br> “rack.hijack?”=&gt;true,<br> “rack.hijack”=&gt;#<puma::client:0x3fd47df7c984 @ready="true">,<br> “rack.input”=&gt;#<puma::nullio:0x007fa9005aa608>,<br> “rack.url_scheme”=&gt;”http”,<br> “rack.after_reply”=&gt;[],<br> “ORIGINAL_FULLPATH”=&gt;”/portal/run@<a href="http://10.0.0.44:3000/portal/index.html" target="_blank" rel="external">http://10.0.0.44:3000/portal/index.html</a>“,</puma::nullio:0x007fa9005aa608></puma::client:0x3fd47df7c984></tcpsocket:fd></p>
+<p>UNEXPECTED_PATH_PREFIX = “/portal/run@”<br>if  UNEXPECTED_PATH_PREFIX in env[“PATH_INFO”]<br>    env[“PATH_INFO”].gsub!(UNEXPECTED_PATH_PREFIX,””)<br>end<br> “PATH_INFO”</p>
+<p>  “ORIGINAL_FULLPATH”=&gt;”/portal/run@<a href="http://10.0.0.44:3000/portal/index.html" target="_blank" rel="external">http://10.0.0.44:3000/portal/index.html</a>“,</p>
+<pre><code>def call(env)
+host = env[&quot;HTTP_HOST&quot;]
+# [&quot;PATH_INFO&quot;, &quot;ORIGINAL_FULLPATH&quot;, &quot;REQUEST_URI&quot;].each do |item|
+[&quot;REQUEST_PATH&quot;, &quot;REQUEST_URI&quot;, &quot;ORIGINAL_FULLPATH&quot;, &quot;PATH_INFO&quot;].each do |item|
+  if env[item].include? host
+    start_of_pos = env[item].rindex(host)+host.length
+    env[item] = env[item][start_of_pos..-1]
+    if env[item].end_with? &quot;/portal/index.html&quot;
+      env[item]=&quot;/&quot;
+    end
+  end
+end
+
+[&quot;REQUEST_PATH&quot;, &quot;REQUEST_URI&quot;,
+  &quot;HTTP_REFERER&quot;,&quot;SERVER_NAME&quot;, &quot;SERVER_PORT&quot;,
+  &quot;ORIGINAL_FULLPATH&quot;, &quot;PATH_INFO&quot;].each do |k|
+    ap(&quot;#{k}:#{env[k]}&quot;)
+end
+
+ap(env)
+# binding.pry if env[&quot;REQUEST_PATH&quot;].include? &quot;/portal/index.html&quot;
+
+@status, @headers, @response = @app.call(env)
+[@status, @headers, @response]
+</code></pre><p>  end</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-angular-cheatsheet" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/angular-cheatsheet/" class="article-date">
+  	<time datetime="2016-04-09T17:14:42.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/angular-cheatsheet/">angular-cheatsheet</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Show-un-safe-string-as-HTML"><a href="#Show-un-safe-string-as-HTML" class="headerlink" title="Show un-safe string as HTML"></a>Show un-safe string as HTML</h1><p>Add a filter</p>
+<pre><code>angular
+    .module(&apos;altairApp&apos;).filter(&apos;unsafe&apos;, function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
+});
+</code></pre><p>In the view</p>
+<pre><code>&lt;p ng-bind-html=&quot;product.description | unsafe&quot;&gt;&lt;/p&gt;
+</code></pre><h1 id="Dropdown-selection-single-and-multiple-choice"><a href="#Dropdown-selection-single-and-multiple-choice" class="headerlink" title="Dropdown selection: single and multiple choice"></a>Dropdown selection: single and multiple choice</h1><h2 id="single-choice"><a href="#single-choice" class="headerlink" title="single choice"></a>single choice</h2><p>pitfalls</p>
+<blockquote>
+ 
+</blockquote>
+<pre><code>&lt;ui-select ng-model=&quot;user_profile.career&quot; theme=&quot;bootstrap&quot; required=&quot;true&quot;&gt;
+&lt;ui-select-match &gt; {{$select.selected.name}} &lt;/ui-select-match&gt;
+&lt;ui-select-choices repeat=&quot;option in selectOptions.career | propsFilter: {name: $select.search} &quot;&gt;
+&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
+&lt;/ui-select-choices&gt;
+&lt;/ui-select&gt;
+</code></pre><h2 id="multiple-choice"><a href="#multiple-choice" class="headerlink" title="multiple choice"></a>multiple choice</h2><p>pitfalls</p>
+<blockquote>
+<p>multiple, </p>
+</blockquote>
+<pre><code>&lt;ui-select multiple ng-model=&quot;loan_plan.careers&quot; theme=&quot;bootstrap&quot; ng-disabled=&quot;disabled&quot;&gt;
+&lt;ui-select-match &gt; {{$item.name}} &lt;/ui-select-match&gt;
+&lt;ui-select-choices repeat=&quot;option in careersOptions | propsFilter: {name: $select.search} &quot;&gt;
+&lt;div ng-bind-html=&quot;option.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
+&lt;small&gt;
+&lt;span ng-bind-html=&quot;&apos;&apos;+ option.description | highlight: $select.search&quot;&gt;&lt;/span&gt;
+&lt;/small&gt;
+&lt;/ui-select-choices&gt;
+&lt;/ui-select&gt;
+</code></pre><h1 id="DEBUG-skill"><a href="#DEBUG-skill" class="headerlink" title="DEBUG skill"></a>DEBUG skill</h1><p>Check the existence of service on the console</p>
+<blockquote>
+<p>injector = angular.element(document.body).injector()<br>injector.get(‘ServiceName’)<br>    angular.js:68 Uncaught Error: [$injector:unpr] Unknown provider: ServiceNameProvider &lt;- ServiceName(…)(anonymous function) @ angular.js:68(anonymous function) @ angular.js:4289getService @ angular.js:4437(anonymous function) @ angular.js:4294getService @ angular.js:4437(anonymous function) @ VM168822:1InjectedScript._evaluateOn @ (program):878InjectedScript._evaluateAndWrap @ (program):811InjectedScript.evaluateOnCallFrame @ (program):936(anonymous function) @ banks.js:2</p>
+</blockquote>
+<h1 id="RESTful"><a href="#RESTful" class="headerlink" title="RESTful"></a>RESTful</h1><p>success callback</p>
+<p>error callback</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
       
 
       
